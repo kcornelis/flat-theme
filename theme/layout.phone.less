@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+
+	#content {
+		margin-left: 0;
+		margin-top: @header_height * 2;
+
+		#content-wrapper {
+			padding: 20px 20px @footer_height 20px;
+		}
+
+		h1 {
+			display: block;
+			margin: -20px -20px 40px -20px;
+			font-weight: lighter;
+			letter-spacing: -1px;
+			line-height: 60px;
+			padding: 0 20px;
+			border-bottom: 1px solid @content_border_color;
+		}		
+	}
+
+	#sidebar {
+		display: none;
+	}
+
+	#header {
+		height: @header_height * 2;
+
+		.content {
+			padding: 0;
+			clear: both;
+			background: #FFFFFF;
+		}
+
+		.logo {
+			width: 100%;
+			clear: both;
+		}		
+	}
+
+	#footer {
+		margin-left: 0px;
+	}
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keyword" content="">
+
+		<title>Flat theme</title>
+
+		<link rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="/bower/fontawesome/css/font-awesome.css">
+		<link rel="stylesheet" href="/bower/simple-line-icons/css/simple-line-icons.css" />
+
+
+		<link rel="stylesheet" href="/dist/flat-theme.css" >
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<header id="header">
+				<div class="logo">
+					<span>Flat Theme</span>
+				</div>	
+
+				<div class="content">
+					<ul class="actions">
+						<li><a href="#"><i class="fa fa-bars"></i></a></li>
+						<li><a href="#"><i class="icon-lock"></i></a></li>
+						<li><a href="#"><i class="icon-user"></i></a></li>
+						<li><a href="#"><i class="icon-settings"></i></a></li>
+					</ul>
+				</div>
+			</header>
+
+			<aside id="sidebar">
+				<div class="content">
+					<ul class="nav nav-list">
+						<li><label class="nav-header">Components</label>
+							<ul class="nav nav-list tree">
+								<li><label class="expandable-nav-header"><i class="icon-wrench"></i>Elements</label>
+									<ul class="nav nav-list tree">
+										<li><a href="/demo/elements-buttons">Buttons</a></li>
+										<li><a href="/demo/elements-panels">Panels</a></li>
+									</ul>
+								</li>
+								<li><label class="expandable-nav-header"><i class="icon-notebook"></i>Forms</label>
+									<ul class="nav nav-list tree">
+										<li><a href="/demo/forms-standard" class="active">Standard</a></li>
+									</ul>
+								</li>								
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li><label class="nav-header">More</label>
+							<ul class="nav nav-list tree">
+								<li><label class="expandable-nav-header"><i class="icon-doc"></i>Pages</label>
+									<ul class="nav nav-list tree">
+										<li><a href="/demo/pages-login">Login</a></li>
+										<li><a href="/demo/pages-blank">Blank</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<section id="content">
+				<div id="content-wrapper">
+					{% block content %}{% endblock %}
+				</div>
+			</section>
+
+
+			<footer id="footer">
+				<div>
+					2015 - Kevin Cornelis
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="/bower/jquery/dist/jquery.js"></script>
+		<script src="/bower/bootstrap/dist/js/bootstrap.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.expandable-nav-header').parent().children('ul.tree').toggle();
+				$('.expandable-nav-header').click(function () {
+					$(this).parent().children('ul.tree').toggle(300);
+				});
+			});
+		</script>
+		<script type="text/javascript" src="http://localhost:35750/livereload.js"></script>
+	</body>
+</html>

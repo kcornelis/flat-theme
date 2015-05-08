@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Dashboard</h1>
+<div class="fm-time-overview ng-scope" data-ng-init="refresh()">
+	<div class="btn-group btn-group-accentuate pull-left">
+		<button class="btn btn-default " data-ng-click="previousDate()"><span class="fa fa-chevron-left"></span></button>
+	</div>
+	<div class="btn-group btn-group-accentuate pull-right">
+		<button class="btn btn-default ng-isolate-scope" data-fm-datepicker="" data-fm-datepicker-format="yyyy-mm-dd" data-fm-datepicker-datechanged="changeDate(date, 'YYYY-MM-DD')">
+			<span class="fa fa-calendar-o"></span>
+		</button>
+		<button class="btn btn-default" data-ng-click="nextDate()"><span class="fa fa-chevron-right"></span></button>
+	</div>
+	<div class="clearfix visible-xs">&nbsp;</div>
+	<h2 class="text-center ng-binding">07 May 2015</h2>
+	<div class="panel panel-default panel-margin ng-hide" data-ng-hide="hasTimeRegistrations">
+		<div class="panel-body text-center">
+			No items
+		</div>
+	</div>
+	<div class="list-group">
+		<div class="list-group-item ng-scope" data-ng-click="openTimeRegistration(timeRegistration)" data-ng-repeat="timeRegistration in timeRegistrations">
+			<div class="row">
+				<div class="col-xs-2">
+					<strong class="ng-binding">06:25</strong>
+					<br>
+					<strong class="ng-binding">07:25</strong>
+				</div>
+				<div class="col-xs-8">
+					<strong class="hideOverflow ng-binding">Kevin Cornelis - CQRS Recipes</strong>
+					<span class="hideOverflow ng-binding">Development - Admin read model</span>
+				</div>
+				<div class="col-xs-2">
+					<span class="pull-right ng-binding">01:00</span>
+				</div>
+			</div>
+		</div>
+		<div class="list-group-item ng-scope" data-ng-click="openTimeRegistration(timeRegistration)" data-ng-repeat="timeRegistration in timeRegistrations">
+			<div class="row">
+				<div class="col-xs-2">
+					<strong class="ng-binding">06:25</strong>
+					<br>
+					<strong class="ng-binding">07:25</strong>
+				</div>
+				<div class="col-xs-8">
+					<strong class="hideOverflow ng-binding">Kevin Cornelis - CQRS Recipes</strong>
+					<span class="hideOverflow ng-binding">Development - Admin read model</span>
+				</div>
+				<div class="col-xs-2">
+					<span class="pull-right ng-binding">01:00</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-default fm-time-infoperproject ng-scope" data-ng-repeat="info in infoPerProject">
+	<div class="panel-heading text-center">Kevin Cornelis - CQRS Recipes</div>
+	<div class="panel-body">
+		<div class="row ng-scope" data-ng-repeat="taskSummary in info.tasks">
+			<div class="col-xs-12 text-center visible-xs">
+				<p class="ng-binding">Development</p>
+			</div>
+			<div class="col-sm-4 hidden-xs ng-binding">
+				Development
+			</div>
+			<div class="clearfix visible-xs"></div>
+			<div class="col-xs-6 col-sm-4 ng-binding"><strong>Billable: </strong>00:00 <span class="hidden-xs">Hour(s)</span></div>
+			<div class="col-xs-6 col-sm-4 ng-binding"><strong>Unbillable: </strong>06:40 <span class="hidden-xs">Hour(s)</span></div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Panel heading without title</div>
+			<div class="panel-body">
+				Panel content
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Panel heading without title</div>
+			<div class="panel-body">
+				Panel content
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

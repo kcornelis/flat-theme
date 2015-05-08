@@ -1,0 +1,13 @@
+.list-group {
+	box-shadow: @content_accentuate_shadow;
+
+	.list-group-item {
+		border: none;
+		border-radius: 0;
+		border-top: 1px solid @content_border_color;
+	}
+
+	& > :first-child {
+		border: none;
+	}	
+}
