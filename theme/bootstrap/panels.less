@@ -1,0 +1,57 @@
+.panel-variant(@heading-text-color; @heading-bg-color;) {
+	& > .panel-heading {
+		color: @heading-text-color;
+		background-color: @heading-bg-color;
+
+		.badge {
+			color: @heading-bg-color;
+			background-color: @heading-text-color;
+		}
+	}
+}
+
+.panel {
+	background: #FFFFFF;
+	border: none;
+	border-radius: 0px !important;
+	-webkit-box-shadow: @content_accentuate_shadow;
+	box-shadow: @content_accentuate_shadow;
+
+	.panel-heading {
+		border: none;
+		border-radius: 0px !important;
+		background: transparent;
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: @color;
+		padding: 15px 20px;
+	}
+
+	.panel-body {
+		padding: 20px;
+	}
+
+	.panel-footer {
+		padding: 15px 20px;
+	}
+}
+
+.panel-primary {
+	.panel-variant(@primary_text_color; @primary_color);
+}
+.panel-success {
+	.panel-variant(@success_text_color; @success_color);
+}
+.panel-info {
+	.panel-variant(@info_text_color; @info_color);
+}
+.panel-warning {
+	.panel-variant(@warning_text_color; @warning_color);
+}
+.panel-danger {
+	.panel-variant(@danger_text_color; @danger_color);
+}
+.panel-dark {
+	.panel-variant(@dark_text_color; @dark_color);
+}

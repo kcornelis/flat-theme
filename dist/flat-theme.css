@@ -951,21 +951,73 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
 .panel {
   background: #FFFFFF;
   border: none;
-  border-radius: 0px;
+  border-radius: 0px !important;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 .panel .panel-heading {
   border: none;
+  border-radius: 0px !important;
   background: transparent;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
   color: #666666;
-  padding: 20px 20px 0 20px;
+  padding: 15px 20px;
 }
 .panel .panel-body {
   padding: 20px;
+}
+.panel .panel-footer {
+  padding: 15px 20px;
+}
+.panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: #7266ba;
+}
+.panel-primary > .panel-heading .badge {
+  color: #7266ba;
+  background-color: #ffffff;
+}
+.panel-success > .panel-heading {
+  color: #ffffff;
+  background-color: #27c24c;
+}
+.panel-success > .panel-heading .badge {
+  color: #27c24c;
+  background-color: #ffffff;
+}
+.panel-info > .panel-heading {
+  color: #ffffff;
+  background-color: #23b7e5;
+}
+.panel-info > .panel-heading .badge {
+  color: #23b7e5;
+  background-color: #ffffff;
+}
+.panel-warning > .panel-heading {
+  color: #ffffff;
+  background-color: #fad733;
+}
+.panel-warning > .panel-heading .badge {
+  color: #fad733;
+  background-color: #ffffff;
+}
+.panel-danger > .panel-heading {
+  color: #ffffff;
+  background-color: #f05050;
+}
+.panel-danger > .panel-heading .badge {
+  color: #f05050;
+  background-color: #ffffff;
+}
+.panel-dark > .panel-heading {
+  color: #ffffff;
+  background-color: #3a3f51;
+}
+.panel-dark > .panel-heading .badge {
+  color: #3a3f51;
+  background-color: #ffffff;
 }
 *,
 :after,
