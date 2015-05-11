@@ -16,8 +16,9 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1, h2, h3 {
-	margin-top: 21px;
+	margin-top: 20px;
 	margin-bottom: 10px;
+	font-weight: lighter;
 }
 
 h1 small, h2 small, h3 small {
@@ -25,8 +26,8 @@ h1 small, h2 small, h3 small {
 }
 
 h4, h5, h6 {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 12px;
+	margin-bottom: 6px;
 }
 
 h4 small, h5 small, h6 small {
@@ -59,4 +60,38 @@ h6 {
 
 p {
 	margin: 0 0 10px;
+}
+
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover {
+    color: darken(@color, 10%);
+  }
+}
+
+.text-primary {
+	.text-emphasis-variant(@primary_color);
+}
+.text-success {
+	.text-emphasis-variant(@success_color);
+}
+.text-info {
+	.text-emphasis-variant(@info_color);
+}
+.text-warning {
+	.text-emphasis-variant(@warning_color);
+}
+.text-danger {
+	.text-emphasis-variant(@danger_color);
+}
+
+pre {
+	border-radius: 0px;
+}
+
+a {
+	color: @link_color;
+	&:hover {
+		color: darken(@link_color, 10%);
+	}
 }

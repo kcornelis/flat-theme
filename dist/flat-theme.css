@@ -40,8 +40,9 @@ h6 small {
 h1,
 h2,
 h3 {
-  margin-top: 21px;
+  margin-top: 20px;
   margin-bottom: 10px;
+  font-weight: lighter;
 }
 h1 small,
 h2 small,
@@ -51,8 +52,8 @@ h3 small {
 h4,
 h5,
 h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 h4 small,
 h5 small,
@@ -79,6 +80,45 @@ h6 {
 }
 p {
   margin: 0 0 10px;
+}
+.text-primary {
+  color: #7266ba;
+}
+a.text-primary:hover {
+  color: #564aa3;
+}
+.text-success {
+  color: #27c24c;
+}
+a.text-success:hover {
+  color: #1e983b;
+}
+.text-info {
+  color: #23b7e5;
+}
+a.text-info:hover {
+  color: #1797be;
+}
+.text-warning {
+  color: #fad733;
+}
+a.text-warning:hover {
+  color: #f4ca06;
+}
+.text-danger {
+  color: #f05050;
+}
+a.text-danger:hover {
+  color: #ec2121;
+}
+pre {
+  border-radius: 0px;
+}
+a {
+  color: #3498db;
+}
+a:hover {
+  color: #217dbb;
 }
 .hideOverflow {
   overflow: hidden;
@@ -1078,18 +1118,20 @@ body {
   margin-top: -1px;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
-#content h1 {
+#content .content-header {
   display: block;
-  margin: -20px -20px 40px -20px;
+  margin: -40px -20px 40px -20px;
   padding: 0 20px;
-  line-height: 60px;
-  font-weight: lighter;
+  height: 60px;
   border-bottom: 1px solid #cfd8dc;
 }
-#content h2 {
-  margin-bottom: 32px;
-  line-height: 32px;
-  font-weight: lighter;
+#content .content-header h1,
+#content .content-header h2,
+#content .content-header h3,
+#content .content-header h4,
+#content .content-header h5,
+#content .content-header h6 {
+  line-height: 60px;
 }
 /* FOOTER */
 #footer {
