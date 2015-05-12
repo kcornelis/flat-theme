@@ -1,0 +1,33 @@
+.table-row-variant(@state; @background) {
+
+	.table > thead > tr,
+	.table > tbody > tr,
+	.table > tfoot > tr {
+		> td.@{state},
+		> th.@{state},
+		&.@{state} > td,
+		&.@{state} > th {
+			background-color: @background;
+		}
+	}
+
+	// Hover states for `.table-hover`
+	// Note: this is not available for cells or rows within `thead` or `tfoot`.
+	.table-hover > tbody > tr {
+		> td.@{state}:hover,
+		> th.@{state}:hover,
+		&.@{state}:hover > td,
+		&:hover > .@{state},
+		&.@{state}:hover > th {
+			background-color: darken(@background, 5%);
+		}
+	}
+}
+
+.table-row-variant(success; @table_success_background);
+.table-row-variant(info; @table_info_background);
+.table-row-variant(warning; @table_warning_background);
+.table-row-variant(danger; @table_danger_background);
+.table-row-variant(dark; @table_dark_background);
+.table-row-variant(green; @table_green_background);
+.table-row-variant(pink; @table_pink_background);

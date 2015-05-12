@@ -8,7 +8,6 @@
 	box-shadow: none;
 	text-shadow: none;
 	margin-bottom: 5px;
-	margin-right: 5px;
 	border: 1px solid @content_border_color;
 
 	&.btn-link {
@@ -177,10 +176,9 @@
 
 .btn-group {
 	margin-bottom: 5px;
-	margin-right: 5px;
 
 	.btn {
-		margin: 0px;
+		margin-bottom: 0px;
 	}
 
 	&.btn-group-accentuate {
@@ -189,5 +187,17 @@
 		.btn-default {
 			.button-variant(@btn_default_color; @btn_default_background; @btn_default_background);
 		}
+	}
+}
+
+/*
+	PAGINATION 
+*/
+
+.pagination {
+	border-radius: 0px;
+
+	a {
+		border-radius: 0px !important;
 	}
 }
