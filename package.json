@@ -1,18 +1,19 @@
 {
-	"name": "Flat-Theme",
-	"version": "0.0.1",
-	"private": true,
-	"description": "Flat theme for bootstrap",
-	"devDependencies": {
-		"grunt": "^0.4.5",
-		"grunt-concurrent": "^1.0.0",
-		"grunt-contrib-cssmin": "^0.12.2",
-		"grunt-contrib-less": "^1.0.1",
-		"grunt-contrib-watch": "^0.6.1",
-		"grunt-nodemon": "^0.4.0"
-	},
-	"dependencies": {
-		"express": "^4.12.3",
-		"swig": "^1.4.2"
-	}
+  "name": "Flat-Theme",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Flat theme for bootstrap",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-ngmin": "0.0.3",
+    "grunt-nodemon": "^0.4.0"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "swig": "^1.4.2"
+  }
 }

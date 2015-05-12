@@ -9,8 +9,15 @@ module.exports = function(grunt) {
 					livereload: false
 				}
 			},
+			js: {
+				files: [ 'scripts/**/*.js' ],
+				tasks: [ 'build' ],
+				options: {
+					livereload: false
+				}
+			},			
 			html: {
-				files: [ '**/*.html', '**/*.css', '**/*.js' ],
+				files: [ '**/*.html', 'dist/**/*.css', 'dist/**/*.js' ],
 				options: {
 					livereload: 35750
 				}
@@ -37,6 +44,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		ngmin: {
+			main: {
+				files: {
+					'dist/flat-theme.js': 'scripts/**/*.js'
+				}
+			}
+		},		
 		nodemon: {
 			dev: {
 				script: 'server.js',
@@ -59,7 +73,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-nodemon');
+	grunt.loadNpmTasks('grunt-ngmin');
 
-	grunt.registerTask('build', [ 'less', 'cssmin' ]);
+	grunt.registerTask('build', [ 'less', 'cssmin', 'ngmin' ]);
 	grunt.registerTask('default', [ 'build', 'concurrent' ]);
 };
