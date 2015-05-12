@@ -5,24 +5,68 @@
 	<h1>Dialogs</h1>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
-	Launch small dialog
-</button>
+<style>
+.static-modal .modal {
+	position: relative;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+	z-index: 1;
+	display: block;
+}
+.static-modal .modal .modal-dialog {
+	left: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+}
+</style>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
-	Launch standaard dialog
-</button>
+<div class="panel panel-default static-modal">
+	<div class="panel-heading">Modal</div>
+	<div class="panel-body">
+		<div class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<p>One fine body&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-	Launch large dialog
-</button>
+		<h4>Open modals:</h4>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smallModal">
+			Small
+		</button>
 
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".model-standaard">
+			Standaard
+		</button>
+
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#largeModal">
+			Large
+		</button>
+	</div>
+</div>
+
+
+
+<div class="modal fade model-standaard" id="standaardModal" tabindex="-1" role="dialog" aria-labelledby="standaardModalTitle" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel1">Modal title</h4>
+				<h4 class="modal-title" id="standaardModalTitle">Modal title</h4>
 			</div>
 			<div class="modal-body">
 				...
@@ -35,12 +79,12 @@
 	</div>
 </div>
 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalTitle" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel2">Modal title</h4>
+				<h4 class="modal-title" id="largeModalTitle">Modal title</h4>
 			</div>
 			<div class="modal-body">
 				...
@@ -53,12 +97,12 @@
 	</div>
 </div>
 
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalTitle" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel3">Modal title</h4>
+				<h4 class="modal-title" id="smallModalTitle">Modal title</h4>
 			</div>
 			<div class="modal-body">
 				...
