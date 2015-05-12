@@ -4,3 +4,51 @@
 	text-overflow: ellipsis;
 	display: block;
 }
+
+.ml-a {
+	margin-left: auto !important;
+}
+
+.mr-a {
+	margin-right: auto !important;
+}
+
+/* Margin - Padding helpers */
+
+.panel-variant(@heading-text-color; @heading-bg-color;) {
+	& > .panel-heading {
+		color: @heading-text-color;
+		background-color: @heading-bg-color;
+
+		.badge {
+			color: @heading-bg-color;
+			background-color: @heading-text-color;
+		}
+	}
+}
+
+.tools-render-spacing(@suffix, @amount) {
+	.m@{suffix} { margin: @amount !important; }
+	.mb@{suffix} { margin-bottom: @amount !important; }
+	.mt@{suffix} { margin-top: @amount !important; }
+	.ml@{suffix} { margin-left: @amount !important; }
+	.mr@{suffix} { margin-right: @amount !important; }
+	.mh@{suffix} { margin-right: @amount !important; margin-left: @amount !important; }
+	.mv@{suffix} { margin-bottom: @amount !important; margin-top: @amount !important; }
+
+	.p@{suffix} { padding: @amount !important; }
+	.pb@{suffix} { padding-bottom: @amount !important; }
+	.pt@{suffix} { padding-top: @amount !important; }
+	.pl@{suffix} { padding-left: @amount !important; }
+	.pr@{suffix} { padding-right: @amount !important; }
+	.ph@{suffix} { padding-right: @amount !important; padding-left: @amount !important; }
+	.pv@{suffix} { padding-bottom: @amount !important; padding-top: @amount !important; }	
+}
+
+
+.tools-render-spacing(-none, 0px);
+.tools-render-spacing(-sm, 5px);
+.tools-render-spacing(~'', 10px);
+.tools-render-spacing(-lg, 15px);
+.tools-render-spacing(-xl, 30px);
+.tools-render-spacing(-xxl, 60px);
