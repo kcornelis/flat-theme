@@ -1692,55 +1692,213 @@ body {
   background: #2c3e50;
   color: #f2f4f6;
 }
-#sidebar .content {
+#sidebar .sidebar-menu,
+#sidebar .sidebar-menu ul,
+#sidebar .sidebar-menu ul li,
+#sidebar .sidebar-menu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+}
+#sidebar .sidebar-menu {
   overflow-y: hidden;
   overflow-x: hidden;
   height: 100%;
+  /* show active sub menu */
+  /* menu header */
+  /* menu links */
+  /* expandable sub menu item */
+  /* sub menus (level 2) */
+  /* sub menus (level 3) */
 }
-#sidebar .content .nav {
+#sidebar .sidebar-menu > ul {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
   margin-right: -17px;
   color: #f2f4f6;
 }
-#sidebar .content .nav a,
-#sidebar .content .nav a:visited,
-#sidebar .content .nav a:hover,
-#sidebar .content .nav a:focus {
-  padding: 10px 46px;
-  color: #f2f4f6;
-  background: transparent;
+#sidebar .sidebar-menu ul ul {
+  display: none;
 }
-#sidebar .content .nav a:hover {
-  color: #3498db;
+#sidebar .sidebar-menu ul > li.active > ul {
+  display: block;
 }
-#sidebar .content .nav a.active {
-  color: #3498db;
-}
-#sidebar .content .nav .nav-header {
+#sidebar .sidebar-menu ul > li.header > a {
   width: 100%;
   text-align: center;
-  padding-top: 10px;
+  cursor: default;
   font-size: 17px;
   font-weight: normal;
   color: #bdc3c7;
 }
-#sidebar .content .nav .expandable-nav-header {
-  width: 100%;
-  padding: 10px 18px;
-  margin: 0px;
+#sidebar .sidebar-menu ul > li > a {
+  padding: 16px 39px 16px 22px;
   cursor: pointer;
-  text-align: left;
-  font-weight: lighter;
+  z-index: 2;
   font-size: 16px;
+  text-decoration: none;
+  font-weight: lighter;
+  color: #f2f4f6;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
 }
-#sidebar .content .nav .expandable-nav-header i {
+#sidebar .sidebar-menu ul > li > a:hover {
+  color: #3498db;
+}
+#sidebar .sidebar-menu ul > li > a i {
   font-size: 14px;
   margin-right: 10px;
+  line-height: 16px;
 }
-#sidebar .content .nav .expandable-nav-header:hover {
+#sidebar .sidebar-menu ul > li.has-sub-menu > a:after {
+  position: absolute;
+  right: 43px;
+  top: 19px;
+  z-index: 5;
+  display: block;
+  height: 10px;
+  width: 2px;
+  background: #ffffff;
+  content: "";
+  -webkit-transition: transform 0.1s ease-out;
+  -moz-transition: transform 0.1s ease-out;
+  -ms-transition: transform 0.1s ease-out;
+  -o-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+#sidebar .sidebar-menu ul > li.has-sub-menu > a:before {
+  position: absolute;
+  right: 39px;
+  top: 23px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  background: #ffffff;
+  content: "";
+  -webkit-transition: transform 0.1s ease-out;
+  -moz-transition: transform 0.1s ease-out;
+  -ms-transition: transform 0.1s ease-out;
+  -o-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+#sidebar .sidebar-menu ul > li.has-sub-menu.open > a:after,
+#sidebar .sidebar-menu ul > li.has-sub-menu.open > a:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#sidebar .sidebar-menu ul ul li a {
+  padding: 14px 22px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 14px;
+  text-decoration: none;
+  color: #f2f4f6;
+  background: #34495e;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#sidebar .sidebar-menu ul ul li a:hover {
   color: #3498db;
+}
+#sidebar .sidebar-menu ul ul > li.has-sub-menu > a:after {
+  top: 16px;
+}
+#sidebar .sidebar-menu ul ul > li.has-sub-menu > a:before {
+  top: 20px;
+}
+#sidebar .sidebar-menu ul ul ul li a {
+  padding-left: 32px;
+}
+.visible-menu-collapsed {
+  display: none;
+}
+.sidebar-collapsed .visible-menu-collapsed {
+  display: block;
+}
+.sidebar-collapsed .hidden-menu-collapsed {
+  display: none;
+}
+.sidebar-collapsed #header .logo {
+  width: 60px;
+}
+.sidebar-collapsed #header .content {
+  padding-left: 75px;
+}
+.sidebar-collapsed #content {
+  margin-left: 60px;
+}
+.sidebar-collapsed #sidebar {
+  width: 60px;
+}
+.sidebar-collapsed #sidebar .sidebar-menu {
+  overflow: visible;
+  width: 60px;
+  /* first level (icons) */
+  /* hide expandable menu icon */
+  /* list defaults  */
+  /* second level */
+}
+.sidebar-collapsed #sidebar .sidebar-menu > ul {
+  overflow: visible;
+  width: 60px;
+}
+.sidebar-collapsed #sidebar .sidebar-menu > ul > li > a i {
+  font-size: 18px;
+}
+.sidebar-collapsed #sidebar .sidebar-menu > ul > li > a span {
+  display: none;
+}
+.sidebar-collapsed #sidebar .sidebar-menu > ul > li.header {
+  display: none;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul > li.has-sub-menu > a:after,
+.sidebar-collapsed #sidebar .sidebar-menu ul > li.has-sub-menu > a:before {
+  visibility: hidden;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul {
+  position: relative;
+  z-index: 597;
+  float: left;
+  display: block !important;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul li {
+  float: none;
+  vertical-align: middle;
+  position: relative;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul li > a {
+  padding: 18px 39px 14px 20px;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul li:hover > ul {
+  visibility: visible;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 5px;
+  left: 100%;
+  margin-left: 0px;
+  z-index: 598;
+  width: auto;
+  min-width: 180px;
+}
+.sidebar-collapsed #sidebar .sidebar-menu ul ul li {
+  float: none;
 }
 /* CONTENT */
 #content {

@@ -28,13 +28,16 @@
 		<div id="container">
 
 			<header id="header">
-				<div class="logo">
+				<div class="logo hidden-menu-collapsed">
 					<span>Flat Theme</span>
-				</div>	
+				</div>
+				<div class="logo visible-menu-collapsed">
+					<span>FT</span>
+				</div>					
 
 				<div class="content">
 					<ul class="actions">
-						<li><a href="#"><i class="fa fa-bars"></i></a></li>
+						<li><a href="#" id="toggle"><i class="fa fa-bars"></i></a></li>
 						<li><a href="#"><i class="icon-lock"></i></a></li>
 						<li><a href="#"><i class="icon-user"></i></a></li>
 						<li><a href="#"><i class="icon-settings"></i></a></li>
@@ -43,38 +46,49 @@
 			</header>
 
 			<aside id="sidebar">
-				<div class="content">
-					<ul class="nav nav-list">
-						<li><label class="nav-header">Components</label>
+				<div class="sidebar-menu">
+					<ul>
+						<li class="header"><a>Components</a></li>
+						<li class="has-sub-menu active">
+							<a><i class="icon-wrench"></i><span>Elements</span></a>
+							<ul>
+								<li><a href="/demo/elements-typography">Typography</a></li>
+								<li><a href="/demo/elements-buttons">Buttons</a></li>
+								<li><a href="/demo/elements-tables">Tables</a></li>
+								<li><a href="/demo/elements-panels">Panels</a></li>
+								<li><a href="/demo/elements-dialogs">Dialogs</a></li>
+								<li><a href="/demo/elements-tools">Tools</a></li>
+							</ul>
+						</li>
+						<li class="has-sub-menu">
+							<a><i class="icon-notebook"></i><span>Forms</span></a>
 							<ul class="nav nav-list tree">
-								<li><label class="expandable-nav-header"><i class="icon-wrench"></i>Elements</label>
-									<ul class="nav nav-list tree">
-										<li><a href="/demo/elements-typography">Typography</a></li>
-										<li><a href="/demo/elements-buttons">Buttons</a></li>
-										<li><a href="/demo/elements-tables">Tables</a></li>
-										<li><a href="/demo/elements-panels">Panels</a></li>
-										<li><a href="/demo/elements-dialogs">Dialogs</a></li>
-										<li><a href="/demo/elements-tools">Tools</a></li>
-									</ul>
-								</li>
-								<li><label class="expandable-nav-header"><i class="icon-notebook"></i>Forms</label>
-									<ul class="nav nav-list tree">
-										<li><a href="/demo/forms-standard" class="active">Standard</a></li>
-									</ul>
-								</li>								
+								<li><a href="/demo/forms-standard" class="active">Standard</a></li>
 							</ul>
 						</li>
 						<li class="divider"></li>
-						<li><label class="nav-header">More</label>
-							<ul class="nav nav-list tree">
-								<li><label class="expandable-nav-header"><i class="icon-doc"></i>Pages</label>
-									<ul class="nav nav-list tree">
-										<li><a href="/demo/pages-login">Login</a></li>
-										<li><a href="/demo/pages-blank">Blank</a></li>
+						<li class="header"><a>More</a></li>
+						<li class="has-sub-menu">
+							<a><i class="icon-doc"></i><span>Pages</span></a>
+							<ul>
+								<li><a href="/demo/pages-login">Login</a></li>
+								<li><a href="/demo/pages-blank">Blank</a></li>
+							</ul>
+						</li>
+						<li class="has-sub-menu">
+							<a><i class="fa fa-folder-open-o"></i><span>Menu</span></a>
+							<ul>
+								<li><a href="#">Menu item</a></li>
+								<li class="has-sub-menu">
+									<a><span>Sub menu</span></a>
+									<ul>
+										<li><a href="#">Sub menu item 1</a></li>
+										<li><a href="#">Sub menu item 2</a></li>
 									</ul>
 								</li>
 							</ul>
 						</li>
+						<li><a href="#">About</a></li>
 					</ul>
 				</div>
 			</aside>
@@ -103,6 +117,32 @@
 				$('.expandable-nav-header').click(function () {
 					$(this).parent().children('ul.tree').toggle(300);
 				});
+
+
+				$('#toggle').click(function() { $('body').toggleClass('sidebar-collapsed'); });
+
+				$('.sidebar-menu li.active').addClass('open').children('ul').show();
+
+				$('.sidebar-menu li.has-sub-menu > a').on('click', function() {
+					if ($('.sidebar-menu.collapsed').length > 0)
+						return;
+
+					var element = $(this).closest('li');
+
+					if (element.hasClass('open')) {
+						element.removeClass('open');
+						element.find('li').removeClass('open');
+						element.find('ul').slideUp(200);
+					}
+					else {
+						element.addClass('open');
+						element.children('ul').slideDown(200);
+						element.siblings('li').children('ul').slideUp(200);
+						element.siblings('li').removeClass('open');
+						element.siblings('li').find('li').removeClass('open');
+						element.siblings('li').find('ul').slideUp(200);
+					}
+				});				
 			});
 		</script>
 		<script type="text/javascript" src="http://localhost:35750/livereload.js"></script>
