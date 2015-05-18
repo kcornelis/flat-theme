@@ -140,6 +140,10 @@ body {
 			display: block;
 		}
 
+		ul > li.selected > a {
+			color: @sidebar_active_color;
+		}
+
 		/* menu header */
 		ul > li.header > a {
 			width: 100%;
@@ -154,7 +158,7 @@ body {
 
 		/* menu links */
 		ul > li > a {
-			padding: 16px 39px 16px 22px;
+			padding: 16px 22px 16px 22px;
 			cursor: pointer;
 			z-index: 2;
 			font-size: 16px;
@@ -180,7 +184,7 @@ body {
 		ul > li.has-sub-menu {
 			& > a:after {
 				position: absolute;
-				right: 43px;
+				right: 26px;
 				top: 19px;
 				z-index: 5;
 				display: block;
@@ -197,7 +201,7 @@ body {
 
 			& > a:before {
 				position: absolute;
-				right: 39px;
+				right: 22px;
 				top: 23px;
 				display: block;
 				width: 10px;
@@ -386,14 +390,15 @@ body {
 
 	.content-header {
 		display: block;
-		margin: -40px -20px 40px -20px;
-		padding: 0 20px;
+		margin: -20px 0px 10px 0px;
+		padding: 0;
 		height: 60px;
 
-		border-bottom: 1px solid @content_border_color;
+		/* border-bottom: 1px solid @content_border_color; */
 
 		h1, h2, h3, h4, h5, h6 {
 			line-height: 60px;
+			margin: 0;
 		}
 
 		.toolbar {

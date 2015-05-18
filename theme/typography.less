@@ -69,20 +69,10 @@ p {
   }
 }
 
-.text-primary {
-	.text-emphasis-variant(@primary_color);
-}
-.text-success {
-	.text-emphasis-variant(@success_color);
-}
-.text-info {
-	.text-emphasis-variant(@info_color);
-}
-.text-warning {
-	.text-emphasis-variant(@warning_color);
-}
-.text-danger {
-	.text-emphasis-variant(@danger_color);
+.for(@colors); .-each(@color) {
+	.text-@{color} {
+		.text-emphasis-variant(@@color);
+	}	
 }
 
 pre {

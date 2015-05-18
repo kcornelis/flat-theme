@@ -1,3 +1,5 @@
+/* MIXINS */
+
 .panel-variant(@heading-text-color; @heading-bg-color;) {
 	& > .panel-heading {
 		color: @heading-text-color;
@@ -9,6 +11,8 @@
 		}
 	}
 }
+
+/* PANEL + VARIANTS */
 
 .panel {
 	background: #FFFFFF;
@@ -37,27 +41,24 @@
 	}
 }
 
-.panel-primary {
-	.panel-variant(@primary_text_color; @primary_color);
+.for(@colors); .-each(@color) {
+	.panel-@{color} {
+		.panel-variant(@text-colors; @@color);
+	}	
 }
-.panel-success {
-	.panel-variant(@success_text_color; @success_color);
+
+/* BOX */
+
+.box {
+	margin-bottom: 15px;
+	padding: 20px;
+	border: 1px dashed darken(@background, 10%);
+	background: @background;
+	color: @color;
 }
-.panel-info {
-	.panel-variant(@info_text_color; @info_color);
-}
-.panel-warning {
-	.panel-variant(@warning_text_color; @warning_color);
-}
-.panel-danger {
-	.panel-variant(@danger_text_color; @danger_color);
-}
-.panel-dark {
-	.panel-variant(@dark_text_color; @dark_color);
-}
-.panel-green {
-	.panel-variant(@danger_text_color; @green_color);
-}
-.panel-pink {
-	.panel-variant(@dark_text_color; @pink_color);
+
+/* ALERTS */
+
+.for(@colors); .-each(@color) {
+	.alert-@{color} { background: @@color; color: @text-colors; border-radius: 0px; }
 }

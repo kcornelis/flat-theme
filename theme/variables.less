@@ -1,58 +1,74 @@
-/* MAIN */
-
-@background: #F1F3FA;
-@color: #666666;
-@title_color: #666666;
-
 /* COLORS */
 
-@link_color: #3498DB;
-@primary_color: #7266ba;
-@success_color: #27c24c;
-@info_color: #23b7e5;
-@warning_color: #fad733;
-@danger_color: #f05050;
-@dark_color: #3a3f51;
-@green_color: #37bc9b;
-@pink_color: #f41fe3;
+@red: #f05050;
+@pink: #E91E63;
+@purple: #9C27B0;
+@deep-purple: #7266ba;
+@indigo: #3F51B5;
+@blue: #23b7e5;
+@teal: #009688;
+@green: #27c24c;
+@light-green: #8BC34A;
+@lime:  #CDDC39;
+@yellow: #fad733;
+@orange: #FF9800;
+@deep-orange: #FF5722;
+@brown: #795548;
+@light-grey: #F1F3FA;
+@grey: #9E9E9E;
+@blue-grey: #607D8B;
+@dark: #2C3E50;
 
-@primary_text_color: #FFFFFF;
-@success_text_color: #FFFFFF;
-@info_text_color: #FFFFFF;
-@warning_text_color: #FFFFFF;
-@danger_text_color: #FFFFFF;
-@dark_text_color: #FFFFFF;
-@green_text_color: #FFFFFF;
-@pink_text_color: #FFFFFF;
+@primary: @deep-purple;
+@success: @green;
+@info: @blue;
+@warning: @orange;
+@danger: @red;
+
+@text-dark: #666666;
+@text-light: #F2F4F6;
+@text-colors: #FFFFFF;
+
+@colors: red, pink, purple, deep-purple, indigo, blue, teal, 
+		green, light-green, lime, yellow, orange, deep-orange, brown, grey, 
+		light-grey, blue-grey, dark, primary, success, info, warning, danger;
+
+/* MAIN */
+
+@background: @light-grey;
+@color: @text-dark;
+@title_color: @text-dark;
+@link_color: #3498DB;
 
 /* HEADER */
 
 @header_height: 60px;
-@header_background: #3498DB;
-@header_color: #F5F5F5;
+@header_background: @blue;
+@header_color: #FFFFFF;
 @header_content_background: #FFFFFF;
-@header_content_color: #90a4ae;
-@header_content_hover_background: #F9FAFC;
+@header_content_color: @grey;
+@header_content_hover_background: @light-grey;
 @header_content_hover_color: darken(@header_content_color, 25%);
 
 /*  SIDEBAR */
 
 @sidebar_width: 220px;
 @sidebar_collapsed_width: 60px;
-@sidebar_background: #2C3E50;
+@sidebar_background: @dark;
 @sidebar_header_color: #BDC3C7;
 @sidebar_color: #F2F4F6;
-@sidebar_hover_color: #3498DB;
-@sidebar_active_color: #3498DB;
+@sidebar_hover_color: @blue;
+@sidebar_active_color: @blue;
 
-@sidebar_submenu_background: #34495E;
+@sidebar_submenu_background: lighten(@dark, 5%);
 @sidebar_submenu_color: #F2F4F6;
-@sidebar_submenu_hover_color: #3498DB;
+@sidebar_submenu_hover_color: @blue;
 
 /* CONTENT */
 
 @content_border_color: #CFD8DC;
 @content_accentuate_shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+@form_border_color: @content_border_color;
 
 /* FOOTER */
 
@@ -64,45 +80,9 @@
 @btn_default_border_color: @content_border_color;
 @btn_default_color: @color;
 
-@btn_primary_background: @primary_color;
-@btn_primary_border_color: @primary_color;
-@btn_primary_color: #FFFFFF;
+/* WIZARD */
 
-@btn_success_background: @success_color;
-@btn_success_border_color: @success_color;
-@btn_success_color: #FFFFFF;
-
-@btn_info_background: @info_color;
-@btn_info_border_color: @info_color;
-@btn_info_color: #FFFFFF;
-
-@btn_warning_background: @warning_color;
-@btn_warning_border_color: @warning_color;
-@btn_warning_color: #FFFFFF;
-
-@btn_danger_background: @danger_color;
-@btn_danger_border_color: @danger_color;
-@btn_danger_color: #FFFFFF;
-
-@btn_dark_background: @dark_color;
-@btn_dark_border_color: @dark_color;
-@btn_dark_color: #FFFFFF;
-
-@btn_green_background: @green_color;
-@btn_green_border_color: @green_color;
-@btn_green_color: #FFFFFF;
-
-@btn_pink_background: @pink_color;
-@btn_pink_border_color: @pink_color;
-@btn_pink_color: #FFFFFF;
-
-/* BOOTSTRAP TABLES */
-
-@table_primary_background: lighten(@primary_color, 30%);
-@table_success_background: lighten(@success_color, 30%);
-@table_info_background: lighten(@info_color, 30%);
-@table_warning_background: lighten(@warning_color, 25%);
-@table_danger_background: lighten(@danger_color, 25%);
-@table_dark_background: lighten(@dark_color, 30%);
-@table_green_background: lighten(@green_color, 30%);
-@table_pink_background: lighten(@pink_color, 30%);
+@wizard_header_background: @light-grey;
+@wizard_header_color: @text-dark;
+@wizard_header_selected_background: @blue;
+@wizard_header_selected_color: #FFFFFF;

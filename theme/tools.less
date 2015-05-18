@@ -15,18 +15,6 @@
 
 /* Margin - Padding helpers */
 
-.panel-variant(@heading-text-color; @heading-bg-color;) {
-	& > .panel-heading {
-		color: @heading-text-color;
-		background-color: @heading-bg-color;
-
-		.badge {
-			color: @heading-bg-color;
-			background-color: @heading-text-color;
-		}
-	}
-}
-
 .tools-render-spacing(@suffix, @amount) {
 	.m@{suffix} { margin: @amount !important; }
 	.mb@{suffix} { margin-bottom: @amount !important; }

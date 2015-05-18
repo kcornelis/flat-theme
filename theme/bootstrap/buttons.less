@@ -1,23 +1,4 @@
-.btn {
-	border-radius: 0px;
-	outline: none !important;
-	background-image: none !important;
-	filter: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	text-shadow: none;
-	margin-bottom: 5px;
-	border: 1px solid @content_border_color;
-
-	&.btn-link {
-		border: none !important;
-	}
-
-	&.btn-accentuate {
-		box-shadow: @content_accentuate_shadow;
-	}
-}
+/* MIXINS */
 
 .button-variant(@color; @background; @border) {
 	color: @color;
@@ -60,40 +41,43 @@
 	}
 }
 
+/* DEFAULT STYLES + VARIANTS */
+
+.btn {
+	border-radius: 0px;
+	outline: none !important;
+	background-image: none !important;
+	filter: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+	margin-bottom: 5px;
+	border: 1px solid @content_border_color;
+
+	&.btn-link {
+		border: none !important;
+	}
+
+	&.btn-accentuate {
+		box-shadow: @content_accentuate_shadow;
+	}
+}
+
 .btn-default {
 	.button-variant(@btn_default_color; @btn_default_background; @btn_default_border_color);
 }
 .btn-default.btn-accentuate {
 	.button-variant(@btn_default_color; @btn_default_background; @btn_default_background);
 }
-.btn-primary {
-	.button-variant(@btn_primary_color; @btn_primary_background; @btn_primary_border_color);
-}
-.btn-success {
-	.button-variant(@btn_success_color; @btn_success_background; @btn_success_border_color);
-}
-.btn-info {
-	.button-variant(@btn_info_color; @btn_info_background; @btn_info_border_color);
-}
-.btn-warning {
-	.button-variant(@btn_warning_color; @btn_warning_background; @btn_warning_border_color);
-}
-.btn-danger {
-	.button-variant(@btn_danger_color; @btn_danger_background; @btn_danger_border_color);
-}
-.btn-dark {
-	.button-variant(@btn_dark_color; @btn_dark_background; @btn_dark_border_color);
-}
-.btn-green {
-	.button-variant(@btn_green_color; @btn_green_background; @btn_green_border_color);
-}
-.btn-pink {
-	.button-variant(@btn_pink_color; @btn_pink_background; @btn_pink_border_color);
+
+.for(@colors); .-each(@color) {
+	.btn-@{color} {
+		.button-variant(@text-colors; @@color; @@color);
+	}
 }
 
-/*
-	LABELED 
-*/
+/* LABELED */
 
 .btn {
 	&.btn-labeled {
@@ -160,9 +144,7 @@
 	font-size: 14px;
 }
 
-/*
-	ROUNDED 
-*/
+/* ROUNDED  */
 
 .btn {
 	&.btn-rounded {
@@ -170,9 +152,7 @@
 	}
 }
 
-/*
-	GROUPS 
-*/
+/* GROUPS */
 
 .btn-group {
 	margin-bottom: 5px;
@@ -190,9 +170,7 @@
 	}
 }
 
-/*
-	PAGINATION 
-*/
+/* PAGINATION */
 
 .pagination {
 	border-radius: 0px;

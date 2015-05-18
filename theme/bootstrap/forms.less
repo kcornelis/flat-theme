@@ -1,12 +1,15 @@
+select[multiple], select[size], textarea {
+  height: auto !important;
+}
+
 .form-group {
 	position: relative;
-	margin-top: 20px;
-	padding-top: 22px;
+	padding-top: 15px;
 
 	label {
 		position: absolute;
 		left: 0;
-		top: 20px;
+		top: 13px;
 		pointer-events: none;
 		line-height: 34px;
 		font-size: 14px;
@@ -16,14 +19,17 @@
 		transition: top ease-in-out .2s, font-size ease-in-out .2s, color ease-in-out .2s;
 	}
 
-	&.active label {
-		color: @primary_color;
+	&.active {
+		label {
+			color: @primary;
+		}
 	}
 
 	&.active label,
 	&.filled label {
 		top: 0px;
 		font-size: 12px;
+		line-height: 14px;
 	}
 
 	.form-control {
@@ -39,7 +45,7 @@
 		border-top: none;
 		border-left: none;
 		border-right: none;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid @form_border_color;
 		border-radius: 0px;
 		-webkit-box-shadow: none;
 		box-shadow: none;
@@ -50,9 +56,57 @@
 		&:focus {
 			-webkit-box-shadow: none;
 			box-shadow: none;
-			border-bottom: 1px solid @primary_color;			
+			border-bottom: 1px solid @primary;			
 		}
 	}
+
+	/* Upload file */
+	.form-file {
+		position: relative;
+		display: inline-block;
+		vertical-align: bottom;
+		overflow: hidden;
+
+		input[type=file] {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			z-index: 1;
+			width: 100%;
+			opacity: 0;
+			cursor: pointer;
+			left: 0;
+			font-size: 500px;
+		}
+	}
+
+	/* ADDONS */
+
+	.input-group-addon {
+		background: none;
+		border: 0;
+		border-bottom: 1px solid @form_border_color;
+		border-radius: 0px;
+		-webkit-transition: border-bottom ease-in-out .2s;
+		-o-transition: border-bottom ease-in-out .2s;
+		transition: border-bottom ease-in-out .2s;
+	}
+
+	.input-group.active {
+		.input-group-addon {
+			border-bottom-color: @primary;
+		}
+	}
+
+	.input-group-btn:first-child > .btn, 
+	.input-group-btn:first-child > .btn-group {
+		margin-right: 0px;
+	}
+
+	.input-group-btn:last-child > .btn, 
+	.input-group-btn:last-child > .btn-group {
+		margin-left: 0px;
+	}	
 }
 
 .form-horizontal {

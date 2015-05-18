@@ -1,33 +1,27 @@
-.table-row-variant(@state; @background) {
+/* ROW STYLES */
+
+.for(@colors); .-each(@color) {
 
 	.table > thead > tr,
 	.table > tbody > tr,
 	.table > tfoot > tr {
-		> td.@{state},
-		> th.@{state},
-		&.@{state} > td,
-		&.@{state} > th {
-			background-color: @background;
+		> td.@{color},
+		> th.@{color},
+		&.@{color} > td,
+		&.@{color} > th {
+			background-color: lighten(@@color, 17%);
 		}
 	}
 
 	// Hover states for `.table-hover`
 	// Note: this is not available for cells or rows within `thead` or `tfoot`.
 	.table-hover > tbody > tr {
-		> td.@{state}:hover,
-		> th.@{state}:hover,
-		&.@{state}:hover > td,
-		&:hover > .@{state},
-		&.@{state}:hover > th {
-			background-color: darken(@background, 5%);
+		> td.@{color}:hover,
+		> th.@{color}:hover,
+		&.@{color}:hover > td,
+		&:hover > .@{color},
+		&.@{color}:hover > th {
+			background-color: lighten(@@color, 10%);
 		}
-	}
+	}	
 }
-
-.table-row-variant(success; @table_success_background);
-.table-row-variant(info; @table_info_background);
-.table-row-variant(warning; @table_warning_background);
-.table-row-variant(danger; @table_danger_background);
-.table-row-variant(dark; @table_dark_background);
-.table-row-variant(green; @table_green_background);
-.table-row-variant(pink; @table_pink_background);
