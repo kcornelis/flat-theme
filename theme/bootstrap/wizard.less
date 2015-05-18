@@ -1,0 +1,41 @@
+.wizard.wizard-horizontal {
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		& > li {
+			padding: 15px;
+			background: @wizard_header_background;
+
+			h4 {
+				font-weight: bold;
+				margin-top: 0px;
+			}
+
+			h4, small {
+				color: @wizard_header_color;
+			}
+
+			&.active {
+				background: @wizard_header_selected_background;
+
+				h4, small {
+					color: @wizard_header_selected_color;
+				}
+			}
+		}
+	}
+
+	.wizard-step {
+		display: none;
+		padding: 15px 0;
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
+

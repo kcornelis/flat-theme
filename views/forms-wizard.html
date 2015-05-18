@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} 
+{% block content %}
+
+<div class="content-header">
+	<h1>Wizard</h1>
+</div>
+
+<div class="panel">
+	<div class="panel-body">
+		<div class="wizard wizard-horizontal">
+			<ol class="row">
+				<li class="col-md-3 active">
+					<h4>Step 1</h4>
+					<small class="text-muted hideOverflow">Welcome</small>
+				</li>
+				<li class="col-md-3">
+					<h4>Step 2</h4>
+					<small class="text-muted hideOverflow">Add items</small>
+				</li>
+				<li class="col-md-3">
+					<h4>Step 3</h4>
+					<small class="text-muted hideOverflow">Fill in your details</small>
+				</li>
+				<li class="col-md-3">
+					<h4>Summary</h4>
+					<small class="text-muted hideOverflow">Confirm your order</small>
+				</li>
+			</ol>
+
+			<div class="wizard-step active">
+<fieldset>
+					<legend>Hello</legend>
+					Welcome to the order wizard... <br />
+					Click next to place your orders
+				</fieldset>
+			</div>
+
+			<div class="wizard-step">
+			</div>
+		</div>	
+	</div>
+</div>
+
+{% endblock %}
