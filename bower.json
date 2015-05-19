@@ -10,7 +10,9 @@
     "bootstrap": "~3.3.4",
     "simple-line-icons": "~1.0.0",
     "fontawesome": "~4.3.0",
-    "flot": "~0.8.3"
+    "flot": "~0.8.3",
+    "flot-spline": "~0.0.1",
+    "flot.tooltip": "~0.8.5"
   },
   "resolutions": {
     "jquery": "2.1.4"

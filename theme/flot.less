@@ -1,0 +1,56 @@
+.flot-chart {
+	display: block;
+	width: 100%;
+	height: 280px;
+
+	.legend {
+		& > table tr td {
+			padding: 3px;
+		}
+
+		& > table tr td:first-child {
+			padding-left: 5px;
+		}
+
+		& > table tr td:last-child {
+			padding-right: 3px;
+		}
+
+		& > table tr+tr td {
+			padding-top: 0;
+		}
+
+		& >div:first-child,
+		.legendColorBox > div {
+			border: none !important;
+		}
+
+		.legendColorBox > div,
+		.legendColorBox > div > div {
+			border-radius: 400px;
+		}
+	}
+}
+
+
+.flot-chart .legend>div:first-child,
+.flot-chart .legend .legendColorBox>div {
+	border: none !important;
+}
+
+.flot-chart .legend .legendColorBox>div,
+.flot-chart .legend .legendColorBox>div>div {
+	border-radius: 400px;
+}
+
+.flot-chart-content {
+	width: 100%;
+	height: 100%;
+}
+
+.flot-pie-label {
+	padding: 3px 5px;
+	font-size: 10px;
+	text-align: center;
+	color: #fff;
+}
