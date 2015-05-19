@@ -1,3 +1,20 @@
+/* MIXINS */
+
+.create-text-emphasis-variants(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
+
+	.text-@{color} {
+		color: @@color !important;
+		a&:hover {
+			color: darken(@@color, 10%) !important;
+		}
+	}	
+	
+	.create-text-emphasis-variants(@iterator + 1);
+}
+
+/* STYLES */
+
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
@@ -62,18 +79,7 @@ p {
 	margin: 0 0 10px;
 }
 
-.text-emphasis-variant(@color) {
-  color: @color;
-  a&:hover {
-    color: darken(@color, 10%);
-  }
-}
-
-.for(@colors); .-each(@color) {
-	.text-@{color} {
-		.text-emphasis-variant(@@color);
-	}	
-}
+.create-text-emphasis-variants();
 
 pre {
 	border-radius: 0px;

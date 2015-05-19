@@ -92,14 +92,30 @@ select[multiple], select[size], textarea {
 		transition: border-bottom ease-in-out .2s;
 	}
 
-	.input-group.active {
-		.input-group-addon {
-			border-bottom-color: @primary;
+	.input-group{
+
+		.btn {
+			-webkit-transition: border-bottom ease-in-out .2s;
+			-o-transition: border-bottom ease-in-out .2s;
+			transition: border-bottom ease-in-out .2s;
+		}
+
+		&.active {
+			.input-group-addon {
+				border-bottom-color: @primary;
+			}
+			.btn {
+				border-color: @primary;
+			}
 		}
 	}
 
 	.input-group-btn:first-child > .btn, 
 	.input-group-btn:first-child > .btn-group {
+		margin-right: -1px;
+	}
+
+	.input-group-btn:first-child > .btn.dropdown-toggle {
 		margin-right: 0px;
 	}
 

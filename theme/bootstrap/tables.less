@@ -1,6 +1,7 @@
-/* ROW STYLES */
+/* MIXINS */
 
-.for(@colors); .-each(@color) {
+.create-row-styles(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
 
 	.table > thead > tr,
 	.table > tbody > tr,
@@ -13,8 +14,6 @@
 		}
 	}
 
-	// Hover states for `.table-hover`
-	// Note: this is not available for cells or rows within `thead` or `tfoot`.
 	.table-hover > tbody > tr {
 		> td.@{color}:hover,
 		> th.@{color}:hover,
@@ -24,4 +23,10 @@
 			background-color: lighten(@@color, 10%);
 		}
 	}	
+
+	.create-row-styles(@iterator + 1);
 }
+
+/* ROW STYLES */
+
+.create-row-styles();

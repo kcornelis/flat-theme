@@ -41,6 +41,16 @@
 	}
 }
 
+.create-btn-variants(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
+
+	.btn-@{color} {
+		.button-variant(@text-colors; @@color; @@color);
+	}
+
+	.create-btn-variants(@iterator + 1);
+}
+
 /* DEFAULT STYLES + VARIANTS */
 
 .btn {
@@ -71,11 +81,7 @@
 	.button-variant(@btn_default_color; @btn_default_background; @btn_default_background);
 }
 
-.for(@colors); .-each(@color) {
-	.btn-@{color} {
-		.button-variant(@text-colors; @@color; @@color);
-	}
-}
+.create-btn-variants();
 
 /* LABELED */
 

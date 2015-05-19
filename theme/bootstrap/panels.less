@@ -9,7 +9,34 @@
 			color: @heading-bg-color;
 			background-color: @heading-text-color;
 		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: @heading-text-color;
+		}
 	}
+}
+
+.create-panel-variants(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
+
+	.panel-@{color} {
+		.panel-variant(@text-colors; @@color);
+	}	
+	
+	.create-panel-variants(@iterator + 1);
+}
+
+.create-alerts(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
+
+	.alert-@{color} { 
+		background: @@color; 
+		color: @text-colors; 
+		border-radius: 0px;
+		border-color: @@color; 
+	}
+	
+	.create-alerts(@iterator + 1);
 }
 
 /* PANEL + VARIANTS */
@@ -41,11 +68,7 @@
 	}
 }
 
-.for(@colors); .-each(@color) {
-	.panel-@{color} {
-		.panel-variant(@text-colors; @@color);
-	}	
-}
+.create-panel-variants();
 
 /* BOX */
 
@@ -59,6 +82,4 @@
 
 /* ALERTS */
 
-.for(@colors); .-each(@color) {
-	.alert-@{color} { background: @@color; color: @text-colors; border-radius: 0px; }
-}
+.create-alerts();
