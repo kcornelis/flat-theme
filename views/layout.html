@@ -1,150 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<meta name="keyword" content="">
+{% extends 'layout-blank.html' %} 
 
-		<title>Flat theme</title>
+{% block body %}
 
-		<link rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="/bower/fontawesome/css/font-awesome.css">
-		<link rel="stylesheet" href="/bower/simple-line-icons/css/simple-line-icons.css" />
+<div id="container">
 
-
-		<link rel="stylesheet" href="/dist/flat-theme.css" >
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div id="container">
-
-			<header id="header">
-				<div class="logo hidden-menu-collapsed">
-					<span>Flat Theme</span>
-				</div>
-				<div class="logo visible-menu-collapsed">
-					<span>FT</span>
-				</div>					
-
-				<div class="content">
-					<ul class="actions">
-						<li><a href="#" id="toggle"><i class="fa fa-bars"></i></a></li>
-						<li><a href="#"><i class="icon-lock"></i></a></li>
-						<li><a href="#"><i class="icon-user"></i></a></li>
-						<li><a href="#"><i class="icon-settings"></i></a></li>
-					</ul>
-				</div>
-			</header>
-
-			<aside id="sidebar">
-				<div class="sidebar-menu">
-					<ul>
-						<li class="header"><a>Components</a></li>
-						<li class="has-sub-menu active">
-							<a><i class="icon-wrench"></i><span>Elements</span></a>
-							<ul>
-								<li><a href="/demo/elements-typography">Typography</a></li>
-								<li><a href="/demo/elements-buttons">Buttons</a></li>
-								<li><a href="/demo/elements-tables">Tables</a></li>
-								<li><a href="/demo/elements-panels">Panels</a></li>
-								<li><a href="/demo/elements-dialogs">Dialogs</a></li>
-								<li><a href="/demo/elements-tools">Tools</a></li>
-							</ul>
-						</li>
-						<li class="has-sub-menu">
-							<a><i class="icon-notebook"></i><span>Forms</span></a>
-							<ul class="nav nav-list tree">
-								<li><a href="/demo/forms-standard" class="active">Standard</a></li>
-							</ul>
-						</li>
-						<li class="divider"></li>
-						<li class="header"><a>More</a></li>
-						<li class="has-sub-menu">
-							<a><i class="icon-doc"></i><span>Pages</span></a>
-							<ul>
-								<li><a href="/demo/pages-login">Login</a></li>
-								<li><a href="/demo/pages-blank">Blank</a></li>
-							</ul>
-						</li>
-						<li class="has-sub-menu">
-							<a><i class="fa fa-folder-open-o"></i><span>Menu</span></a>
-							<ul>
-								<li><a href="#">Menu item</a></li>
-								<li class="has-sub-menu">
-									<a><span>Sub menu</span></a>
-									<ul>
-										<li><a href="#">Sub menu item 1</a></li>
-										<li><a href="#">Sub menu item 2</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="#">About</a></li>
-					</ul>
-				</div>
-			</aside>
-
-			<section id="content">
-				<div id="content-wrapper">
-					{% block content %}{% endblock %}
-				</div>
-			</section>
-
-
-			<footer id="footer">
-				<div>
-					2015 - Kevin Cornelis
-				</div>
-			</footer>
-
+	<header id="header">
+		<div class="logo hidden-menu-collapsed">
+			<span>Flat Theme</span>
 		</div>
+		<div class="logo visible-menu-collapsed">
+			<span>FT</span>
+		</div>					
 
-		<script src="/bower/jquery/dist/jquery.js"></script>
-		<script src="/bower/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="/dist/flat-theme.js"></script>
-		<script>
-			$(document).ready(function () {
-				$('.expandable-nav-header').parent().children('ul.tree').toggle();
-				$('.expandable-nav-header').click(function () {
-					$(this).parent().children('ul.tree').toggle(300);
-				});
+		<div class="content">
+			<ul class="actions">
+				<li><a href="#" id="toggle"><i class="fa fa-bars"></i></a></li>
+				<li><a href="#"><i class="icon-lock"></i></a></li>
+				<li><a href="#"><i class="icon-user"></i></a></li>
+				<li><a href="#"><i class="icon-settings"></i></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<aside id="sidebar">
+		<div class="sidebar-menu">
+			<ul>
+				<li class="header"><a>Main</a></li>
+				<li><a href="/"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
+				<li class="header"><a>Components</a></li>
+				<li class="has-sub-menu">
+					<a><i class="icon-wrench"></i><span>Elements</span></a>
+					<ul>
+						<li><a href="/demo/elements-typography">Typography</a></li>
+						<li><a href="/demo/elements-buttons">Buttons</a></li>
+						<li><a href="/demo/elements-tables">Tables</a></li>
+						<li><a href="/demo/elements-panels">Panels</a></li>
+						<li><a href="/demo/elements-dialogs">Dialogs</a></li>
+						<li><a href="/demo/elements-tools">Tools</a></li>
+					</ul>
+				</li>
+				<li class="has-sub-menu">
+					<a><i class="icon-notebook"></i><span>Forms</span></a>
+					<ul class="nav nav-list tree">
+						<li><a href="/demo/forms-standard">Standard</a></li>
+					</ul>
+				</li>
+				<li class="divider"></li>
+				<li class="header"><a>More</a></li>
+				<li class="has-sub-menu">
+					<a><i class="icon-doc"></i><span>Pages</span></a>
+					<ul>
+						<li><a href="/demo/pages-login">Login</a></li>
+						<li><a href="/demo/pages-blank">Blank</a></li>
+					</ul>
+				</li>
+				<li class="has-sub-menu">
+					<a><i class="fa fa-folder-open-o"></i><span>Menu</span></a>
+					<ul>
+						<li><a href="#">Menu item</a></li>
+						<li class="has-sub-menu">
+							<a><span>Sub menu</span></a>
+							<ul>
+								<li><a href="#">Sub menu item 1</a></li>
+								<li><a href="#">Sub menu item 2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</aside>
+
+	<section id="content">
+		<div id="content-wrapper">
+			{% block content %}{% endblock %}
+		</div>
+	</section>
 
 
-				$('#toggle').click(function() { $('body').toggleClass('sidebar-collapsed'); });
+	<footer id="footer">
+		<div>
+			2015 - Kevin Cornelis
+		</div>
+	</footer>
 
-				$('.sidebar-menu li.active').addClass('open').children('ul').show();
+</div>
 
-				$('.sidebar-menu li.has-sub-menu > a').on('click', function() {
-					if ($('.sidebar-menu.collapsed').length > 0)
-						return;
+{% endblock %}
 
-					var element = $(this).closest('li');
+{% block scripts %}
 
-					if (element.hasClass('open')) {
-						element.removeClass('open');
-						element.find('li').removeClass('open');
-						element.find('ul').slideUp(200);
-					}
-					else {
-						element.addClass('open');
-						element.children('ul').slideDown(200);
-						element.siblings('li').children('ul').slideUp(200);
-						element.siblings('li').removeClass('open');
-						element.siblings('li').find('li').removeClass('open');
-						element.siblings('li').find('ul').slideUp(200);
-					}
-				});				
-			});
-		</script>
-		<script type="text/javascript" src="http://localhost:35750/livereload.js"></script>
-	</body>
-</html>
+<script>
+	$(document).ready(function () {
+		$('.expandable-nav-header').parent().children('ul.tree').toggle();
+		$('.expandable-nav-header').click(function () {
+			$(this).parent().children('ul.tree').toggle(300);
+		});
+
+		$('#toggle').click(function() { $('body').toggleClass('sidebar-collapsed'); });
+
+		$('a[href="' + window.location.pathname + '"]').closest('li').addClass('selected');
+		$('a[href="' + window.location.pathname + '"]').parents('.has-sub-menu').addClass('active');
+		$('.sidebar-menu li.active').addClass('open').children('ul').show();
+
+		$('.sidebar-menu li.has-sub-menu > a').on('click', function() {
+			if ($('.sidebar-menu.collapsed').length > 0)
+				return;
+
+			var element = $(this).closest('li');
+
+			if (element.hasClass('open')) {
+				element.removeClass('open');
+				element.find('li').removeClass('open');
+				element.find('ul').slideUp(200);
+			}
+			else {
+				element.addClass('open');
+				element.children('ul').slideDown(200);
+				element.siblings('li').children('ul').slideUp(200);
+				element.siblings('li').removeClass('open');
+				element.siblings('li').find('li').removeClass('open');
+				element.siblings('li').find('ul').slideUp(200);
+			}
+		});
+	});
+</script>
+
+{% endblock %}
