@@ -98,14 +98,10 @@
 
 <script>
 	$(document).ready(function () {
-		$('.expandable-nav-header').parent().children('ul.tree').toggle();
-		$('.expandable-nav-header').click(function () {
-			$(this).parent().children('ul.tree').toggle(300);
-		});
 
 		$('#toggle').click(function() { $('body').toggleClass('sidebar-collapsed'); });
 
-		$('a[href="' + window.location.pathname + '"]').closest('li').addClass('selected');
+		$('a[href="' + window.location.pathname + '"]').closest('li').addClass('active');
 		$('a[href="' + window.location.pathname + '"]').parents('.has-sub-menu').addClass('active');
 		$('.sidebar-menu li.active').addClass('open').children('ul').show();
 
