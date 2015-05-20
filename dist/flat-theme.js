@@ -1,8 +1,8 @@
 (function () {
-  $('.form-group .form-control').on('focus', function () {
+  $(document).on('focus', '.form-group .form-control', function () {
     $(this).parent().addClass('active');
   });
-  $('.form-group .form-control').on('blur', function () {
+  $(document).on('blur', '.form-group .form-control', function () {
     $(this).parent().removeClass('active');
     if ($(this).val()) {
       $(this).parent().addClass('filled');
