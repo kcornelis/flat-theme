@@ -4,6 +4,7 @@
 /* HEADER */
 /*  SIDEBAR */
 /* CONTENT */
+/* FORMS */
 /* FOOTER */
 /* BOOTSTRAP BUTTONS */
 /* WIZARD */
@@ -538,6 +539,185 @@ a:hover {
 .width-auto {
   width: auto;
 }
+.wizard.wizard-horizontal ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wizard.wizard-horizontal ol > li {
+  padding: 15px;
+  background: #f1f3fa;
+}
+.wizard.wizard-horizontal ol > li h4 {
+  font-weight: bold;
+  margin-top: 0px;
+}
+.wizard.wizard-horizontal ol > li h4,
+.wizard.wizard-horizontal ol > li small {
+  color: #666666;
+}
+.wizard.wizard-horizontal ol > li.active {
+  background: #23b7e5;
+}
+.wizard.wizard-horizontal ol > li.active h4,
+.wizard.wizard-horizontal ol > li.active small {
+  color: #ffffff;
+}
+.wizard.wizard-horizontal .wizard-step {
+  display: none;
+  padding: 15px 0;
+}
+.wizard.wizard-horizontal .wizard-step.active {
+  display: block;
+}
+/* BOX */
+.box {
+  margin-bottom: 15px;
+  padding: 20px;
+  border: 1px dashed #cbd3ed;
+  background: #f1f3fa;
+  color: #666666;
+}
+/* MIXINS */
+/* ALERTS */
+.alert-red {
+  background: #f05050;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #f05050;
+}
+.alert-pink {
+  background: #e91e63;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #e91e63;
+}
+.alert-purple {
+  background: #9c27b0;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #9c27b0;
+}
+.alert-deep-purple {
+  background: #7266ba;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #7266ba;
+}
+.alert-indigo {
+  background: #3f51b5;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #3f51b5;
+}
+.alert-blue {
+  background: #23b7e5;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #23b7e5;
+}
+.alert-teal {
+  background: #009688;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #009688;
+}
+.alert-green {
+  background: #27c24c;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #27c24c;
+}
+.alert-light-green {
+  background: #8bc34a;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #8bc34a;
+}
+.alert-lime {
+  background: #cddc39;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #cddc39;
+}
+.alert-yellow {
+  background: #fad733;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #fad733;
+}
+.alert-orange {
+  background: #ff9800;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #ff9800;
+}
+.alert-deep-orange {
+  background: #ff5722;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #ff5722;
+}
+.alert-brown {
+  background: #795548;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #795548;
+}
+.alert-grey {
+  background: #9e9e9e;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #9e9e9e;
+}
+.alert-light-grey {
+  background: #f1f3fa;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #f1f3fa;
+}
+.alert-blue-grey {
+  background: #607d8b;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #607d8b;
+}
+.alert-dark {
+  background: #2c3e50;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #2c3e50;
+}
+.alert-primary {
+  background: #7266ba;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #7266ba;
+}
+.alert-success {
+  background: #27c24c;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #27c24c;
+}
+.alert-info {
+  background: #23b7e5;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #23b7e5;
+}
+.alert-warning {
+  background: #ff9800;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #ff9800;
+}
+.alert-danger {
+  background: #f05050;
+  color: #ffffff;
+  border-radius: 0px;
+  border-color: #f05050;
+}
 /* MIXINS */
 /* DEFAULT STYLES + VARIANTS */
 .btn {
@@ -619,6 +799,7 @@ fieldset[disabled] .btn-default:active,
 fieldset[disabled] .btn-default.active {
   background-color: #ffffff;
   border-color: #cfd8dc;
+  opacity: 0.5;
 }
 .btn-default .badge {
   color: #ffffff;
@@ -685,6 +866,7 @@ fieldset[disabled] .btn-default.btn-accentuate:active,
 fieldset[disabled] .btn-default.btn-accentuate.active {
   background-color: #ffffff;
   border-color: #ffffff;
+  opacity: 0.5;
 }
 .btn-default.btn-accentuate .badge {
   color: #ffffff;
@@ -751,6 +933,7 @@ fieldset[disabled] .btn-red:active,
 fieldset[disabled] .btn-red.active {
   background-color: #f05050;
   border-color: #f05050;
+  opacity: 0.5;
 }
 .btn-red .badge {
   color: #f05050;
@@ -817,6 +1000,7 @@ fieldset[disabled] .btn-pink:active,
 fieldset[disabled] .btn-pink.active {
   background-color: #e91e63;
   border-color: #e91e63;
+  opacity: 0.5;
 }
 .btn-pink .badge {
   color: #e91e63;
@@ -883,6 +1067,7 @@ fieldset[disabled] .btn-purple:active,
 fieldset[disabled] .btn-purple.active {
   background-color: #9c27b0;
   border-color: #9c27b0;
+  opacity: 0.5;
 }
 .btn-purple .badge {
   color: #9c27b0;
@@ -949,6 +1134,7 @@ fieldset[disabled] .btn-deep-purple:active,
 fieldset[disabled] .btn-deep-purple.active {
   background-color: #7266ba;
   border-color: #7266ba;
+  opacity: 0.5;
 }
 .btn-deep-purple .badge {
   color: #7266ba;
@@ -1015,6 +1201,7 @@ fieldset[disabled] .btn-indigo:active,
 fieldset[disabled] .btn-indigo.active {
   background-color: #3f51b5;
   border-color: #3f51b5;
+  opacity: 0.5;
 }
 .btn-indigo .badge {
   color: #3f51b5;
@@ -1081,6 +1268,7 @@ fieldset[disabled] .btn-blue:active,
 fieldset[disabled] .btn-blue.active {
   background-color: #23b7e5;
   border-color: #23b7e5;
+  opacity: 0.5;
 }
 .btn-blue .badge {
   color: #23b7e5;
@@ -1147,6 +1335,7 @@ fieldset[disabled] .btn-teal:active,
 fieldset[disabled] .btn-teal.active {
   background-color: #009688;
   border-color: #009688;
+  opacity: 0.5;
 }
 .btn-teal .badge {
   color: #009688;
@@ -1213,6 +1402,7 @@ fieldset[disabled] .btn-green:active,
 fieldset[disabled] .btn-green.active {
   background-color: #27c24c;
   border-color: #27c24c;
+  opacity: 0.5;
 }
 .btn-green .badge {
   color: #27c24c;
@@ -1279,6 +1469,7 @@ fieldset[disabled] .btn-light-green:active,
 fieldset[disabled] .btn-light-green.active {
   background-color: #8bc34a;
   border-color: #8bc34a;
+  opacity: 0.5;
 }
 .btn-light-green .badge {
   color: #8bc34a;
@@ -1345,6 +1536,7 @@ fieldset[disabled] .btn-lime:active,
 fieldset[disabled] .btn-lime.active {
   background-color: #cddc39;
   border-color: #cddc39;
+  opacity: 0.5;
 }
 .btn-lime .badge {
   color: #cddc39;
@@ -1411,6 +1603,7 @@ fieldset[disabled] .btn-yellow:active,
 fieldset[disabled] .btn-yellow.active {
   background-color: #fad733;
   border-color: #fad733;
+  opacity: 0.5;
 }
 .btn-yellow .badge {
   color: #fad733;
@@ -1477,6 +1670,7 @@ fieldset[disabled] .btn-orange:active,
 fieldset[disabled] .btn-orange.active {
   background-color: #ff9800;
   border-color: #ff9800;
+  opacity: 0.5;
 }
 .btn-orange .badge {
   color: #ff9800;
@@ -1543,6 +1737,7 @@ fieldset[disabled] .btn-deep-orange:active,
 fieldset[disabled] .btn-deep-orange.active {
   background-color: #ff5722;
   border-color: #ff5722;
+  opacity: 0.5;
 }
 .btn-deep-orange .badge {
   color: #ff5722;
@@ -1609,6 +1804,7 @@ fieldset[disabled] .btn-brown:active,
 fieldset[disabled] .btn-brown.active {
   background-color: #795548;
   border-color: #795548;
+  opacity: 0.5;
 }
 .btn-brown .badge {
   color: #795548;
@@ -1675,6 +1871,7 @@ fieldset[disabled] .btn-grey:active,
 fieldset[disabled] .btn-grey.active {
   background-color: #9e9e9e;
   border-color: #9e9e9e;
+  opacity: 0.5;
 }
 .btn-grey .badge {
   color: #9e9e9e;
@@ -1741,6 +1938,7 @@ fieldset[disabled] .btn-light-grey:active,
 fieldset[disabled] .btn-light-grey.active {
   background-color: #f1f3fa;
   border-color: #f1f3fa;
+  opacity: 0.5;
 }
 .btn-light-grey .badge {
   color: #f1f3fa;
@@ -1807,6 +2005,7 @@ fieldset[disabled] .btn-blue-grey:active,
 fieldset[disabled] .btn-blue-grey.active {
   background-color: #607d8b;
   border-color: #607d8b;
+  opacity: 0.5;
 }
 .btn-blue-grey .badge {
   color: #607d8b;
@@ -1873,6 +2072,7 @@ fieldset[disabled] .btn-dark:active,
 fieldset[disabled] .btn-dark.active {
   background-color: #2c3e50;
   border-color: #2c3e50;
+  opacity: 0.5;
 }
 .btn-dark .badge {
   color: #2c3e50;
@@ -1939,6 +2139,7 @@ fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
   background-color: #7266ba;
   border-color: #7266ba;
+  opacity: 0.5;
 }
 .btn-primary .badge {
   color: #7266ba;
@@ -2005,6 +2206,7 @@ fieldset[disabled] .btn-success:active,
 fieldset[disabled] .btn-success.active {
   background-color: #27c24c;
   border-color: #27c24c;
+  opacity: 0.5;
 }
 .btn-success .badge {
   color: #27c24c;
@@ -2071,6 +2273,7 @@ fieldset[disabled] .btn-info:active,
 fieldset[disabled] .btn-info.active {
   background-color: #23b7e5;
   border-color: #23b7e5;
+  opacity: 0.5;
 }
 .btn-info .badge {
   color: #23b7e5;
@@ -2137,6 +2340,7 @@ fieldset[disabled] .btn-warning:active,
 fieldset[disabled] .btn-warning.active {
   background-color: #ff9800;
   border-color: #ff9800;
+  opacity: 0.5;
 }
 .btn-warning .badge {
   color: #ff9800;
@@ -2203,6 +2407,7 @@ fieldset[disabled] .btn-danger:active,
 fieldset[disabled] .btn-danger.active {
   background-color: #f05050;
   border-color: #f05050;
+  opacity: 0.5;
 }
 .btn-danger .badge {
   color: #f05050;
@@ -2328,6 +2533,7 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default:active,
 fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
   background-color: #ffffff;
   border-color: #ffffff;
+  opacity: 0.5;
 }
 .btn-group.btn-group-accentuate .btn-default .badge {
   color: #ffffff;
@@ -2743,153 +2949,6 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
 .panel-danger > .panel-heading h5,
 .panel-danger > .panel-heading h6 {
   color: #ffffff;
-}
-/* BOX */
-.box {
-  margin-bottom: 15px;
-  padding: 20px;
-  border: 1px dashed #cbd3ed;
-  background: #f1f3fa;
-  color: #666666;
-}
-/* ALERTS */
-.alert-red {
-  background: #f05050;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #f05050;
-}
-.alert-pink {
-  background: #e91e63;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #e91e63;
-}
-.alert-purple {
-  background: #9c27b0;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #9c27b0;
-}
-.alert-deep-purple {
-  background: #7266ba;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #7266ba;
-}
-.alert-indigo {
-  background: #3f51b5;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #3f51b5;
-}
-.alert-blue {
-  background: #23b7e5;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #23b7e5;
-}
-.alert-teal {
-  background: #009688;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #009688;
-}
-.alert-green {
-  background: #27c24c;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #27c24c;
-}
-.alert-light-green {
-  background: #8bc34a;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #8bc34a;
-}
-.alert-lime {
-  background: #cddc39;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #cddc39;
-}
-.alert-yellow {
-  background: #fad733;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #fad733;
-}
-.alert-orange {
-  background: #ff9800;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #ff9800;
-}
-.alert-deep-orange {
-  background: #ff5722;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #ff5722;
-}
-.alert-brown {
-  background: #795548;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #795548;
-}
-.alert-grey {
-  background: #9e9e9e;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #9e9e9e;
-}
-.alert-light-grey {
-  background: #f1f3fa;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #f1f3fa;
-}
-.alert-blue-grey {
-  background: #607d8b;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #607d8b;
-}
-.alert-dark {
-  background: #2c3e50;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #2c3e50;
-}
-.alert-primary {
-  background: #7266ba;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #7266ba;
-}
-.alert-success {
-  background: #27c24c;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #27c24c;
-}
-.alert-info {
-  background: #23b7e5;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #23b7e5;
-}
-.alert-warning {
-  background: #ff9800;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #ff9800;
-}
-.alert-danger {
-  background: #f05050;
-  color: #ffffff;
-  border-radius: 0px;
-  border-color: #f05050;
 }
 /* MIXINS */
 /* ROW STYLES */
@@ -3376,18 +3435,51 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
 .table-hover > tbody > tr.danger:hover > th {
   background-color: #f47f7f;
 }
-select[multiple],
-select[size],
-textarea {
+/* MIXINS */
+/* STYLES */
+/* FORM CONTROL */
+.form-control {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 6px 2px;
+  color: #666666;
+  background-color: #fff;
+  background-image: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #bfbfbf;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #fff;
+  border-bottom: 1px solid #bfbfbf;
+}
+select[multiple].form-control,
+select[size].form-control,
+textarea.form-control {
   height: auto !important;
 }
-.form-group {
+/* FORM-GROUP */
+.form-group.floating {
   position: relative;
   padding-top: 15px;
-  /* Upload file */
-  /* ADDONS */
 }
-.form-group label {
+.form-group.floating .form-control {
+  height: 34px;
+}
+.form-group.floating label {
+  color: #bfbfbf;
   position: absolute;
   left: 0;
   top: 13px;
@@ -3395,52 +3487,135 @@ textarea {
   line-height: 34px;
   font-size: 14px;
   font-weight: lighter;
-  -webkit-transition: top ease-in-out 0.2s, font-size ease-in-out 0.2s, color ease-in-out 0.2s;
-  -o-transition: top ease-in-out 0.2s, font-size ease-in-out 0.2s, color ease-in-out 0.2s;
-  transition: top ease-in-out 0.2s, font-size ease-in-out 0.2s, color ease-in-out 0.2s;
+  -webkit-transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-group.active label {
-  color: #7266ba;
+.form-group.floating .form-control-feedback {
+  color: #bfbfbf;
 }
-.form-group.active label,
-.form-group.filled label {
+.form-group.floating.active label,
+.form-group.floating.filled label {
   top: 0px;
   font-size: 12px;
   line-height: 14px;
 }
-.form-group .form-control {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 0px;
+.form-group.floating.active label {
+  color: #23b7e5;
+}
+/* CHECKBOX */
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  margin: 0;
+  padding: 0;
+}
+.checkbox label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+.checkbox input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #bfbfbf;
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: all .2s;
+  cursor: pointer;
+}
+.checkbox [type="checkbox"]:after {
+  content: '✔';
+  position: absolute;
+  top: -3px;
+  left: 1px;
   font-size: 14px;
-  line-height: 15px;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #cfd8dc;
-  border-radius: 0px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: border-bottom ease-in-out 0.2s;
-  -o-transition: border-bottom ease-in-out 0.2s;
-  transition: border-bottom ease-in-out 0.2s;
+  color: #FFFFFF;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .2s;
+  cursor: pointer;
 }
-.form-group .form-control:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-bottom: 1px solid #7266ba;
+.checkbox [type="checkbox"]:checked:after {
+  opacity: 1;
+  transform: scale(1);
 }
-.form-group .form-file {
+.checkbox [type="checkbox"]:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.checkbox [type="checkbox"]:disabled:before {
+  background: #bfbfbf !important;
+  border-color: #bfbfbf !important;
+  pointer-events: none;
+}
+/* RADIO */
+.radio input[type="radio"] {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  margin: 0;
+  padding: 0;
+}
+.radio label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+.radio input[type="radio"]:before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #bfbfbf;
+  background: #FFFFFF;
+  border-radius: 100px;
+  transition: all .2s;
+  cursor: pointer;
+}
+.radio [type="radio"]:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #FFFFFF;
+  background: transparent;
+  border-radius: 100px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .2s;
+  cursor: pointer;
+}
+.radio [type="radio"]:checked:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.radio [type="radio"]:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.radio [type="radio"]:disabled:before {
+  background: #bfbfbf !important;
+  border-color: #bfbfbf !important;
+  pointer-events: none;
+}
+/* FILE */
+.form-file {
   position: relative;
   display: inline-block;
   vertical-align: bottom;
   overflow: hidden;
 }
-.form-group .form-file input[type=file] {
+.form-file input[type=file] {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3451,45 +3626,1184 @@ textarea {
   left: 0;
   font-size: 500px;
 }
-.form-group .input-group-addon {
+/* INPUT GROUP */
+.input-group .btn.btn-default {
+  border-color: #bfbfbf;
+}
+.input-group .input-group-addon {
   background: none;
   border: 0;
-  border-bottom: 1px solid #cfd8dc;
+  border-bottom: 1px solid #bfbfbf;
   border-radius: 0px;
-  -webkit-transition: border-bottom ease-in-out 0.2s;
-  -o-transition: border-bottom ease-in-out 0.2s;
-  transition: border-bottom ease-in-out 0.2s;
 }
-.form-group .input-group .btn {
-  -webkit-transition: border-bottom ease-in-out 0.2s;
-  -o-transition: border-bottom ease-in-out 0.2s;
-  transition: border-bottom ease-in-out 0.2s;
-}
-.form-group .input-group.active .input-group-addon {
-  border-bottom-color: #7266ba;
-}
-.form-group .input-group.active .btn {
-  border-color: #7266ba;
-}
-.form-group .input-group-btn:first-child > .btn,
-.form-group .input-group-btn:first-child > .btn-group {
-  margin-right: -1px;
-}
-.form-group .input-group-btn:first-child > .btn.dropdown-toggle {
+.input-group .input-group-btn:first-child > .btn,
+.input-group .input-group-btn:first-child > .btn-group,
+.input-group .input-group-btn:first-child > .btn.dropdown-toggle {
   margin-right: 0px;
 }
-.form-group .input-group-btn:last-child > .btn,
-.form-group .input-group-btn:last-child > .btn-group {
+.input-group .input-group-btn:last-child > .btn,
+.input-group .input-group-btn:last-child > .btn-group {
   margin-left: 0px;
+}
+.input-group .input-group-btn + .form-control {
+  padding-left: 5px;
+}
+/* COLORS */
+.help-block {
+  color: #bfbfbf;
+}
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .checkbox,
+.has-success .radio-inline,
+.has-success .checkbox-inline,
+.has-success.radio label,
+.has-success.checkbox label,
+.has-success.radio-inline label,
+.has-success.checkbox-inline label {
+  color: #27c24c;
+}
+.has-success .form-control {
+  border-bottom: 1px solid #27c24c;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-success .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #23b7e5;
+}
+.has-success .input-group-addon {
+  color: #27c24c;
+  border: none;
+  background-color: #fff;
+}
+.has-success .form-control-feedback {
+  color: #27c24c;
+}
+.has-warning .help-block,
+.has-warning .control-label,
+.has-warning .radio,
+.has-warning .checkbox,
+.has-warning .radio-inline,
+.has-warning .checkbox-inline,
+.has-warning.radio label,
+.has-warning.checkbox label,
+.has-warning.radio-inline label,
+.has-warning.checkbox-inline label {
+  color: #ff9800;
+}
+.has-warning .form-control {
+  border-bottom: 1px solid #ff9800;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-warning .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #23b7e5;
+}
+.has-warning .input-group-addon {
+  color: #ff9800;
+  border: none;
+  background-color: #fff;
+}
+.has-warning .form-control-feedback {
+  color: #ff9800;
+}
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: #f05050;
+}
+.has-error .form-control {
+  border-bottom: 1px solid #f05050;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-error .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #23b7e5;
+}
+.has-error .input-group-addon {
+  color: #f05050;
+  border: none;
+  background-color: #fff;
+}
+.has-error .form-control-feedback {
+  color: #f05050;
+}
+.form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-control:focus {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-group.active label {
+  color: #23b7e5;
+}
+.form-group.active .form-control-feedback {
+  color: #23b7e5;
+}
+.checkbox [type="checkbox"]:checked:before {
+  border-color: #23b7e5;
+  background: #23b7e5;
+}
+.radio [type="radio"]:checked:before {
+  border-color: #23b7e5;
+  background: #23b7e5;
+}
+.input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.input-group.active .btn {
+  border-bottom: 1px solid #23b7e5;
+}
+.input-group.active .input-group-addon {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-red .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-red .form-control:focus {
+  border-bottom: 1px solid #f05050;
+}
+.form-red .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-red .form-group.active label {
+  color: #f05050;
+}
+.form-red .form-group.active .form-control-feedback {
+  color: #f05050;
+}
+.form-red .checkbox [type="checkbox"]:checked:before {
+  border-color: #f05050;
+  background: #f05050;
+}
+.form-red .radio [type="radio"]:checked:before {
+  border-color: #f05050;
+  background: #f05050;
+}
+.form-red .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-red .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-red .input-group.active .btn {
+  border-bottom: 1px solid #f05050;
+}
+.form-red .input-group.active .input-group-addon {
+  border-bottom: 1px solid #f05050;
+}
+.form-pink .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-pink .form-control:focus {
+  border-bottom: 1px solid #e91e63;
+}
+.form-pink .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-pink .form-group.active label {
+  color: #e91e63;
+}
+.form-pink .form-group.active .form-control-feedback {
+  color: #e91e63;
+}
+.form-pink .checkbox [type="checkbox"]:checked:before {
+  border-color: #e91e63;
+  background: #e91e63;
+}
+.form-pink .radio [type="radio"]:checked:before {
+  border-color: #e91e63;
+  background: #e91e63;
+}
+.form-pink .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-pink .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-pink .input-group.active .btn {
+  border-bottom: 1px solid #e91e63;
+}
+.form-pink .input-group.active .input-group-addon {
+  border-bottom: 1px solid #e91e63;
+}
+.form-purple .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-purple .form-control:focus {
+  border-bottom: 1px solid #9c27b0;
+}
+.form-purple .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-purple .form-group.active label {
+  color: #9c27b0;
+}
+.form-purple .form-group.active .form-control-feedback {
+  color: #9c27b0;
+}
+.form-purple .checkbox [type="checkbox"]:checked:before {
+  border-color: #9c27b0;
+  background: #9c27b0;
+}
+.form-purple .radio [type="radio"]:checked:before {
+  border-color: #9c27b0;
+  background: #9c27b0;
+}
+.form-purple .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-purple .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-purple .input-group.active .btn {
+  border-bottom: 1px solid #9c27b0;
+}
+.form-purple .input-group.active .input-group-addon {
+  border-bottom: 1px solid #9c27b0;
+}
+.form-deep-purple .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-purple .form-control:focus {
+  border-bottom: 1px solid #7266ba;
+}
+.form-deep-purple .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-purple .form-group.active label {
+  color: #7266ba;
+}
+.form-deep-purple .form-group.active .form-control-feedback {
+  color: #7266ba;
+}
+.form-deep-purple .checkbox [type="checkbox"]:checked:before {
+  border-color: #7266ba;
+  background: #7266ba;
+}
+.form-deep-purple .radio [type="radio"]:checked:before {
+  border-color: #7266ba;
+  background: #7266ba;
+}
+.form-deep-purple .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-purple .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-purple .input-group.active .btn {
+  border-bottom: 1px solid #7266ba;
+}
+.form-deep-purple .input-group.active .input-group-addon {
+  border-bottom: 1px solid #7266ba;
+}
+.form-indigo .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-indigo .form-control:focus {
+  border-bottom: 1px solid #3f51b5;
+}
+.form-indigo .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-indigo .form-group.active label {
+  color: #3f51b5;
+}
+.form-indigo .form-group.active .form-control-feedback {
+  color: #3f51b5;
+}
+.form-indigo .checkbox [type="checkbox"]:checked:before {
+  border-color: #3f51b5;
+  background: #3f51b5;
+}
+.form-indigo .radio [type="radio"]:checked:before {
+  border-color: #3f51b5;
+  background: #3f51b5;
+}
+.form-indigo .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-indigo .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-indigo .input-group.active .btn {
+  border-bottom: 1px solid #3f51b5;
+}
+.form-indigo .input-group.active .input-group-addon {
+  border-bottom: 1px solid #3f51b5;
+}
+.form-blue .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue .form-control:focus {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-blue .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue .form-group.active label {
+  color: #23b7e5;
+}
+.form-blue .form-group.active .form-control-feedback {
+  color: #23b7e5;
+}
+.form-blue .checkbox [type="checkbox"]:checked:before {
+  border-color: #23b7e5;
+  background: #23b7e5;
+}
+.form-blue .radio [type="radio"]:checked:before {
+  border-color: #23b7e5;
+  background: #23b7e5;
+}
+.form-blue .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue .input-group.active .btn {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-blue .input-group.active .input-group-addon {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-teal .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-teal .form-control:focus {
+  border-bottom: 1px solid #009688;
+}
+.form-teal .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-teal .form-group.active label {
+  color: #009688;
+}
+.form-teal .form-group.active .form-control-feedback {
+  color: #009688;
+}
+.form-teal .checkbox [type="checkbox"]:checked:before {
+  border-color: #009688;
+  background: #009688;
+}
+.form-teal .radio [type="radio"]:checked:before {
+  border-color: #009688;
+  background: #009688;
+}
+.form-teal .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-teal .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-teal .input-group.active .btn {
+  border-bottom: 1px solid #009688;
+}
+.form-teal .input-group.active .input-group-addon {
+  border-bottom: 1px solid #009688;
+}
+.form-green .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-green .form-control:focus {
+  border-bottom: 1px solid #27c24c;
+}
+.form-green .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-green .form-group.active label {
+  color: #27c24c;
+}
+.form-green .form-group.active .form-control-feedback {
+  color: #27c24c;
+}
+.form-green .checkbox [type="checkbox"]:checked:before {
+  border-color: #27c24c;
+  background: #27c24c;
+}
+.form-green .radio [type="radio"]:checked:before {
+  border-color: #27c24c;
+  background: #27c24c;
+}
+.form-green .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-green .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-green .input-group.active .btn {
+  border-bottom: 1px solid #27c24c;
+}
+.form-green .input-group.active .input-group-addon {
+  border-bottom: 1px solid #27c24c;
+}
+.form-light-green .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-green .form-control:focus {
+  border-bottom: 1px solid #8bc34a;
+}
+.form-light-green .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-green .form-group.active label {
+  color: #8bc34a;
+}
+.form-light-green .form-group.active .form-control-feedback {
+  color: #8bc34a;
+}
+.form-light-green .checkbox [type="checkbox"]:checked:before {
+  border-color: #8bc34a;
+  background: #8bc34a;
+}
+.form-light-green .radio [type="radio"]:checked:before {
+  border-color: #8bc34a;
+  background: #8bc34a;
+}
+.form-light-green .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-green .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-green .input-group.active .btn {
+  border-bottom: 1px solid #8bc34a;
+}
+.form-light-green .input-group.active .input-group-addon {
+  border-bottom: 1px solid #8bc34a;
+}
+.form-lime .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-lime .form-control:focus {
+  border-bottom: 1px solid #cddc39;
+}
+.form-lime .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-lime .form-group.active label {
+  color: #cddc39;
+}
+.form-lime .form-group.active .form-control-feedback {
+  color: #cddc39;
+}
+.form-lime .checkbox [type="checkbox"]:checked:before {
+  border-color: #cddc39;
+  background: #cddc39;
+}
+.form-lime .radio [type="radio"]:checked:before {
+  border-color: #cddc39;
+  background: #cddc39;
+}
+.form-lime .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-lime .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-lime .input-group.active .btn {
+  border-bottom: 1px solid #cddc39;
+}
+.form-lime .input-group.active .input-group-addon {
+  border-bottom: 1px solid #cddc39;
+}
+.form-yellow .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-yellow .form-control:focus {
+  border-bottom: 1px solid #fad733;
+}
+.form-yellow .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-yellow .form-group.active label {
+  color: #fad733;
+}
+.form-yellow .form-group.active .form-control-feedback {
+  color: #fad733;
+}
+.form-yellow .checkbox [type="checkbox"]:checked:before {
+  border-color: #fad733;
+  background: #fad733;
+}
+.form-yellow .radio [type="radio"]:checked:before {
+  border-color: #fad733;
+  background: #fad733;
+}
+.form-yellow .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-yellow .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-yellow .input-group.active .btn {
+  border-bottom: 1px solid #fad733;
+}
+.form-yellow .input-group.active .input-group-addon {
+  border-bottom: 1px solid #fad733;
+}
+.form-orange .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-orange .form-control:focus {
+  border-bottom: 1px solid #ff9800;
+}
+.form-orange .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-orange .form-group.active label {
+  color: #ff9800;
+}
+.form-orange .form-group.active .form-control-feedback {
+  color: #ff9800;
+}
+.form-orange .checkbox [type="checkbox"]:checked:before {
+  border-color: #ff9800;
+  background: #ff9800;
+}
+.form-orange .radio [type="radio"]:checked:before {
+  border-color: #ff9800;
+  background: #ff9800;
+}
+.form-orange .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-orange .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-orange .input-group.active .btn {
+  border-bottom: 1px solid #ff9800;
+}
+.form-orange .input-group.active .input-group-addon {
+  border-bottom: 1px solid #ff9800;
+}
+.form-deep-orange .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-orange .form-control:focus {
+  border-bottom: 1px solid #ff5722;
+}
+.form-deep-orange .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-orange .form-group.active label {
+  color: #ff5722;
+}
+.form-deep-orange .form-group.active .form-control-feedback {
+  color: #ff5722;
+}
+.form-deep-orange .checkbox [type="checkbox"]:checked:before {
+  border-color: #ff5722;
+  background: #ff5722;
+}
+.form-deep-orange .radio [type="radio"]:checked:before {
+  border-color: #ff5722;
+  background: #ff5722;
+}
+.form-deep-orange .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-orange .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-deep-orange .input-group.active .btn {
+  border-bottom: 1px solid #ff5722;
+}
+.form-deep-orange .input-group.active .input-group-addon {
+  border-bottom: 1px solid #ff5722;
+}
+.form-brown .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-brown .form-control:focus {
+  border-bottom: 1px solid #795548;
+}
+.form-brown .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-brown .form-group.active label {
+  color: #795548;
+}
+.form-brown .form-group.active .form-control-feedback {
+  color: #795548;
+}
+.form-brown .checkbox [type="checkbox"]:checked:before {
+  border-color: #795548;
+  background: #795548;
+}
+.form-brown .radio [type="radio"]:checked:before {
+  border-color: #795548;
+  background: #795548;
+}
+.form-brown .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-brown .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-brown .input-group.active .btn {
+  border-bottom: 1px solid #795548;
+}
+.form-brown .input-group.active .input-group-addon {
+  border-bottom: 1px solid #795548;
+}
+.form-grey .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-grey .form-control:focus {
+  border-bottom: 1px solid #9e9e9e;
+}
+.form-grey .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-grey .form-group.active label {
+  color: #9e9e9e;
+}
+.form-grey .form-group.active .form-control-feedback {
+  color: #9e9e9e;
+}
+.form-grey .checkbox [type="checkbox"]:checked:before {
+  border-color: #9e9e9e;
+  background: #9e9e9e;
+}
+.form-grey .radio [type="radio"]:checked:before {
+  border-color: #9e9e9e;
+  background: #9e9e9e;
+}
+.form-grey .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-grey .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-grey .input-group.active .btn {
+  border-bottom: 1px solid #9e9e9e;
+}
+.form-grey .input-group.active .input-group-addon {
+  border-bottom: 1px solid #9e9e9e;
+}
+.form-light-grey .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-grey .form-control:focus {
+  border-bottom: 1px solid #f1f3fa;
+}
+.form-light-grey .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-grey .form-group.active label {
+  color: #f1f3fa;
+}
+.form-light-grey .form-group.active .form-control-feedback {
+  color: #f1f3fa;
+}
+.form-light-grey .checkbox [type="checkbox"]:checked:before {
+  border-color: #f1f3fa;
+  background: #f1f3fa;
+}
+.form-light-grey .radio [type="radio"]:checked:before {
+  border-color: #f1f3fa;
+  background: #f1f3fa;
+}
+.form-light-grey .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-grey .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-light-grey .input-group.active .btn {
+  border-bottom: 1px solid #f1f3fa;
+}
+.form-light-grey .input-group.active .input-group-addon {
+  border-bottom: 1px solid #f1f3fa;
+}
+.form-blue-grey .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue-grey .form-control:focus {
+  border-bottom: 1px solid #607d8b;
+}
+.form-blue-grey .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue-grey .form-group.active label {
+  color: #607d8b;
+}
+.form-blue-grey .form-group.active .form-control-feedback {
+  color: #607d8b;
+}
+.form-blue-grey .checkbox [type="checkbox"]:checked:before {
+  border-color: #607d8b;
+  background: #607d8b;
+}
+.form-blue-grey .radio [type="radio"]:checked:before {
+  border-color: #607d8b;
+  background: #607d8b;
+}
+.form-blue-grey .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue-grey .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-blue-grey .input-group.active .btn {
+  border-bottom: 1px solid #607d8b;
+}
+.form-blue-grey .input-group.active .input-group-addon {
+  border-bottom: 1px solid #607d8b;
+}
+.form-dark .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-dark .form-control:focus {
+  border-bottom: 1px solid #2c3e50;
+}
+.form-dark .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-dark .form-group.active label {
+  color: #2c3e50;
+}
+.form-dark .form-group.active .form-control-feedback {
+  color: #2c3e50;
+}
+.form-dark .checkbox [type="checkbox"]:checked:before {
+  border-color: #2c3e50;
+  background: #2c3e50;
+}
+.form-dark .radio [type="radio"]:checked:before {
+  border-color: #2c3e50;
+  background: #2c3e50;
+}
+.form-dark .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-dark .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-dark .input-group.active .btn {
+  border-bottom: 1px solid #2c3e50;
+}
+.form-dark .input-group.active .input-group-addon {
+  border-bottom: 1px solid #2c3e50;
+}
+.form-primary .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-primary .form-control:focus {
+  border-bottom: 1px solid #7266ba;
+}
+.form-primary .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-primary .form-group.active label {
+  color: #7266ba;
+}
+.form-primary .form-group.active .form-control-feedback {
+  color: #7266ba;
+}
+.form-primary .checkbox [type="checkbox"]:checked:before {
+  border-color: #7266ba;
+  background: #7266ba;
+}
+.form-primary .radio [type="radio"]:checked:before {
+  border-color: #7266ba;
+  background: #7266ba;
+}
+.form-primary .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-primary .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-primary .input-group.active .btn {
+  border-bottom: 1px solid #7266ba;
+}
+.form-primary .input-group.active .input-group-addon {
+  border-bottom: 1px solid #7266ba;
+}
+.form-success .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-success .form-control:focus {
+  border-bottom: 1px solid #27c24c;
+}
+.form-success .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-success .form-group.active label {
+  color: #27c24c;
+}
+.form-success .form-group.active .form-control-feedback {
+  color: #27c24c;
+}
+.form-success .checkbox [type="checkbox"]:checked:before {
+  border-color: #27c24c;
+  background: #27c24c;
+}
+.form-success .radio [type="radio"]:checked:before {
+  border-color: #27c24c;
+  background: #27c24c;
+}
+.form-success .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-success .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-success .input-group.active .btn {
+  border-bottom: 1px solid #27c24c;
+}
+.form-success .input-group.active .input-group-addon {
+  border-bottom: 1px solid #27c24c;
+}
+.form-info .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-info .form-control:focus {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-info .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-info .form-group.active label {
+  color: #23b7e5;
+}
+.form-info .form-group.active .form-control-feedback {
+  color: #23b7e5;
+}
+.form-info .checkbox [type="checkbox"]:checked:before {
+  border-color: #23b7e5;
+  background: #23b7e5;
+}
+.form-info .radio [type="radio"]:checked:before {
+  border-color: #23b7e5;
+  background: #23b7e5;
+}
+.form-info .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-info .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-info .input-group.active .btn {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-info .input-group.active .input-group-addon {
+  border-bottom: 1px solid #23b7e5;
+}
+.form-warning .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-warning .form-control:focus {
+  border-bottom: 1px solid #ff9800;
+}
+.form-warning .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-warning .form-group.active label {
+  color: #ff9800;
+}
+.form-warning .form-group.active .form-control-feedback {
+  color: #ff9800;
+}
+.form-warning .checkbox [type="checkbox"]:checked:before {
+  border-color: #ff9800;
+  background: #ff9800;
+}
+.form-warning .radio [type="radio"]:checked:before {
+  border-color: #ff9800;
+  background: #ff9800;
+}
+.form-warning .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-warning .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-warning .input-group.active .btn {
+  border-bottom: 1px solid #ff9800;
+}
+.form-warning .input-group.active .input-group-addon {
+  border-bottom: 1px solid #ff9800;
+}
+.form-danger .form-control {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-danger .form-control:focus {
+  border-bottom: 1px solid #f05050;
+}
+.form-danger .form-group label {
+  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-danger .form-group.active label {
+  color: #f05050;
+}
+.form-danger .form-group.active .form-control-feedback {
+  color: #f05050;
+}
+.form-danger .checkbox [type="checkbox"]:checked:before {
+  border-color: #f05050;
+  background: #f05050;
+}
+.form-danger .radio [type="radio"]:checked:before {
+  border-color: #f05050;
+  background: #f05050;
+}
+.form-danger .input-group .btn {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-danger .input-group .input-group-addon {
+  -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+}
+.form-danger .input-group.active .btn {
+  border-bottom: 1px solid #f05050;
+}
+.form-danger .input-group.active .input-group-addon {
+  border-bottom: 1px solid #f05050;
+}
+/* HORIZONTAL FORM */
+.form-horizontal label {
+  pointer-events: initial;
+  color: #666666;
 }
 .form-horizontal .form-group {
   margin-left: 0px;
   margin-right: 0px;
 }
 .form-horizontal .form-group label.control-label {
-  position: initial;
-  padding-top: 0px;
-  text-align: right;
+  padding-right: 2px;
+}
+/* INLINE FORM */
+.form-inline .checkbox {
+  vertical-align: bottom;
+  margin-bottom: 6px;
+}
+.form-inline .checkbox label {
+  padding-left: 25px;
+  padding-right: 5px;
+}
+.form-inline .checkbox input[type="checkbox"] {
+  position: absolute;
+}
+.form-inline .btn {
+  margin-bottom: 0px;
+  vertical-align: bottom;
 }
 .modal-backdrop {
   background-color: #555555;
@@ -3503,37 +4817,6 @@ textarea {
 }
 .modal .modal-footer .btn {
   margin-bottom: 0px;
-}
-.wizard.wizard-horizontal ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.wizard.wizard-horizontal ol > li {
-  padding: 15px;
-  background: #f1f3fa;
-}
-.wizard.wizard-horizontal ol > li h4 {
-  font-weight: bold;
-  margin-top: 0px;
-}
-.wizard.wizard-horizontal ol > li h4,
-.wizard.wizard-horizontal ol > li small {
-  color: #666666;
-}
-.wizard.wizard-horizontal ol > li.active {
-  background: #23b7e5;
-}
-.wizard.wizard-horizontal ol > li.active h4,
-.wizard.wizard-horizontal ol > li.active small {
-  color: #ffffff;
-}
-.wizard.wizard-horizontal .wizard-step {
-  display: none;
-  padding: 15px 0;
-}
-.wizard.wizard-horizontal .wizard-step.active {
-  display: block;
 }
 *,
 :after,
@@ -3884,6 +5167,33 @@ body {
   margin-left: 220px;
   border-top: 1px solid #cfd8dc;
 }
+@media (max-width: 768px) {
+  #content {
+    margin-left: 0;
+    margin-top: 120px;
+  }
+  #content #content-wrapper {
+    padding: 20px 20px 60px 20px;
+  }
+  #sidebar {
+    display: none;
+  }
+  #header {
+    height: 120px;
+  }
+  #header .content {
+    padding: 0;
+    clear: both;
+    background: #FFFFFF;
+  }
+  #header .logo {
+    width: 100%;
+    clear: both;
+  }
+  #footer {
+    margin-left: 0px;
+  }
+}
 .flot-chart {
   display: block;
   width: 100%;
@@ -3926,31 +5236,4 @@ body {
   font-size: 10px;
   text-align: center;
   color: #fff;
-}
-@media (max-width: 768px) {
-  #content {
-    margin-left: 0;
-    margin-top: 120px;
-  }
-  #content #content-wrapper {
-    padding: 20px 20px 60px 20px;
-  }
-  #sidebar {
-    display: none;
-  }
-  #header {
-    height: 120px;
-  }
-  #header .content {
-    padding: 0;
-    clear: both;
-    background: #FFFFFF;
-  }
-  #header .logo {
-    width: 100%;
-    clear: both;
-  }
-  #footer {
-    margin-left: 0px;
-  }
 }

@@ -1,13 +1,18 @@
 (function () {
   $(document).on('focus', '.form-group .form-control', function () {
-    $(this).parent().addClass('active');
+    $(this).closest('.form-group, .input-group').addClass('active');
   });
   $(document).on('blur', '.form-group .form-control', function () {
-    $(this).parent().removeClass('active');
+    $(this).closest('.form-group, .input-group').removeClass('active');
+  });
+  $(document).on('change', '.form-control', function () {
     if ($(this).val()) {
-      $(this).parent().addClass('filled');
+      $(this).closest('.form-group, .input-group').addClass('filled');
     } else {
-      $(this).parent().removeClass('filled');
+      $(this).closest('.form-group, .input-group').removeClass('filled');
     }
+  });
+  $(document).ready(function () {
+    $('.form-control[value]').closest('.form-group, .input-group').addClass('filled');
   });
 }());
