@@ -15,27 +15,27 @@
 				<form>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1">
+						<input type="email" class="form-control" id="exampleInputEmail1" value="test@foo.com" />
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1">
+						<input type="password" class="form-control" id="exampleInputPassword1" />
 					</div>
 					<div class="checkbox">
 						<label><input type="checkbox" /> Check me out </label>
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-info">Submit</button>
 				</form>
 			</div>
 		</div>
-	</div>
+	</div>	
 	<div class="col-md-6">
 		<div class="panel panel-white">
 			<div class="panel-heading clearfix">
-				<h4 class="panel-title">Horizontal Form</h4>
+				<h4 class="panel-title">Green Horizontal Form</h4>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal form-green">
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-10">
@@ -58,13 +58,36 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-success">Sign in</button>
+							<button type="submit" class="btn btn-green">Sign in</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+	<div class="col-md-6">
+		<div class="panel panel-white">
+			<div class="panel-heading clearfix">
+				<h4 class="panel-title">Basic Floating Form</h4>
+			</div>
+			<div class="panel-body">
+				<form>
+					<div class="form-group floating">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" value="test@foo.com" />
+					</div>
+					<div class="form-group floating">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" />
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" /> Check me out </label>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>	
 	<div class="col-md-12">
 		<div class="panel panel-white">
 			<div class="panel-heading clearfix">
@@ -81,15 +104,36 @@
 						<input type="password" class="form-control" id="exampleInputPassword2">
 					</div>
 					<div class="checkbox">
-						<label>
-							<div class="checker"><span><input type="checkbox"></span></div> Remember me
-						</label>
+						<label><input type="checkbox" /> Remember me </label>
 					</div>
 					<button type="submit" class="btn btn-info">Sign in</button>
 				</form>
 			</div>
 		</div>
 	</div>
+	<div class="col-md-12">
+		<div class="panel panel-white">
+			<div class="panel-heading clearfix">
+				<h4 class="panel-title">Floating Inline Form</h4>
+			</div>
+			<div class="panel-body">
+				<form class="form-inline">
+					<div class="form-group floating">
+						<label for="exampleInputEmail2">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail2">
+					</div>
+					<div class="form-group floating">
+						<label for="exampleInputPassword2">Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword2">
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" /> Remember me </label>
+					</div>
+					<button type="submit" class="btn btn-info">Sign in</button>
+				</form>
+			</div>
+		</div>
+	</div>	
 	<div class="col-md-12">
 		<div class="panel panel-white">
 			<div class="panel-heading clearfix">
@@ -180,15 +224,11 @@
 							<div class="checkbox">
 								<label><input type="checkbox" checked="" /> Checked </label>
 							</div>
-							<div class="checkbox">
-								<label>
-									<div class="checker disabled"><span class="checked"><input type="checkbox" checked="" disabled=""></span></div>Checked &amp; Disabled
-								</label>
+							<div class="checkbox disabled">
+								<label><input type="checkbox" checked="" disabled="" /> Checked &amp; Disabled </label>
 							</div>
-							<div class="checkbox">
-								<label>
-									<div class="checker disabled"><span><input type="checkbox" disabled=""></span></div>Disabled
-								</label>
+							<div class="checkbox disabled">
+								<label><input type="checkbox" disabled="" /> Disabled </label>
 							</div>
 						</div>
 					</div>
