@@ -1,0 +1,18 @@
+/* MIXINS */
+
+.create-alerts(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
+
+	.alert-@{color} { 
+		background: @@color; 
+		color: @text-light; 
+		border-radius: 0px;
+		border-color: @@color; 
+	}
+	
+	.create-alerts(@iterator + 1);
+}
+
+/* ALERTS */
+
+.create-alerts();

@@ -33,6 +33,7 @@
 		&, &:hover, &:focus, &.focus, &:active, &.active {
 			background-color: @background;
 			border-color: @border;
+			opacity: 0.5;
 		}
 	}
 	.badge {
@@ -45,7 +46,7 @@
 	@color: extract(@colors, @iterator);
 
 	.btn-@{color} {
-		.button-variant(@text-colors; @@color; @@color);
+		.button-variant(@text-light; @@color; @@color);
 	}
 
 	.create-btn-variants(@iterator + 1);
