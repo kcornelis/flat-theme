@@ -1,5 +1,70 @@
-select[multiple], select[size], textarea {
-  height: auto !important;
+/* MIXINS */
+
+.form-control-validation(@text-color) {
+
+	.help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline,
+	&.radio label, &.checkbox label, &.radio-inline label, &.checkbox-inline label  {
+		color: @text-color;
+	}
+
+	.form-control {
+		border-bottom: 1px solid @text-color;
+		border-radius: 0px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		&:focus {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			border-bottom: 2px solid @text-color;	
+		}
+	}
+
+	.input-group-addon {
+		color: @text-color;
+		border: none;
+		background-color: #fff;
+	}
+
+	.form-control-feedback {
+		color: @text-color;
+	}
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 0px;
+	font-size: 14px;
+	line-height: 15px;
+	color: @form_text_color;
+	background-color: #fff;
+	background-image: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid @form_input_border_color;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+	-o-transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+	transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+
+	&:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		border-bottom: 2px solid @form_accent_color;			
+	}
+
+	&[disabled], &[readonly], fieldset[disabled] & {
+		background-color: #fff;
+		border-bottom: 1px solid @form_input_border_color;
+	}
+
+	select[multiple]&, select[size]&, textarea& {
+		height: auto !important;
+	}
 }
 
 .form-group {
@@ -7,6 +72,7 @@ select[multiple], select[size], textarea {
 	padding-top: 15px;
 
 	label {
+		color: @form_label_color;
 		position: absolute;
 		left: 0;
 		top: 13px;
@@ -14,14 +80,14 @@ select[multiple], select[size], textarea {
 		line-height: 34px;
 		font-size: 14px;
 		font-weight: lighter;
-		-webkit-transition: top ease-in-out .2s, font-size ease-in-out .2s, color ease-in-out .2s;
-		-o-transition: top ease-in-out .2s, font-size ease-in-out .2s, color ease-in-out .2s;
-		transition: top ease-in-out .2s, font-size ease-in-out .2s, color ease-in-out .2s;
+		-webkit-transition: top cubic-bezier(.25,.8,.25,1) .25s, font-size cubic-bezier(.25,.8,.25,1) .25s, color cubic-bezier(.25,.8,.25,1) .25s;
+		-o-transition: top cubic-bezier(.25,.8,.25,1) .25s, font-size cubic-bezier(.25,.8,.25,1) .25s, color cubic-bezier(.25,.8,.25,1) .25s;
+		transition: top cubic-bezier(.25,.8,.25,1) .25s, font-size cubic-bezier(.25,.8,.25,1) .25s, color cubic-bezier(.25,.8,.25,1) .25s;
 	}
 
 	&.active {
 		label {
-			color: @primary;
+			color: @form_accent_color;
 		}
 	}
 
@@ -31,82 +97,69 @@ select[multiple], select[size], textarea {
 		font-size: 12px;
 		line-height: 14px;
 	}
+}
 
-	.form-control {
-		display: block;
+.form-horizontal {
+	label { 
+		pointer-events: initial; 
+		color: @text-dark;
+	}
+
+	.form-group {
+		margin-left: 0px;
+		margin-right: 0px;
+
+		label.control-label {
+			position: initial;
+			padding-top: 0px;
+			text-align: right;
+		}
+	}	
+}
+
+.form-file {
+	position: relative;
+	display: inline-block;
+	vertical-align: bottom;
+	overflow: hidden;
+
+	input[type=file] {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
 		width: 100%;
-		height: 34px;
-		padding: 6px 0px;
-		font-size: 14px;
-		line-height: 15px;
-		color: #555;
-		background-color: #fff;
-		background-image: none;
-		border-top: none;
-		border-left: none;
-		border-right: none;
-		border-bottom: 1px solid @form_border_color;
-		border-radius: 0px;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-		-webkit-transition: border-bottom ease-in-out .2s;
-		-o-transition: border-bottom ease-in-out .2s;
-		transition: border-bottom ease-in-out .2s;
+		opacity: 0;
+		cursor: pointer;
+		left: 0;
+		font-size: 500px;
+	}
+}
 
-		&:focus {
-			-webkit-box-shadow: none;
-			box-shadow: none;
-			border-bottom: 1px solid @primary;			
+.input-group-addon {
+	background: none;
+	border: 0;
+	border-bottom: 1px solid @form_input_border_color;
+	border-radius: 0px;
+	-webkit-transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+	-o-transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+	transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+}
+
+.input-group{
+
+	.btn {
+		-webkit-transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+		-o-transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+		transition: border-bottom cubic-bezier(.25,.8,.25,1) .25s;
+	}
+
+	&.active {
+		.input-group-addon {
+			border-bottom-color: @form_accent_color;
 		}
-	}
-
-	/* Upload file */
-	.form-file {
-		position: relative;
-		display: inline-block;
-		vertical-align: bottom;
-		overflow: hidden;
-
-		input[type=file] {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			z-index: 1;
-			width: 100%;
-			opacity: 0;
-			cursor: pointer;
-			left: 0;
-			font-size: 500px;
-		}
-	}
-
-	/* ADDONS */
-
-	.input-group-addon {
-		background: none;
-		border: 0;
-		border-bottom: 1px solid @form_border_color;
-		border-radius: 0px;
-		-webkit-transition: border-bottom ease-in-out .2s;
-		-o-transition: border-bottom ease-in-out .2s;
-		transition: border-bottom ease-in-out .2s;
-	}
-
-	.input-group{
-
 		.btn {
-			-webkit-transition: border-bottom ease-in-out .2s;
-			-o-transition: border-bottom ease-in-out .2s;
-			transition: border-bottom ease-in-out .2s;
-		}
-
-		&.active {
-			.input-group-addon {
-				border-bottom-color: @primary;
-			}
-			.btn {
-				border-color: @primary;
-			}
+			border-color: @form_accent_color;
 		}
 	}
 
@@ -125,15 +178,18 @@ select[multiple], select[size], textarea {
 	}	
 }
 
-.form-horizontal {
-	.form-group {
-		margin-left: 0px;
-		margin-right: 0px;
+.help-block {
+	color: @form_label_color;
+}
 
-		label.control-label {
-			position: initial;
-			padding-top: 0px;
-			text-align: right;
-		}
-	}
+.has-success {
+	.form-control-validation(@success);
+}
+
+.has-warning {
+	.form-control-validation(@warning);
+}
+
+.has-error {
+	.form-control-validation(@danger);
 }
