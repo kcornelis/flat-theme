@@ -57,6 +57,11 @@ body {
 		font-style: italic;
 		font-weight: lighter;
 		line-height: @header_height;
+
+		a, a:focus, a:visited, a:hover {
+			color: @header_color;
+			text-decoration: none;
+		}
 	}
 
 	.content {
@@ -127,6 +132,7 @@ body {
 			overflow-x: hidden;
 			height: 100%;
 			margin-right: -17px;
+			padding-right: 17px;
 			
 			color: @sidebar_color;
 		}
@@ -140,7 +146,7 @@ body {
 			display: block;
 		}
 
-		ul > li.selected > a {
+		ul > li.active > a {
 			color: @sidebar_active_color;
 		}
 
