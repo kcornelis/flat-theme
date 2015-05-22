@@ -1,4 +1,4 @@
-(function () {
+$(function () {
   $(document).on('focus', '.form-group .form-control', function () {
     $(this).closest('.form-group, .input-group').addClass('active');
   });
@@ -12,7 +12,5 @@
       $(this).closest('.form-group, .input-group').removeClass('filled');
     }
   });
-  $(document).ready(function () {
-    $('.form-control[value]').closest('.form-group, .input-group').addClass('filled');
-  });
-}());
+  $('.form-control[value]').closest('.form-group, .input-group').addClass('filled');
+});
