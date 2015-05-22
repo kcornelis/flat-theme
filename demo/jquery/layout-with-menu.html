@@ -1,23 +1,19 @@
-{% extends 'layout-blank.html' %} 
-
-{% block body %}
-
 <div id="container">
 
 	<header id="header">
-		<div class="logo hidden-menu-collapsed">
-			<span>Flat Theme</span>
+		<div class="logo large">
+			<span>FLAT THEME</span>
 		</div>
-		<div class="logo visible-menu-collapsed">
+		<div class="logo small">
 			<span>FT</span>
 		</div>					
 
 		<div class="content">
 			<ul class="actions">
-				<li><a href="#" id="toggle"><i class="fa fa-bars"></i></a></li>
-				<li><a href="#"><i class="icon-lock"></i></a></li>
-				<li><a href="#"><i class="icon-user"></i></a></li>
-				<li><a href="#"><i class="icon-settings"></i></a></li>
+				<li><a id="toggle"><i class="fa fa-bars"></i></a></li>
+				<li><a><i class="icon-lock"></i></a></li>
+				<li><a><i class="icon-user"></i></a></li>
+				<li><a><i class="icon-settings"></i></a></li>
 			</ul>
 		</div>
 	</header>
@@ -25,39 +21,39 @@
 	<aside id="sidebar">
 		<div class="sidebar-menu">
 			<ul>
-				<li class="header"><a>Main</a></li>
-				<li><a href="/"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
-				<li class="header"><a>Components</a></li>
+				<li class="header">Main</li>
+				<li><a href="#dashboard"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
+				<li class="header">Components</li>
 				<li class="has-sub-menu">
 					<a><i class="icon-wrench"></i><span>Elements</span></a>
 					<ul>
-						<li><a href="/demo/elements-buttons">Buttons</a></li>
-						<li><a href="/demo/elements-dialogs">Dialogs</a></li>
-						<li><a href="/demo/elements-panels">Panels</a></li>
-						<li><a href="/demo/elements-tables">Tables</a></li>
-						<li><a href="/demo/elements-tools">Tools</a></li>
-						<li><a href="/demo/elements-typography">Typography</a></li>
+						<li><a href="#elements-buttons">Buttons</a></li>
+						<li><a href="#elements-dialogs">Dialogs</a></li>
+						<li><a href="#elements-panels">Panels</a></li>
+						<li><a href="#elements-tables">Tables</a></li>
+						<li><a href="#elements-tools">Tools</a></li>
+						<li><a href="#elements-typography">Typography</a></li>
 					</ul>
 				</li>
 				<li class="has-sub-menu">
 					<a><i class="icon-notebook"></i><span>Forms</span></a>
 					<ul class="nav nav-list tree">
-						<li><a href="/demo/forms-standard">Standard</a></li>
-						<li><a href="/demo/forms-wizard">Wizard</a></li>
+						<li><a href="#forms-standard">Standard</a></li>
+						<li><a href="#forms-wizard">Wizard</a></li>
 					</ul>
 				</li>
 				<li class="has-sub-menu">
 					<a><i class="icon-graph"></i><span>Charts</span></a>
 					<ul class="nav nav-list tree">
-						<li><a href="/demo/charts-flot">Flot</a></li>
+						<li><a href="#charts-flot">Flot</a></li>
 					</ul>
 				</li>
-				<li class="header"><a>More</a></li>
+				<li class="header">More</li>
 				<li class="has-sub-menu">
 					<a><i class="icon-doc"></i><span>Pages</span></a>
 					<ul>
-						<li><a href="/demo/pages-blank">Blank</a></li>
-						<li><a href="/demo/pages-login">Login</a></li>
+						<li><a href="#pages-blank">Blank</a></li>
+						<li><a href="#pages-login">Login</a></li>
 					</ul>
 				</li>
 				<li class="has-sub-menu">
@@ -92,17 +88,13 @@
 
 </div>
 
-{% endblock %}
-
-{% block scripts %}
-
 <script>
 	$(document).ready(function () {
 
 		$('#toggle').click(function() { $('body').toggleClass('sidebar-collapsed'); });
 
-		$('a[href="' + window.location.pathname + '"]').closest('li').addClass('active');
-		$('a[href="' + window.location.pathname + '"]').parents('.has-sub-menu').addClass('active');
+		$('a[href="' + window.location.hash + '"]').closest('li').addClass('active');
+		$('a[href="' + window.location.hash + '"]').parents('.has-sub-menu').addClass('active');
 		$('.sidebar-menu li.active').addClass('open').children('ul').show();
 
 		$('.sidebar-menu li.has-sub-menu > a').on('click', function() {
@@ -127,5 +119,3 @@
 		});
 	});
 </script>
-
-{% endblock %}

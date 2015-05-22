@@ -3,8 +3,8 @@
 A flat theme based on bootstrap i use for my personal projects.
 
 - Grunt
-- NodeJS + Express + Swig
-- LESS as css preprocessor
+- NodeJS + Express
+- LESS
 
 
 ## MIT License

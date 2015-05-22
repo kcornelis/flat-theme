@@ -3,33 +3,24 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 			less: {
-				files: [ 'theme/**/*.less' ],
-				tasks: [ 'build' ],
-				options: {
-					livereload: false
-				}
+				files: [ 'src/**/*.less' ],
+				tasks: [ 'build' ]
 			},
 			js: {
-				files: [ 'scripts/**/*.js' ],
-				tasks: [ 'build' ],
-				options: {
-					livereload: false
-				}
-			},			
-			html: {
-				files: [ '**/*.html', 'dist/**/*.css', 'dist/**/*.js' ],
-				options: {
-					livereload: 35750
-				}
+				files: [ 'src/**/*.js' ],
+				tasks: [ 'build' ]
 			}
 		},
 		less: {
 			main: {
-					options: {
-					paths: ['theme']
+				options: {
+					paths: ['src/theme'],
+					sourceMap: true,
+					sourceMapURL: './flat-theme.css.map',
+					sourceMapRootpath: '../'
 				},
 				files: {
-					'dist/flat-theme.css': 'theme/main.less'
+					'dist/flat-theme.css': 'src/theme/main.less'
 				}
 			}
 		},
@@ -46,9 +37,9 @@ module.exports = function(grunt) {
 			}
 		},
 		ngmin: {
-			main: {
+			jquery: {
 				files: {
-					'dist/flat-theme.js': 'scripts/**/*.js'
+					'dist/flat-theme.jquery.js': 'src/jquery/**/*.js'
 				}
 			}
 		},		
