@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html ng-app="ftApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keyword" content="">
+
+		<title>Flat Theme</title>
+
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css" />
+		<link rel="stylesheet" href="../../bower/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="../../bower/fontawesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../bower/simple-line-icons/css/simple-line-icons.css" />
+
+		<link rel="stylesheet" href="../../dist/flat-theme.css" >
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<script src="../../bower/jquery/dist/jquery.js"></script>
+		<script src="../../bower/bootstrap/dist/js/bootstrap.js"></script>
+
+		<script src="../../bower/angular/angular.min.js"></script>
+		<script src="../../bower/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="script.js"></script>
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<header id="header">
+				<div class="logo large">
+					<span>FLAT THEME</span>
+				</div>
+				<div class="logo small">
+					<span>FT</span>
+				</div>					
+
+				<div class="content">
+					<ul class="actions">
+						<li><a id="toggle"><i class="fa fa-bars"></i></a></li>
+						<li><a><i class="icon-lock"></i></a></li>
+						<li><a><i class="icon-user"></i></a></li>
+						<li><a><i class="icon-settings"></i></a></li>
+					</ul>
+				</div>
+			</header>
+
+			<aside id="sidebar">
+				<div class="sidebar-menu">
+					<ul>
+						<li class="header">Main</li>
+						<li><a ui-sref="dashboard"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
+						<li class="header">Components</li>
+						<li class="has-sub-menu">
+							<a><i class="icon-wrench"></i><span>Elements</span></a>
+							<ul>
+								<li><a ui-sref="elements-buttons">Buttons</a></li>
+								<li><a ui-sref="elements-dialogs">Dialogs</a></li>
+								<li><a ui-sref="elements-panels">Panels</a></li>
+								<li><a ui-sref="elements-tables">Tables</a></li>
+								<li><a ui-sref="elements-tools">Tools</a></li>
+								<li><a ui-sref="elements-typography">Typography</a></li>
+							</ul>
+						</li>
+						<li class="has-sub-menu">
+							<a><i class="icon-notebook"></i><span>Forms</span></a>
+							<ul class="nav nav-list tree">
+								<li><a ui-sref="forms-standard">Standard</a></li>
+								<li><a ui-sref="forms-wizard">Wizard</a></li>
+							</ul>
+						</li>
+						<li class="has-sub-menu">
+							<a><i class="icon-graph"></i><span>Charts</span></a>
+							<ul class="nav nav-list tree">
+								<li><a ui-sref="charts-flot">Flot</a></li>
+							</ul>
+						</li>
+						<li class="header">More</li>
+						<li class="has-sub-menu">
+							<a><i class="icon-doc"></i><span>Pages</span></a>
+							<ul>
+								<li><a ui-sref="pages-blank">Blank</a></li>
+								<li><a ui-sref="pages-login">Login</a></li>
+							</ul>
+						</li>
+						<li class="has-sub-menu">
+							<a><i class="fa fa-folder-open-o"></i><span>Menu</span></a>
+							<ul>
+								<li><a href="#">Menu item</a></li>
+								<li class="has-sub-menu">
+									<a><span>Sub menu</span></a>
+									<ul>
+										<li><a href="#">Sub menu item 1</a></li>
+										<li><a href="#">Sub menu item 2</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<section id="content">
+				<div id="content-wrapper" ui-view />
+			</section>
+
+
+			<footer id="footer">
+				<div>
+					2015 - Kevin Cornelis
+				</div>
+			</footer>
+
+		</div>
+		
+	</body>
+
+</html>
