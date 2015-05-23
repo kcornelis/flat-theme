@@ -36,7 +36,7 @@
 
 			var hash = window.location.hash ? window.location.hash.replace('#', '') : 'dashboard';
 			if(hash) {
-				nunjucks.configure('/demo/jquery', { autoescape: true });
+				nunjucks.configure('./', { autoescape: true });
 				nunjucks.render(hash + '.html', function(error, content) {
 					if(!error) {
 						$('body').prepend(content);
