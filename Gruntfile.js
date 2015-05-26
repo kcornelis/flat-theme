@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+	require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
 		watch: {
 			less: {
@@ -36,10 +38,28 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		ngmin: {
+		concat: {
+			options: {
+				sourceMap: true,
+			},
+			jquery: {
+				src: 'src/jquery/**/*.js',
+				dest: 'dist/flat-theme.jquery.js'
+			},
+			angular: {
+				src: [ 'src/angular/module.js', 'src/angular/directives/**/*.js' ],
+				dest: 'dist/flat-theme.angular.js'
+			}
+		},
+		uglify: {
 			jquery: {
 				files: {
-					'dist/flat-theme.jquery.js': 'src/jquery/**/*.js'
+					'dist/flat-theme.jquery.min.js': 'dist/flat-theme.jquery.js'
+				}
+			},
+			angular: {
+				files: {
+					'dist/flat-theme.angular.min.js': 'dist/flat-theme.angular.js'
 				}
 			}
 		},		
@@ -59,14 +79,7 @@ module.exports = function(grunt) {
 			}
 		},
 	});
-
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-concurrent');
-	grunt.loadNpmTasks('grunt-nodemon');
-	grunt.loadNpmTasks('grunt-ngmin');
-
-	grunt.registerTask('build', [ 'less', 'cssmin', 'ngmin' ]);
+	
+	grunt.registerTask('build', [ 'less', 'cssmin', 'concat', 'uglify' ]);
 	grunt.registerTask('default', [ 'build', 'concurrent' ]);
 };
