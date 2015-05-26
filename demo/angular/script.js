@@ -1,4 +1,4 @@
-var ftApp = angular.module('ftApp', ['ui.router']);
+var ftApp = angular.module('ftApp', ['ui.router', 'ft', 'LocalStorageModule']);
 
 ftApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise('dashboard');
@@ -10,5 +10,9 @@ ftApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	.state('elements-buttons', {
 		url: '/elements-buttons',
 		templateUrl: 'views/elements-buttons.html'
+	})
+	.state('forms-standard', {
+		url: '/forms-standard',
+		templateUrl: 'views/forms-standard.html'
 	});
 });

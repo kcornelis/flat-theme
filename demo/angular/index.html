@@ -28,6 +28,8 @@
 
 		<script src="../../vendor/angular/angular.min.js"></script>
 		<script src="../../vendor/angular-ui-router/angular-ui-router.js"></script>
+		<script src="../../vendor/angular-local-storage/angular-local-storage.js"></script>
+		<script src="../../dist/flat-theme.angular.js"></script>
 		<script src="script.js"></script>
 	</head>
 
@@ -45,7 +47,7 @@
 
 				<div class="content">
 					<ul class="actions">
-						<li><a id="toggle"><i class="fa fa-bars"></i></a></li>
+						<li><a id="toggle" ft-toggle-sidebar><i class="fa fa-bars"></i></a></li>
 						<li><a><i class="icon-lock"></i></a></li>
 						<li><a><i class="icon-user"></i></a></li>
 						<li><a><i class="icon-settings"></i></a></li>
@@ -53,8 +55,8 @@
 				</div>
 			</header>
 
-			<aside id="sidebar">
-				<div class="sidebar-menu">
+			<ft-sidebar>
+				<ft-sidebar-menu>
 					<ul>
 						<li class="header">Main</li>
 						<li><a ui-sref="dashboard"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
@@ -105,8 +107,8 @@
 							</ul>
 						</li>
 					</ul>
-				</div>
-			</aside>
+				</ft-sidebar-menu>
+			</ft-sidebar>
 
 			<section id="content">
 				<div id="content-wrapper" ui-view />
