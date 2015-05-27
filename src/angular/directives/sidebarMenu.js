@@ -5,16 +5,24 @@
 
 	angular.module('ft').directive(directiveName, sidebarMenu);
 
-	sidebarMenu.$inject = [ '$rootScope' ];
+	sidebarMenu.$inject = [ '$rootScope', '$http', '$compile', '$timeout' ];
 
-	function sidebarMenu($rootScope) {
+	function sidebarMenu($rootScope, $http, $compile, $timeout) {
 		return {
 			restrict: 'E',
-			transclude: true,
 			replace: true,
+			transclude: true,
 			template: '<div class="sidebar-menu" ng-transclude></div>',
 			link: function(scope, element, attrs) {
-
+				
+				// if the menu is loaded with json we should disable transclude 
+				// and add a template to render the json menu
+				if(attrs.ftLoad) {
+					element.removeAttr('ng-transclude');
+					element.html('<ul><li ng-repeat="item in menuItems" ft-sidebar-menu-item="item"></li></ul>');
+					$compile(element)(scope);
+				}
+				
 				// listen for state changes, select the new state if the state changes
 				$rootScope.$on('$stateChangeStart', handleStateChange);
 
@@ -24,40 +32,57 @@
 						return;
 
 					openMenuItem($(this).closest('li'));
-				});				
+				});
+			},
+			controller: function($scope, $element, $attrs) {
+				var self = this;
+
+				self.loadJsonMenu = function(url) {
+					$http.get(url).success(function(menuItems) {
+						$scope.menuItems = menuItems;
+					});
+				}
+
+				if($attrs.ftLoad) {
+					self.loadJsonMenu($attrs.ftLoad);
+				}
 			}
 		};
 
 		function handleStateChange(event, toState, toParams, fromState, fromParams) {
 
-			// find the menu item for the new state
-			var activeMenuItem = $('a[ui-sref="' + toState.name + '"]').closest('li');
+			// execute after the menu is rendered
+			$timeout(function () {
 
-			// activate the new menu item (also his parents), deactivate all other menu items
-			activeMenuItem.parents('li').andSelf().each(function(index, menuItem) {
-				var $menuItem = $(menuItem);
+				// find the menu item for the new state
+				var activeMenuItem = $('a[ui-sref="' + toState.name + '"]').closest('li');
 
-				$menuItem.addClass('active');
-				$menuItem.siblings('li').removeClass('active');
-				$menuItem.siblings('li').find('li').removeClass('active');
-			});
+				// activate the new menu item (also his parents), deactivate all other menu items
+				activeMenuItem.parents('li').andSelf().each(function(index, menuItem) {
+					var $menuItem = $(menuItem);
 
-			// open the active menu item (also his parents), close all other menu items
-			activeMenuItem.parents('li.has-sub-menu').andSelf().each(function(index, menuItem) {
-				var $menuItem = $(menuItem);
+					$menuItem.addClass('active');
+					$menuItem.siblings('li').removeClass('active');
+					$menuItem.siblings('li').find('li').removeClass('active');
+				});
 
-				// open the current menu item if the menu items has sub menu items
-				if($menuItem.hasClass('has-sub-menu')){
-					$menuItem.addClass('open');
-					$menuItem.children('ul').slideDown(200);
-				}
+				// open the active menu item (also his parents), close all other menu items
+				activeMenuItem.parents('li.has-sub-menu').andSelf().each(function(index, menuItem) {
+					var $menuItem = $(menuItem);
 
-				// close other menu items
-				$menuItem.siblings('li.has-sub-menu').children('ul').slideUp(200);
-				$menuItem.siblings('li.has-sub-menu').removeClass('open');
-				$menuItem.siblings('li.has-sub-menu').find('li.has-sub-menu').removeClass('open');
-				$menuItem.siblings('li.has-sub-menu').find('ul').slideUp(200);
-			});			
+					// open the current menu item if the menu items has sub menu items
+					if($menuItem.hasClass('has-sub-menu')){
+						$menuItem.addClass('open');
+						$menuItem.children('ul').slideDown(200);
+					}
+
+					// close other menu items
+					$menuItem.siblings('li.has-sub-menu').children('ul').slideUp(200);
+					$menuItem.siblings('li.has-sub-menu').removeClass('open');
+					$menuItem.siblings('li.has-sub-menu').find('li.has-sub-menu').removeClass('open');
+					$menuItem.siblings('li.has-sub-menu').find('ul').slideUp(200);
+				});
+			});	
 		}
 
 		function openMenuItem($menuItem) {

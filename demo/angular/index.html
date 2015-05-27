@@ -10,11 +10,14 @@
 
 		<title>Flat Theme</title>
 
-		<link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css" />
-		<link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.css" />
+		<!-- our boostrap css (normalize included) -->
+		<link rel="stylesheet" href="../../dist/bootstrap.css" />
+
+		<!-- vendor css -->
 		<link rel="stylesheet" href="../../vendor/fontawesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="../../vendor/simple-line-icons/css/simple-line-icons.css" />
 
+		<!-- flat theme -->
 		<link rel="stylesheet" href="../../dist/flat-theme.css" >
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -22,15 +25,6 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
-		<script src="../../vendor/jquery/jquery.js"></script>
-		<script src="../../vendor/bootstrap/js/bootstrap.js"></script>
-
-		<script src="../../vendor/angular/angular.min.js"></script>
-		<script src="../../vendor/angular-ui-router/angular-ui-router.js"></script>
-		<script src="../../vendor/angular-local-storage/angular-local-storage.js"></script>
-		<script src="../../dist/flat-theme.angular.js"></script>
-		<script src="script.js"></script>
 	</head>
 
 	<body>
@@ -56,8 +50,9 @@
 			</header>
 
 			<ft-sidebar>
-				<ft-sidebar-menu>
-					<ul>
+				<ft-sidebar-menu ft-load="./config/menu.json">
+					<!-- Remove the ft-load attribute and uncomment this code to not load the menu from json
+					 <ul>
 						<li class="header">Main</li>
 						<li><a ui-sref="dashboard"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
 						<li class="header">Components</li>
@@ -65,34 +60,9 @@
 							<a><i class="icon-wrench"></i><span>Elements</span></a>
 							<ul>
 								<li><a ui-sref="elements-buttons">Buttons</a></li>
-								<li><a ui-sref="elements-dialogs">Dialogs</a></li>
-								<li><a ui-sref="elements-panels">Panels</a></li>
-								<li><a ui-sref="elements-tables">Tables</a></li>
-								<li><a ui-sref="elements-tools">Tools</a></li>
-								<li><a ui-sref="elements-typography">Typography</a></li>
-							</ul>
-						</li>
-						<li class="has-sub-menu">
-							<a><i class="icon-notebook"></i><span>Forms</span></a>
-							<ul class="nav nav-list tree">
-								<li><a ui-sref="forms-standard">Standard</a></li>
-								<li><a ui-sref="forms-wizard">Wizard</a></li>
-							</ul>
-						</li>
-						<li class="has-sub-menu">
-							<a><i class="icon-graph"></i><span>Charts</span></a>
-							<ul class="nav nav-list tree">
-								<li><a ui-sref="charts-flot">Flot</a></li>
 							</ul>
 						</li>
 						<li class="header">More</li>
-						<li class="has-sub-menu">
-							<a><i class="icon-doc"></i><span>Pages</span></a>
-							<ul>
-								<li><a ui-sref="pages-blank">Blank</a></li>
-								<li><a ui-sref="pages-login">Login</a></li>
-							</ul>
-						</li>
 						<li class="has-sub-menu">
 							<a><i class="fa fa-folder-open-o"></i><span>Menu</span></a>
 							<ul>
@@ -106,7 +76,7 @@
 								</li>
 							</ul>
 						</li>
-					</ul>
+					</ul> -->
 				</ft-sidebar-menu>
 			</ft-sidebar>
 
@@ -114,15 +84,20 @@
 				<div id="content-wrapper" ui-view />
 			</section>
 
-
 			<footer id="footer">
 				<div>
 					2015 - Kevin Cornelis
 				</div>
 			</footer>
-
 		</div>
-		
-	</body>
 
+		<script src="../../vendor/jquery/jquery.js"></script>
+		<script src="../../vendor/bootstrap/js/bootstrap.js"></script>
+
+		<script src="../../vendor/angular/angular.min.js"></script>
+		<script src="../../vendor/angular-ui-router/angular-ui-router.js"></script>
+		<script src="../../vendor/angular-local-storage/angular-local-storage.js"></script>
+		<script src="../../dist/flat-theme.angular.js"></script>
+		<script src="script.js"></script>		
+	</body>
 </html>

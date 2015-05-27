@@ -1,0 +1,25 @@
+[
+	{
+		"text": "Main",
+		"heading": "true"
+	},
+	{
+		"text": "Dashboard",
+		"sref": "dashboard",
+		"icon": "icon-speedometer"
+	},
+	{
+		"text": "Elements",
+		"icon": "icon-wrench",
+		"submenu": [
+			{ "text": "Buttons", "sref": "elements-buttons" }
+		]
+	},
+	{
+		"text": "Forms",
+		"icon": "icon-notebook",
+		"submenu": [
+			{ "text": "Standard", "sref": "forms-standard" }
+		]
+	}
+]
