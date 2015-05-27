@@ -26,18 +26,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		cssmin: {
-			options: {
-				shorthandCompacting: false,
-				roundingPrecision: -1,
-				advanced: false
-			},
-			target: {
-				files: {
-					'dist/flat-theme.min.css': [ 'dist/flat-theme.css' ]
-				}
-			}
-		},
 		concat: {
 			options: {
 				sourceMap: true,
@@ -47,10 +35,28 @@ module.exports = function(grunt) {
 				dest: 'dist/flat-theme.jquery.js'
 			},
 			angular: {
-				src: [ 'src/angular/module.js', 'src/angular/directives/**/*.js' ],
+				src: [ 'src/angular/module.js', 'src/angular/config/**/*.js', 'src/angular/directives/**/*.js' ],
 				dest: 'dist/flat-theme.angular.js'
+			},
+			bootstrap: {
+				src: [ 'vendor/normalize/normalize.css', 'vendor/bootstrap/css/bootstrap.css' ],
+				dest: 'dist/bootstrap.css'
 			}
 		},
+		cssmin: {
+			options: {
+				keepSpecialComments: 0,
+				shorthandCompacting: false,
+				roundingPrecision: -1,
+				advanced: false
+			},
+			target: {
+				files: {
+					'dist/flat-theme.min.css': [ 'dist/flat-theme.css' ],
+					'dist/bootstrap.min.css': [ 'dist/bootstrap.css' ]
+				}
+			}
+		},		
 		uglify: {
 			jquery: {
 				files: {

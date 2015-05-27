@@ -9,11 +9,14 @@
 
 		<title>Flat Theme</title>
 
-		<link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css" />
-		<link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.css" />
+		<!-- our boostrap css (normalize included) -->
+		<link rel="stylesheet" href="../../dist/bootstrap.css" />
+
+		<!-- vendor css -->
 		<link rel="stylesheet" href="../../vendor/fontawesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="../../vendor/simple-line-icons/css/simple-line-icons.css" />
 
+		<!-- flat theme -->
 		<link rel="stylesheet" href="../../dist/flat-theme.css" >
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,14 +24,14 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+	</head>
+
+	<body>
 
 		<script src="../../vendor/jquery/jquery.js"></script>
 		<script src="../../vendor/bootstrap/js/bootstrap.js"></script>
 		<script src="../../dist/flat-theme.jquery.js"></script>
 		<script src="../../vendor/nunjucks/nunjucks.js"></script>
-	</head>
-
-	<body>
 		<script>
 			$(window).on('hashchange',function(){ 
 				window.location.reload(); 
