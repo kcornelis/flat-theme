@@ -3,11 +3,11 @@
 
 	var directiveName = 'input';
 
-	angular.module('ft').directive(directiveName, input);
+	angular.module('ft').directive(directiveName, inputDirective);
 
-	input.$inject = [ ];
+	inputDirective.$inject = [ ];
 
-	function input() {
+	function inputDirective() {
 		return {
 			restrict: 'E',
 			require: [ '^?ftFormGroup' ],		

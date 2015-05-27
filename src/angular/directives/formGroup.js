@@ -3,11 +3,12 @@
 
 	var directiveName = 'ftFormGroup';
 
-	angular.module('ft').directive(directiveName, formGroup);
+	angular.module('ft').directive(directiveName, formGroupDirective);
 
-	formGroup.$inject = [ ];
-
-	function formGroup() {
+	formGroupDirective.$inject = [ ];
+	formGroupController.$inject = [ '$scope', '$element' ];
+	
+	function formGroupDirective() {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -18,17 +19,19 @@
 					element.addClass('floating');
 				}
 			},
-			controller: function($scope, $element) {
-				var self = this;
-
-				self.setIsFilled = function(isFilled) {
-					$element.toggleClass('filled', !!isFilled);
-				}
-
-				self.setActive = function(active) {
-					$element.toggleClass('active', !!active);
-				}
-			}
+			controller: formGroupController
 		};
+	}
+
+	function formGroupController($scope, $element) {
+		var self = this;
+
+		self.setIsFilled = function(isFilled) {
+			$element.toggleClass('filled', !!isFilled);
+		}
+
+		self.setActive = function(active) {
+			$element.toggleClass('active', !!active);
+		}
 	}
 })();

@@ -3,11 +3,12 @@
 
 	var directiveName = 'ftSidebarMenu';
 
-	angular.module('ft').directive(directiveName, sidebarMenu);
+	angular.module('ft').directive(directiveName, sidebarMenuDirective);
 
-	sidebarMenu.$inject = [ '$rootScope', '$http', '$compile', '$timeout' ];
+	sidebarMenuDirective.$inject = [ '$rootScope', '$compile', '$timeout' ];
+	sidebarMenuController.$inject = [ '$scope', '$element', '$attrs', '$http' ];
 
-	function sidebarMenu($rootScope, $http, $compile, $timeout) {
+	function sidebarMenuDirective($rootScope, $compile, $timeout) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -22,7 +23,7 @@
 					element.html('<ul><li ng-repeat="item in menuItems" ft-sidebar-menu-item="item"></li></ul>');
 					$compile(element)(scope);
 				}
-				
+
 				// listen for state changes, select the new state if the state changes
 				$rootScope.$on('$stateChangeStart', handleStateChange);
 
@@ -34,19 +35,7 @@
 					openMenuItem($(this).closest('li'));
 				});
 			},
-			controller: function($scope, $element, $attrs) {
-				var self = this;
-
-				self.loadJsonMenu = function(url) {
-					$http.get(url).success(function(menuItems) {
-						$scope.menuItems = menuItems;
-					});
-				}
-
-				if($attrs.ftLoad) {
-					self.loadJsonMenu($attrs.ftLoad);
-				}
-			}
+			controller: sidebarMenuController
 		};
 
 		function handleStateChange(event, toState, toParams, fromState, fromParams) {
@@ -102,6 +91,20 @@
 				$menuItem.siblings('li.has-sub-menu').find('li').removeClass('open');
 				$menuItem.siblings('li.has-sub-menu').find('ul').slideUp(200);
 			}
+		}
+	}
+
+	function sidebarMenuController($scope, $element, $attrs, $http) {
+		var self = this;
+
+		self.loadJsonMenu = function(url) {
+			$http.get(url).success(function(menuItems) {
+				$scope.menuItems = menuItems;
+			});
+		}
+
+		if($attrs.ftLoad) {
+			self.loadJsonMenu($attrs.ftLoad);
 		}
 	}
 })();

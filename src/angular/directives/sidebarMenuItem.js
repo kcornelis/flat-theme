@@ -3,11 +3,12 @@
 
 	var directiveName = 'ftSidebarMenuItem';
 
-	angular.module('ft').directive(directiveName, sidebarMenuItem);
+	angular.module('ft').directive(directiveName, sidebarMenuItemDirective);
 
-	sidebarMenuItem.$inject = [ '$compile' ];
+	sidebarMenuItemDirective.$inject = [ ];
+	sidebarMenuItemController.$inject = [ '$scope', '$element', '$attrs', '$compile' ];
 
-	function sidebarMenuItem($compile) {
+	function sidebarMenuItemDirective() {
 		return {
 			restrict: 'A',
 			scope: { item: '=ftSidebarMenuItem' },
@@ -20,19 +21,21 @@
 						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
 						'<span>{{ item.text }}</span>' +
 					'</a>',
-			controller: function($scope, $element, $attrs) {
-				var self = this;
-
-				if($scope.item.heading) {
-					$element.addClass('header');
-				}
-
-				if($scope.item.submenu) {
-					$element.addClass('has-sub-menu');
-					$element.append('<ul><li ng-repeat="item in item.submenu" ft-sidebar-menu-item="item"></li></ul>');
-					$compile($element.contents())($scope);
-				}
-			}
+			controller: sidebarMenuItemController
 		};
+	}
+
+	function sidebarMenuItemController($scope, $element, $attrs, $compile) {
+		var self = this;
+
+		if($scope.item.heading) {
+			$element.addClass('header');
+		}
+
+		if($scope.item.submenu) {
+			$element.addClass('has-sub-menu');
+			$element.append('<ul><li ng-repeat="item in item.submenu" ft-sidebar-menu-item="item"></li></ul>');
+			$compile($element.contents())($scope);
+		}
 	}
 })();
