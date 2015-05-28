@@ -1,0 +1,45 @@
+<div id="login" class="width-xl mh-a mt-xl">
+
+	<div class="panel panel-blue panel-flat">
+		<div class="panel-heading text-center">
+			<h3 class="mv-none"><i>Flat Theme</i></h3>
+		</div>
+		<div class="panel-body">
+			<h4 class="text-center mb-lg">SIGN IN TO CONTINUE</h4>
+			<div id="loginError" style="display:none;" class="alert alert-danger text-center mt-xl">Invalid username and/or password</div>
+			<form id="loginForm" role="form" novalidate="" class="mb-lg">
+
+				<ft-form-group ft-floating-label>
+					<label>Email address</label>
+					<input type="email" name="email" class="form-control">
+					<span class="fa fa-envelope form-control-feedback"></span>
+				</ft-form-group>
+
+				<ft-form-group ft-floating-label>
+					<label>Password</label>
+					<input type="password" name="password" class="form-control">
+					<span class="fa fa-lock form-control-feedback"></span>
+				</ft-form-group>
+
+				<button type="submit" class="btn btn-block btn-blue mt-xl">Login</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="pb text-center">
+		© 2015 - Kevin Cornelis
+		<br />
+		Flat Theme
+	</div>	
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('#loginForm').submit(function(e) {
+			$('#loginError').toggle();
+			e.preventDefault();
+		});
+
+		$('#container').replaceWith($('#login'));
+	});
+</script>

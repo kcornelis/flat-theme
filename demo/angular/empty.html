@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="ftApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="keyword" content="">
+
+		<title>Flat Theme</title>
+
+		<!-- our boostrap css (normalize included) -->
+		<link rel="stylesheet" href="../../dist/bootstrap.css" />
+
+		<!-- vendor css -->
+		<link rel="stylesheet" href="../../vendor/fontawesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../vendor/simple-line-icons/css/simple-line-icons.css" />
+
+		<!-- flat theme -->
+		<link rel="stylesheet" href="../../dist/flat-theme.css" >
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div ui-view />
+
+		<script src="../../vendor/jquery/jquery.js"></script>
+		<script src="../../vendor/bootstrap/js/bootstrap.js"></script>
+
+		<script src="../../vendor/angular/angular.min.js"></script>
+		<script src="../../vendor/angular-ui-router/angular-ui-router.js"></script>
+		<script src="../../vendor/angular-local-storage/angular-local-storage.js"></script>
+		<script src="../../dist/flat-theme.angular.js"></script>
+		<script src="script.js"></script>		
+	</body>
+</html>

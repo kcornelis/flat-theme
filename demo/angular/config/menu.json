@@ -44,7 +44,7 @@
 		"icon": "icon-doc",
 		"submenu": [
 			{ "text": "Blank", "sref": "pages-blank" },
-			{ "text": "Login", "sref": "pages-login" }
+			{ "text": "Login", "href": "empty.html#/pages-login" }
 		]
 	},
 	{

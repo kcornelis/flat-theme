@@ -13,11 +13,15 @@
 			restrict: 'A',
 			scope: { item: '=ftSidebarMenuItem' },
 			template: '<span ng-if="item.heading">{{ item.text }}</span>' +
-					'<a ng-if="!item.heading && !item.sref">' +
+					'<a ng-if="!item.heading && !item.sref && !item.href">' +
 						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
 						'<span>{{ item.text }}</span>' +
 					'</a>' +
-					'<a ng-if="!item.heading && item.sref" ui-sref="{{ item.sref }}">' +
+					'<a ng-if="!item.heading && item.sref && !item.href" ui-sref="{{ item.sref }}">' +
+						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
+						'<span>{{ item.text }}</span>' +
+					'</a>' +
+					'<a ng-if="!item.heading && !item.sref && item.href" href="{{ item.href }}">' +
 						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
 						'<span>{{ item.text }}</span>' +
 					'</a>',
