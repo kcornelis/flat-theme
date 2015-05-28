@@ -1,4 +1,4 @@
-(function($, window){
+(function(){
 	'use strict';
 	
 	var $html = $('html'), $win = $(window);
@@ -13,4 +13,4 @@
 
 	$html.addClass($.support.touch ? 'touch' : 'no-touch');
 
-}(jQuery, window));
+})();
