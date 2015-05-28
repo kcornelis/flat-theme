@@ -12,14 +12,53 @@
 		"text": "Elements",
 		"icon": "icon-wrench",
 		"submenu": [
-			{ "text": "Buttons", "sref": "elements-buttons" }
+			{ "text": "Buttons", "sref": "elements-buttons" },
+			{ "text": "Dialogs", "sref": "elements-dialogs" },
+			{ "text": "Panels", "sref": "elements-panels" },
+			{ "text": "Tables", "sref": "elements-tables" },
+			{ "text": "Tools", "sref": "elements-tools" },
+			{ "text": "Typography", "sref": "elements-typography" }
 		]
 	},
 	{
 		"text": "Forms",
 		"icon": "icon-notebook",
 		"submenu": [
-			{ "text": "Standard", "sref": "forms-standard" }
+			{ "text": "Standard", "sref": "forms-standard" },
+			{ "text": "Wizard", "sref": "forms-wizard" }
+		]
+	},
+	{
+		"text": "Charts",
+		"icon": "icon-graph",
+		"submenu": [
+			{ "text": "Flot", "sref": "charts-flot" }
+		]
+	},
+	{
+		"text": "More",
+		"heading": "true"
+	},	
+	{
+		"text": "Pages",
+		"icon": "icon-doc",
+		"submenu": [
+			{ "text": "Blank", "sref": "pages-blank" },
+			{ "text": "Login", "sref": "pages-login" }
+		]
+	},
+	{
+		"text": "Menu",
+		"icon": "fa fa-folder-open-o",
+		"submenu": [
+			{ "text": "Menu item", "sref": "#" },
+			{ 
+				"text": "Sub menu",
+				"submenu": [
+					{ "text": "Sub menu item 1", "sref": "#" },
+					{ "text": "Sub menu item 2", "sref": "#" }
+				]
+			}
 		]
 	}
 ]

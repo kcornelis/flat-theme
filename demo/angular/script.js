@@ -1,18 +1,39 @@
-var ftApp = angular.module('ftApp', ['ui.router', 'ft', 'LocalStorageModule']);
+(function() {
+	'use strict';
 
-ftApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-	$urlRouterProvider.otherwise('dashboard');
+	var ftApp = angular.module('ftApp', ['ui.router', 'ft', 'LocalStorageModule']);
+	ftApp.config(configureRouting);
 
-	$stateProvider.state('dashboard', {
-		url: '/dashboard',
-		templateUrl: 'views/dashboard.html'
-	})
-	.state('elements-buttons', {
-		url: '/elements-buttons',
-		templateUrl: 'views/elements-buttons.html'
-	})
-	.state('forms-standard', {
-		url: '/forms-standard',
-		templateUrl: 'views/forms-standard.html'
-	});
-});
+	configureRouting.$inject = [ '$stateProvider', '$urlRouterProvider', '$locationProvider' ];
+
+	function configureRouting($stateProvider, $urlRouterProvider, $locationProvider) {
+		$urlRouterProvider.otherwise('dashboard');
+
+		var states = [ 'dashboard',
+
+			'elements-buttons',
+			'elements-dialogs',
+			'elements-panels',
+			'elements-tables',
+			'elements-tools',
+			'elements-typography',
+
+			'forms-standard',
+			'forms-wizard',
+
+			'charts-flot',
+
+			'pages-blank',
+			'pages-login'
+		];
+
+		for(var i = 0; i < states.length; i++) {
+			var state = states[i];
+
+			$stateProvider.state(state, {
+				url: '/' + state,
+				templateUrl: 'views/' + state + '.html'
+			});
+		}
+	}
+})();
