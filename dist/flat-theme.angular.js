@@ -3,13 +3,16 @@
 	
 	angular.module('ft', ['LocalStorageModule']);
 })();
-angular.module('ft').constant('mediaquery', {
-	'desktopLG': 1200,
-	'desktop': 992,
-	'tablet': 768,
-	'mobile': 480
-});
-
+(function() {
+	'use strict';
+	
+	angular.module('ft').constant('mediaquery', {
+		'desktopLG': 1200,
+		'desktop': 992,
+		'tablet': 768,
+		'mobile': 480
+	});
+})();
 (function() {
 	'use strict';
 
@@ -164,10 +167,10 @@ angular.module('ft').constant('mediaquery', {
 
 	angular.module('ft').directive(directiveName, sidebarMenuDirective);
 
-	sidebarMenuDirective.$inject = [ '$rootScope', '$compile', '$timeout' ];
-	sidebarMenuController.$inject = [ '$scope', '$element', '$attrs', '$http' ];
+	sidebarMenuDirective.$inject = [ '$compile' ];
+	sidebarMenuController.$inject = [ '$rootScope', '$scope', '$element', '$attrs', '$http', '$state', '$timeout' ];
 
-	function sidebarMenuDirective($rootScope, $compile, $timeout) {
+	function sidebarMenuDirective($compile) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -182,28 +185,48 @@ angular.module('ft').constant('mediaquery', {
 					element.html('<ul><li ng-repeat="item in menuItems" ft-sidebar-menu-item="item"></li></ul>');
 					$compile(element)(scope);
 				}
-
-				// listen for state changes, select the new state if the state changes
-				$rootScope.$on('$stateChangeStart', handleStateChange);
-
-				// listen for link clicks, only open the sub menu when the sidebar is not collapsed
-				$(document).on('click', '.sidebar-menu li.has-sub-menu > a', function() {
-					if(element.hasClass('collapsed'))
-						return;
-
-					openMenuItem($(this).closest('li'));
-				});
 			},
 			controller: sidebarMenuController
 		};
+	}
 
-		function handleStateChange(event, toState, toParams, fromState, fromParams) {
+	function sidebarMenuController($rootScope, $scope, $element, $attrs, $http, $state, $timeout) {
+		var self = this;
 
+		$scope.state = $state;
+
+		// listen for state changes, select the new state if the state changes
+		$scope.$watch('state.current.name', function(newValue, oldValue) {
+			self.selectState(newValue);
+	    });
+
+		// load the menu from a json file if the element contains an ft-load attribute
+	    self.loadJsonMenu = function(url) {
+			$http.get(url).success(function(menuItems) {
+				$scope.menuItems = menuItems;
+				self.selectState($scope.state.current.name);
+			});
+		}
+
+		if($attrs.ftLoad) {
+			self.loadJsonMenu($attrs.ftLoad);
+		}
+
+		// listen for link clicks, only open the sub menu when the sidebar is not collapsed
+		$(document).on('click', '.sidebar-menu li.has-sub-menu > a', function() {
+			if($element.hasClass('collapsed'))
+				return;
+
+			self.openMenuItem($(this).closest('li'));
+		});
+
+		self.selectState = function(state) {
+			
 			// execute after the menu is rendered
 			$timeout(function () {
 
 				// find the menu item for the new state
-				var activeMenuItem = $('a[ui-sref="' + toState.name + '"]').closest('li');
+				var activeMenuItem = $('a[ui-sref="' + state + '"]').closest('li');
 
 				// activate the new menu item (also his parents), deactivate all other menu items
 				activeMenuItem.parents('li').andSelf().each(function(index, menuItem) {
@@ -230,10 +253,10 @@ angular.module('ft').constant('mediaquery', {
 					$menuItem.siblings('li.has-sub-menu').find('li.has-sub-menu').removeClass('open');
 					$menuItem.siblings('li.has-sub-menu').find('ul').slideUp(200);
 				});
-			});	
+			});
 		}
 
-		function openMenuItem($menuItem) {
+		self.openMenuItem = function($menuItem) {
 			if(!$menuItem.hasClass('has-sub-menu'))
 				return;
 
@@ -252,20 +275,6 @@ angular.module('ft').constant('mediaquery', {
 			}
 		}
 	}
-
-	function sidebarMenuController($scope, $element, $attrs, $http) {
-		var self = this;
-
-		self.loadJsonMenu = function(url) {
-			$http.get(url).success(function(menuItems) {
-				$scope.menuItems = menuItems;
-			});
-		}
-
-		if($attrs.ftLoad) {
-			self.loadJsonMenu($attrs.ftLoad);
-		}
-	}
 })();
 (function() {
 	'use strict';
@@ -282,11 +291,15 @@ angular.module('ft').constant('mediaquery', {
 			restrict: 'A',
 			scope: { item: '=ftSidebarMenuItem' },
 			template: '<span ng-if="item.heading">{{ item.text }}</span>' +
-					'<a ng-if="!item.heading && !item.sref">' +
+					'<a ng-if="!item.heading && !item.sref && !item.href">' +
 						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
 						'<span>{{ item.text }}</span>' +
 					'</a>' +
-					'<a ng-if="!item.heading && item.sref" ui-sref="{{ item.sref }}">' +
+					'<a ng-if="!item.heading && item.sref && !item.href" ui-sref="{{ item.sref }}">' +
+						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
+						'<span>{{ item.text }}</span>' +
+					'</a>' +
+					'<a ng-if="!item.heading && !item.sref && item.href" href="{{ item.href }}">' +
 						'<i ng-if="item.icon" class="{{ item.icon }}"></i>' +
 						'<span>{{ item.text }}</span>' +
 					'</a>',
