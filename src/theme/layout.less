@@ -406,21 +406,28 @@ body {
 
 	.content-header {
 		display: block;
-		margin: -20px 0px 10px 0px;
-		padding: 0;
-		height: 60px;
+		margin: -20px -20px 40px -20px;
+		padding: 0 20px;
 
 		/* border-bottom: 1px solid @content_border_color; */
 
 		h1, h2, h3, h4, h5, h6 {
-			line-height: 60px;
-			margin: 0;
+			margin-bottom: 10px;
+			color: @primary;
+			font-weight: normal;
+
+			i {
+				font-size: 80%;
+				margin-right: 10px;
+				color: @grey;
+			}
+		}
+
+		small {
+			font-size: 12px;
 		}
 
 		.toolbar {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
 			float:	right;
 
 			.btn {

@@ -81,6 +81,12 @@
 .btn-default.btn-accentuate {
 	.button-variant(@btn_default_color; @btn_default_background; @btn_default_background);
 }
+.btn-link {
+	.button-variant(@link_color; @btn_default_background; transparent);
+}
+.btn-link.btn-accentuate {
+	.button-variant(@link_color; @btn_default_background; @btn_default_background);
+}
 
 .create-btn-variants();
 
@@ -156,6 +162,39 @@
 .btn {
 	&.btn-rounded {
 		border-radius: 3px;
+	}
+}
+
+/* ROUND  */
+
+.btn {
+	&.btn-round {
+		border-radius: 50%;
+		width: 34px;
+		height: 34px;
+		padding: 0;
+		i { font-size: 16px; }
+
+		&.btn-lg {
+			width: 46px;
+			height: 46px;
+
+			i { font-size: 20px; }
+		}
+
+		&.btn-sm {
+			width: 30px;
+			height: 30px;
+
+			i { font-size: 14px; }
+		}
+
+		&.btn-xs {
+			width: 22px;
+			height: 22px;
+
+			i { font-size: 11px; }
+		}
 	}
 }
 
