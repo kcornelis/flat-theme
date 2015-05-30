@@ -75,7 +75,7 @@ h6 {
   font-size: 12px;
 }
 p {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 .text-red {
   color: #f05050 !important;
@@ -732,6 +732,12 @@ ft-accentuate {
   border-radius: 0px;
   border-color: #f05050;
 }
+.popover {
+  border-radius: 0px;
+}
+.tooltip .tooltip-inner {
+  border-radius: 0px;
+}
 /* MIXINS */
 /* DEFAULT STYLES + VARIANTS */
 .btn {
@@ -885,6 +891,140 @@ fieldset[disabled] .btn-default.btn-accentuate.active {
 .btn-default.btn-accentuate .badge {
   color: #ffffff;
   background-color: #666666;
+}
+.btn-link {
+  color: #3498db;
+  background-color: #ffffff;
+  border-color: transparent;
+}
+.btn-link:focus,
+.btn-link.focus {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-link:hover {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-link:active,
+.btn-link.active,
+.open > .dropdown-toggle.btn-link {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-link:active:hover,
+.btn-link.active:hover,
+.open > .dropdown-toggle.btn-link:hover,
+.btn-link:active:focus,
+.btn-link.active:focus,
+.open > .dropdown-toggle.btn-link:focus,
+.btn-link:active.focus,
+.btn-link.active.focus,
+.open > .dropdown-toggle.btn-link.focus {
+  color: #3498db;
+  background-color: #d4d4d4;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-link:active,
+.btn-link.active,
+.open > .dropdown-toggle.btn-link {
+  background-image: none;
+}
+.btn-link.disabled,
+.btn-link[disabled],
+fieldset[disabled] .btn-link,
+.btn-link.disabled:hover,
+.btn-link[disabled]:hover,
+fieldset[disabled] .btn-link:hover,
+.btn-link.disabled:focus,
+.btn-link[disabled]:focus,
+fieldset[disabled] .btn-link:focus,
+.btn-link.disabled.focus,
+.btn-link[disabled].focus,
+fieldset[disabled] .btn-link.focus,
+.btn-link.disabled:active,
+.btn-link[disabled]:active,
+fieldset[disabled] .btn-link:active,
+.btn-link.disabled.active,
+.btn-link[disabled].active,
+fieldset[disabled] .btn-link.active {
+  background-color: #ffffff;
+  border-color: transparent;
+  opacity: 0.5;
+}
+.btn-link .badge {
+  color: #ffffff;
+  background-color: #3498db;
+}
+.btn-link.btn-accentuate {
+  color: #3498db;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-link.btn-accentuate:focus,
+.btn-link.btn-accentuate.focus {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: #bfbfbf;
+}
+.btn-link.btn-accentuate:hover {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: #e0e0e0;
+}
+.btn-link.btn-accentuate:active,
+.btn-link.btn-accentuate.active,
+.open > .dropdown-toggle.btn-link.btn-accentuate {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: #e0e0e0;
+}
+.btn-link.btn-accentuate:active:hover,
+.btn-link.btn-accentuate.active:hover,
+.open > .dropdown-toggle.btn-link.btn-accentuate:hover,
+.btn-link.btn-accentuate:active:focus,
+.btn-link.btn-accentuate.active:focus,
+.open > .dropdown-toggle.btn-link.btn-accentuate:focus,
+.btn-link.btn-accentuate:active.focus,
+.btn-link.btn-accentuate.active.focus,
+.open > .dropdown-toggle.btn-link.btn-accentuate.focus {
+  color: #3498db;
+  background-color: #d4d4d4;
+  border-color: #bfbfbf;
+}
+.btn-link.btn-accentuate:active,
+.btn-link.btn-accentuate.active,
+.open > .dropdown-toggle.btn-link.btn-accentuate {
+  background-image: none;
+}
+.btn-link.btn-accentuate.disabled,
+.btn-link.btn-accentuate[disabled],
+fieldset[disabled] .btn-link.btn-accentuate,
+.btn-link.btn-accentuate.disabled:hover,
+.btn-link.btn-accentuate[disabled]:hover,
+fieldset[disabled] .btn-link.btn-accentuate:hover,
+.btn-link.btn-accentuate.disabled:focus,
+.btn-link.btn-accentuate[disabled]:focus,
+fieldset[disabled] .btn-link.btn-accentuate:focus,
+.btn-link.btn-accentuate.disabled.focus,
+.btn-link.btn-accentuate[disabled].focus,
+fieldset[disabled] .btn-link.btn-accentuate.focus,
+.btn-link.btn-accentuate.disabled:active,
+.btn-link.btn-accentuate[disabled]:active,
+fieldset[disabled] .btn-link.btn-accentuate:active,
+.btn-link.btn-accentuate.disabled.active,
+.btn-link.btn-accentuate[disabled].active,
+fieldset[disabled] .btn-link.btn-accentuate.active {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  opacity: 0.5;
+}
+.btn-link.btn-accentuate .badge {
+  color: #ffffff;
+  background-color: #3498db;
 }
 .btn-red {
   color: #ffffff;
@@ -2476,6 +2616,37 @@ fieldset[disabled] .btn-danger.active {
 .btn.btn-rounded {
   border-radius: 3px;
 }
+/* ROUND  */
+.btn.btn-round {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+}
+.btn.btn-round i {
+  font-size: 16px;
+}
+.btn.btn-round.btn-lg {
+  width: 46px;
+  height: 46px;
+}
+.btn.btn-round.btn-lg i {
+  font-size: 20px;
+}
+.btn.btn-round.btn-sm {
+  width: 30px;
+  height: 30px;
+}
+.btn.btn-round.btn-sm i {
+  font-size: 14px;
+}
+.btn.btn-round.btn-xs {
+  width: 22px;
+  height: 22px;
+}
+.btn.btn-round.btn-xs i {
+  font-size: 11px;
+}
 /* GROUPS */
 .btn-group {
   margin-bottom: 5px;
@@ -2588,7 +2759,7 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
   text-transform: uppercase;
   font-weight: bold;
   color: #666666;
-  padding: 15px 20px;
+  padding: 25px 20px 20px 20px;
 }
 .panel .panel-body {
   padding: 20px;
@@ -2597,7 +2768,7 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
   border: none;
   border-radius: 0px !important;
   background: transparent;
-  padding: 15px 20px;
+  padding: 20px;
 }
 .panel .list-group {
   box-shadow: none;
@@ -4826,7 +4997,7 @@ textarea.form-control {
   vertical-align: bottom;
 }
 .modal-backdrop {
-  background-color: #555555;
+  background-color: #354b60;
 }
 .modal {
   z-index: 999999;
@@ -5165,9 +5336,8 @@ body {
 }
 #content .content-header {
   display: block;
-  margin: -20px 0px 10px 0px;
-  padding: 0;
-  height: 60px;
+  margin: -20px -20px 40px -20px;
+  padding: 0 20px;
   /* border-bottom: 1px solid @content_border_color; */
 }
 #content .content-header h1,
@@ -5176,13 +5346,24 @@ body {
 #content .content-header h4,
 #content .content-header h5,
 #content .content-header h6 {
-  line-height: 60px;
-  margin: 0;
+  margin-bottom: 10px;
+  color: #23b7e5;
+  font-weight: normal;
+}
+#content .content-header h1 i,
+#content .content-header h2 i,
+#content .content-header h3 i,
+#content .content-header h4 i,
+#content .content-header h5 i,
+#content .content-header h6 i {
+  font-size: 80%;
+  margin-right: 10px;
+  color: #9e9e9e;
+}
+#content .content-header small {
+  font-size: 12px;
 }
 #content .content-header .toolbar {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   float: right;
 }
 #content .content-header .toolbar .btn {
