@@ -1,0 +1,196 @@
+{% extends 'layout-with-menu.html' %} 
+{% block content %}
+
+<div class="content-header">
+	<h1><i class="icon-wrench"></i>Notifications</h1>
+	<small>All kinds of notifications for the user.</small>
+</div>
+
+<style>
+.static-modal .modal {
+	position: relative;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+	z-index: 1;
+	display: block;
+}
+.static-modal .modal .modal-dialog {
+	left: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+}
+</style>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default static-modal">
+			<div class="panel-heading">Modal</div>
+			<div class="panel-body">
+				<p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.</p>
+				<div class="modal">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">Modal title</h4>
+							</div>
+							<div class="modal-body">
+								<p>One fine body&hellip;</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h4>Launch demo modals:</h4>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smallModal">
+					Small
+				</button>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".model-standaard">
+					Standaard
+				</button>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#largeModal">
+					Large
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Alerts</div>
+			<div class="panel-body">
+				<p>Wrap any text and an optional dismiss button in <code>.alert</code> and one of the four contextual classes (e.g., <code>.alert-success</code>) for basic alert messages.</p>
+
+				<div class="alert alert-success" role="alert">
+					<strong>Good job!</strong> You created a new account.
+				</div>
+
+				<div class="alert alert-info" role="alert">
+					<strong>Hello there!</strong> Today is 30% off.
+				</div>
+
+				<p>When using a <code>.close</code> button, it must be the first child of the <code>.alert-dismissible</code> and no text content may come before it in the markup.</p>
+
+				<div class="alert alert-warning alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+				</div>
+
+				<div class="alert alert-danger alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 id="oh-snap!-you-got-an-error!">Oh snap! You got an error!<a class="anchorjs-link" href="#oh-snap!-you-got-an-error!"><span class="anchorjs-icon"></span></a></h4>
+					<p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Popovers</div>
+			<div class="panel-body">
+				<p>Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
+				<button type="button" class="btn mr-sm btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+
+				<button type="button" class="btn mr-sm btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+
+				<button type="button" class="btn mr-sm btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+				sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
+
+				<button type="button" class="btn mr-sm btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>				
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">Tooltips</div>
+			<div class="panel-body">
+				<p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
+
+				<button type="button" class="btn mr-sm btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Left</button>
+
+				<button type="button" class="btn mr-sm btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Top</button>
+
+				<button type="button" class="btn mr-sm btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Bottom</button>
+
+				<button type="button" class="btn mr-sm btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Right</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal examples -->
+<div class="modal fade model-standaard" id="standaardModal" tabindex="-1" role="dialog" aria-labelledby="standaardModalTitle" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="standaardModalTitle">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="largeModalTitle">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalTitle" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="smallModalTitle">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- POPOVER - TOOLTIP -->
+<script>
+
+$(function () {
+  $('[data-toggle="popover"]').popover();
+  $('[data-toggle="tooltip"]').tooltip({ container: 'body' });
+});
+
+</script>
+
+{% endblock %}

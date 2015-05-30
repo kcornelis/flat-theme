@@ -12,7 +12,7 @@
 		var states = [ 'dashboard',
 
 			'elements-buttons',
-			'elements-dialogs',
+			'elements-notifications',
 			'elements-panels',
 			'elements-tables',
 			'elements-tools',

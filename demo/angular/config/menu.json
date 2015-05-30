@@ -13,7 +13,7 @@
 		"icon": "icon-wrench",
 		"submenu": [
 			{ "text": "Buttons", "sref": "elements-buttons" },
-			{ "text": "Dialogs", "sref": "elements-dialogs" },
+			{ "text": "Notifications", "sref": "elements-notifications" },
 			{ "text": "Panels", "sref": "elements-panels" },
 			{ "text": "Tables", "sref": "elements-tables" },
 			{ "text": "Tools", "sref": "elements-tools" },
