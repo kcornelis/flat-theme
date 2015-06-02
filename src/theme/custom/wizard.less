@@ -1,4 +1,20 @@
-.wizard.wizard-horizontal {
+.wizard-variant(@heading-bg-color) {
+	ol > li.active {
+		background: @heading-bg-color;
+	}
+}
+
+.create-wizard-variants(@iterator:1) when (@iterator <= length(@colors)) {
+	@color: extract(@colors, @iterator);
+
+	.wizard.wizard-@{color} {
+		.wizard-variant(@@color);
+	}	
+	
+	.create-wizard-variants(@iterator + 1);
+}
+
+.wizard {
 
 	ol {
 		margin: 0;
@@ -36,6 +52,12 @@
 			display: block;
 		}
 	}
+
+	.wizard-step-footer {
+		margin-top: 30px;
+	}
 }
+
+.create-wizard-variants();
 
 
