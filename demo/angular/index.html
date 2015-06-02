@@ -50,34 +50,7 @@
 			</header>
 
 			<ft-sidebar>
-				<ft-sidebar-menu ft-load="./config/menu.json">
-					<!-- Remove the ft-load attribute and uncomment this code to not load the menu from json
-					 <ul>
-						<li class="header">Main</li>
-						<li><a ui-sref="dashboard"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
-						<li class="header">Components</li>
-						<li class="has-sub-menu">
-							<a><i class="icon-wrench"></i><span>Elements</span></a>
-							<ul>
-								<li><a ui-sref="elements-buttons">Buttons</a></li>
-							</ul>
-						</li>
-						<li class="header">More</li>
-						<li class="has-sub-menu">
-							<a><i class="fa fa-folder-open-o"></i><span>Menu</span></a>
-							<ul>
-								<li><a href="#">Menu item</a></li>
-								<li class="has-sub-menu">
-									<a><span>Sub menu</span></a>
-									<ul>
-										<li><a href="#">Sub menu item 1</a></li>
-										<li><a href="#">Sub menu item 2</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul> -->
-				</ft-sidebar-menu>
+				<ft-sidebar-menu ft-load="./config/menu.json"></ft-sidebar-menu>
 			</ft-sidebar>
 
 			<section id="content">
@@ -96,6 +69,7 @@
 
 		<script src="../../vendor/angular/angular.min.js"></script>
 		<script src="../../vendor/angular-ui-router/angular-ui-router.js"></script>
+		<script src="../../vendor/angular-animate/angular-animate.js"></script>
 		<script src="../../vendor/angular-local-storage/angular-local-storage.js"></script>
 		<script src="../../dist/flat-theme.angular.js"></script>
 		<script src="script.js"></script>		

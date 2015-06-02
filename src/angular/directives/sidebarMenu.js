@@ -1,3 +1,6 @@
+// TODO: for now the sidebar menu only works with a json configuration, 
+//       implement other ways to initialize the menu
+
 (function() {
 	'use strict';
 
@@ -12,36 +15,105 @@
 		return {
 			restrict: 'E',
 			replace: true,
-			transclude: true,
-			template: '<div class="sidebar-menu" ng-transclude></div>',
-			link: function(scope, element, attrs) {
-				
-				// if the menu is loaded with json we should disable transclude 
-				// and add a template to render the json menu
-				if(attrs.ftLoad) {
-					element.removeAttr('ng-transclude');
-					element.html('<ul><li ng-repeat="item in menuItems" ft-sidebar-menu-item="item"></li></ul>');
-					$compile(element)(scope);
-				}
-			},
+			template: '<div class="sidebar-menu"><ul><ft-sidebar-menu-item ng-repeat="item in menuItems" ft-menu-item="item"></ft-sidebar-menu-item></ul></div>',
 			controller: sidebarMenuController
 		};
 	}
 
 	function sidebarMenuController($rootScope, $scope, $element, $attrs, $http, $state, $timeout) {
 		var self = this;
+		var $body = $('body');
 
 		$scope.state = $state;
 
 		// listen for state changes, select the new state if the state changes
 		$scope.$watch('state.current.name', function(newValue, oldValue) {
 			self.selectState(newValue);
-	    });
+		});
+
+		self.eachMenuItem = function(f) {
+
+			var loop = function(menuItem) {
+				f(menuItem);
+
+				if(menuItem.submenu) {
+					for(var i = 0; i < menuItem.submenu.length; i++)  {
+						loop(menuItem.submenu[i]);
+					}
+				}
+			}
+
+			if($scope.menuItems) {
+				for(var i = 0; i < $scope.menuItems.length; i++) {
+					loop($scope.menuItems[i]);
+				}
+			}
+		}
+
+		self.findMenuItemWithState = function(state) {
+			if(!$scope.menuItems)
+				return;
+			
+			var found = null;
+			var findMenuItem = function(menuItem) {
+
+				if(menuItem.sref === state) {
+					return menuItem;
+				}
+
+				if(menuItem.submenu) {
+					for(var i = 0; i < menuItem.submenu.length; i++)  {
+						var result = findMenuItem(menuItem.submenu[i]);
+						if(result != null) {
+							return result;
+						}
+					}
+				}
+
+				return null;
+			}
+
+			for(var i = 0; i < $scope.menuItems.length; i++) {
+				found = findMenuItem($scope.menuItems[i]);
+				if(found != null) {
+					break;
+				}
+			}
+
+			return found;
+		}
+
+		self.buildMenuTree = function(menuItems) {
+
+			if(!menuItems) {
+				$scope.menuItems = null;
+				return;
+			}
+
+			var initializeMenuItem = function(menuItem) {
+				menuItem.active = false;
+				menuItem.open = false;
+				menuItem.hasSubMenu = menuItem.submenu && $.isArray(menuItem.submenu);
+
+				if(menuItem.hasSubMenu) {
+					for(var i = 0; i < menuItem.submenu.length; i++)  {
+						menuItem.submenu[i].parent = menuItem;
+						initializeMenuItem(menuItem.submenu[i]);
+					}
+				}
+			}
+
+			for(var i = 0; i < menuItems.length; i++) {
+				initializeMenuItem(menuItems[i]);
+			}
+
+			$scope.menuItems = menuItems;
+		}
 
 		// load the menu from a json file if the element contains an ft-load attribute
-	    self.loadJsonMenu = function(url) {
+		self.loadJsonMenu = function(url) {
 			$http.get(url).success(function(menuItems) {
-				$scope.menuItems = menuItems;
+				self.buildMenuTree(menuItems);
 				self.selectState($scope.state.current.name);
 			});
 		}
@@ -50,67 +122,61 @@
 			self.loadJsonMenu($attrs.ftLoad);
 		}
 
-		// listen for link clicks, only open the sub menu when the sidebar is not collapsed
-		$(document).on('click', '.sidebar-menu li.has-sub-menu > a', function() {
-			if($element.hasClass('collapsed'))
-				return;
-
-			self.openMenuItem($(this).closest('li'));
-		});
-
 		self.selectState = function(state) {
 			
 			// execute after the menu is rendered
 			$timeout(function () {
-
-				// find the menu item for the new state
-				var activeMenuItem = $('a[ui-sref="' + state + '"]').closest('li');
-
-				// activate the new menu item (also his parents), deactivate all other menu items
-				activeMenuItem.parents('li').andSelf().each(function(index, menuItem) {
-					var $menuItem = $(menuItem);
-
-					$menuItem.addClass('active');
-					$menuItem.siblings('li').removeClass('active');
-					$menuItem.siblings('li').find('li').removeClass('active');
+				self.eachMenuItem(function(mi) {
+					mi.active = false;
 				});
 
-				// open the active menu item (also his parents), close all other menu items
-				activeMenuItem.parents('li.has-sub-menu').andSelf().each(function(index, menuItem) {
-					var $menuItem = $(menuItem);
+				var activeMenuItem = self.findMenuItemWithState(state);
+				if(activeMenuItem != null) {
+					activeMenuItem.active = true;
 
-					// open the current menu item if the menu items has sub menu items
-					if($menuItem.hasClass('has-sub-menu')){
-						$menuItem.addClass('open');
-						$menuItem.children('ul').slideDown(200);
+					// make sure all menu item parents have the active state
+					var parentMenuItem = activeMenuItem.parent;
+					while(typeof(parentMenuItem) != 'undefined' && parentMenuItem != null) {
+						parentMenuItem.active = true;
+						parentMenuItem = parentMenuItem.parent;
 					}
 
-					// close other menu items
-					$menuItem.siblings('li.has-sub-menu').children('ul').slideUp(200);
-					$menuItem.siblings('li.has-sub-menu').removeClass('open');
-					$menuItem.siblings('li.has-sub-menu').find('li.has-sub-menu').removeClass('open');
-					$menuItem.siblings('li.has-sub-menu').find('ul').slideUp(200);
-				});
+					// make sure the active menu item is visible
+					// openMenuItem calls $scope.$apply at the end!
+					self.openMenuItem(activeMenuItem, true);
+				}
 			});
 		}
 
-		self.openMenuItem = function($menuItem) {
-			if(!$menuItem.hasClass('has-sub-menu'))
+		self.openMenuItem = function(menuItem, openWhenCollapsed) {
+
+			// open menu item should always run when it's from a state change
+			// when entering from a click, the code should only run when the sidebar is not collapsed
+			if(!openWhenCollapsed && $body.hasClass('sidebar-collapsed'))
 				return;
 
-			if ($menuItem.hasClass('open')) {
-				$menuItem.removeClass('open');
-				$menuItem.find('li.has-sub-menu').removeClass('open');
-				$menuItem.find('ul').slideUp(200);
+			var currentState = menuItem.open;
+
+			// close all menu items
+			self.eachMenuItem(function(mi) {
+				mi.open = false;
+			});
+
+			// only set the state to open if the menu item has a sub menu
+			if(menuItem.hasSubMenu)
+			{
+				// invert the state of the clicked menu item
+				menuItem.open = !currentState;
 			}
-			else {
-				$menuItem.addClass('open');
-				$menuItem.children('ul').slideDown(200);
-				$menuItem.siblings('li.has-sub-menu').children('ul').slideUp(200);
-				$menuItem.siblings('li.has-sub-menu').removeClass('open');
-				$menuItem.siblings('li.has-sub-menu').find('li').removeClass('open');
-				$menuItem.siblings('li.has-sub-menu').find('ul').slideUp(200);
+
+			// make sure all the parents from the menu item are open
+			var parentMenuItem = menuItem.parent;
+			while(typeof(parentMenuItem) != 'undefined' && parentMenuItem != null) {
+				parentMenuItem.open = true;
+				parentMenuItem = parentMenuItem.parent;
 			}
+
+			$scope.$apply();
 		}
 	}
 })();

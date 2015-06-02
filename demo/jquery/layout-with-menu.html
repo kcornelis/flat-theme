@@ -93,6 +93,7 @@
 
 		$('#toggle').click(function() { $('body').toggleClass('sidebar-collapsed'); });
 
+		$('.sidebar-menu li ul').hide();
 		$('a[href="' + window.location.hash + '"]').closest('li').addClass('active');
 		$('a[href="' + window.location.hash + '"]').parents('.has-sub-menu').addClass('active');
 		$('.sidebar-menu li.active').addClass('open').children('ul').show();

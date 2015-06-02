@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var ftApp = angular.module('ftApp', ['ui.router', 'ft', 'LocalStorageModule']);
+	var ftApp = angular.module('ftApp', ['ui.router', 'ngAnimate', 'ft', 'LocalStorageModule']);
 	ftApp.config(configureRouting);
 
 	configureRouting.$inject = [ '$stateProvider', '$urlRouterProvider', '$locationProvider' ];
