@@ -82,10 +82,13 @@
 	.button-variant(@btn_default_color; @btn_default_background; @btn_default_background);
 }
 .btn-link {
-	.button-variant(@link_color; @btn_default_background; transparent);
+	.button-variant(@link_color; transparent; transparent);
 }
 .btn-link.btn-accentuate {
 	.button-variant(@link_color; @btn_default_background; @btn_default_background);
+}
+.btn-noborder {
+	.button-variant(@link_color; @btn_default_background; transparent);
 }
 
 .create-btn-variants();
