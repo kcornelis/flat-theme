@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 				sourceMap: true,
 			},
 			jquery: {
-				src: 'src/jquery/**/*.js',
+				src: [ 'src/jquery/tools/*.js', 'src/jquery/*.js' ],
 				dest: 'dist/flat-theme.jquery.js'
 			},
 			angular: {

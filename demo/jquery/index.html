@@ -13,11 +13,12 @@
 		<link rel="stylesheet" href="../../dist/bootstrap.css" />
 
 		<!-- vendor css -->
+		<meta name="ft:vendorcss" content="">
 		<link rel="stylesheet" href="../../vendor/fontawesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="../../vendor/simple-line-icons/css/simple-line-icons.css" />
 
 		<!-- flat theme -->
-		<link rel="stylesheet" href="../../dist/flat-theme.css" >
+		<link rel="stylesheet" href="../../dist/flat-theme.css" />
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -33,6 +34,16 @@
 		<script src="../../dist/flat-theme.jquery.js"></script>
 		<script src="../../vendor/nunjucks/nunjucks.js"></script>
 		<script>
+			$.loadCSS = function(href) {
+				var cssLink = $('<link rel="stylesheet" type="text/css" href="'+href+'">');
+				$('meta[name="ft:vendorcss"]').after(cssLink); 
+			};
+
+			$.loadJS = function(src) {
+				var jsLink = $('<script type="text/javascript" src="'+src+'">');
+				$('body').append(jsLink); 
+			}; 
+
 			$(window).on('hashchange',function(){ 
 				window.location.reload(); 
 			});
