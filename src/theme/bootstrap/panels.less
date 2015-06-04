@@ -21,7 +21,7 @@
 
 	.panel-@{color} {
 		.panel-variant(@text-light; @@color);
-	}	
+	}
 	
 	.create-panel-variants(@iterator + 1);
 }
@@ -35,6 +35,11 @@
 	-webkit-box-shadow: @content_accentuate_shadow;
 	box-shadow: @content_accentuate_shadow;
 
+	/* a panel inside a panel should have a thinner border */
+	.panel {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
+
 	.panel-heading {
 		border: none;
 		border-radius: 0px !important;
@@ -43,7 +48,15 @@
 		text-transform: uppercase;
 		font-weight: bold;
 		color: @color;
-		padding: 25px 20px 20px 20px;
+		padding: 20px;
+
+		&.panel-heading-sm {
+			padding: 10px 20px;
+		}
+
+		&.panel-heading-xs {
+			padding: 5px 20px;
+		}
 	}
 
 	.panel-body {
