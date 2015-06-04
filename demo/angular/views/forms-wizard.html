@@ -5,7 +5,7 @@
 
 <div class="panel">
 	<div class="panel-body">
-		<div class="wizard wizard-deep-purple wizard-horizontal">
+		<div class="wizard wizard-indigo wizard-horizontal">
 			<ol class="row">
 				<li class="col-md-3 active">
 					<h4>Step 1</h4>
@@ -31,7 +31,7 @@
 				Click next to place your orders
 
 				<div class="wizard-step-footer">
-					<button class="btn btn-deep-purple wizard-next pull-right">Next <i class="ml fa fa-chevron-right"></i></button>
+					<button class="btn btn-indigo wizard-next pull-right">Next <i class="ml fa fa-chevron-right"></i></button>
 				</div>
 			</div>
 
@@ -70,43 +70,43 @@
 				</table>
 
 				<div class="wizard-step-footer">
-					<button class="btn btn-deep-purple wizard-previous pull-left"><i class="mr fa fa-chevron-left"></i> Previous</button>
-					<button class="btn btn-deep-purple wizard-next pull-right">Next <i class="ml fa fa-chevron-right"></i></button>
+					<button class="btn btn-indigo wizard-previous pull-left"><i class="mr fa fa-chevron-left"></i> Previous</button>
+					<button class="btn btn-indigo wizard-next pull-right">Next <i class="ml fa fa-chevron-right"></i></button>
 				</div>
 			</div>
 
-			<div class="wizard-step form-deep-purple">
+			<div class="wizard-step form-indigo">
 				
 				<div class="row">
 					<div class="col-md-6">
 						<h2>Personal details</h2>
-						<div class="form-group floating">
+						<ft-form-group ft-floating-label>
 							<label>Email address</label>
 							<input type="email" class="form-control" />
-						</div>
-						<div class="form-group floating">
+						</ft-form-group>
+						<ft-form-group ft-floating-label>
 							<label>Name</label>
 							<input type="text" class="form-control" />
-						</div>
+						</ft-form-group>
 					</div>
 					<div class="col-md-6">
 						<h2>Shipping details</h2>
-						<div class="form-group floating">
+						<ft-form-group ft-floating-label>
 							<label>Address line 1</label>
 							<input type="email" class="form-control" />
-						</div>
+						</ft-form-group>
 						<div class="row">
 							<div class="col-md-4">
-								<div class="form-group floating">
+								<ft-form-group ft-floating-label>
 									<label>Zipcde</label>
 									<input type="text" class="form-control" />
-								</div>
+								</ft-form-group>
 							</div>
 							<div class="col-md-8">
-								<div class="form-group floating">
+								<ft-form-group ft-floating-label>
 									<label>City</label>
 									<input type="text" class="form-control" />
-								</div>	
+								</ft-form-group>	
 							</div>
 						</div>
 					</div>					
@@ -114,15 +114,15 @@
 
 
 				<div class="wizard-step-footer">
-					<button class="btn btn-deep-purple wizard-previous pull-left"><i class="mr fa fa-chevron-left"></i> Previous</button>
-					<button class="btn btn-deep-purple wizard-next pull-right">Next <i class="ml fa fa-chevron-right"></i></button>
+					<button class="btn btn-indigo wizard-previous pull-left"><i class="mr fa fa-chevron-left"></i> Previous</button>
+					<button class="btn btn-indigo wizard-next pull-right">Next <i class="ml fa fa-chevron-right"></i></button>
 				</div>
 			</div>
 
 			<div class="wizard-step">
 
 				<div class="panel panel-green mt-xl">
-					<div class="panel-heading">Order lines</div>
+					<div class="panel-heading panel-heading-sm text-center">Order lines</div>
 					<ul class="list-group">
 						<li class="list-group-item">2 x cards (total $100)</li>
 						<li class="list-group-item">100 x chips (total $50)</li>
@@ -130,35 +130,43 @@
 					</ul>
 				</div>
 
-				<div class="panel panel-green">
-					<div class="panel-heading">Personal details</div>
-					<div class="panel-body">
-						<dl>
-							<dt>Email</dt>
-							<dd>john@doe.com</dd>
-							<dt>Name</dt>
-							<dd>John Doe</dd>
-						</dl>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-green">
+							<div class="panel-heading panel-heading-sm text-center">Personal details</div>
+							<div class="panel-body">
+								<dl class="mb-none">
+									<dt>Email</dt>
+									<dd>john@doe.com</dd>
+									<dt>Name</dt>
+									<dd>John Doe</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="panel panel-green">
+							<div class="panel-heading panel-heading-sm text-center">Shipping details</div>
+							<div class="panel-body">
+								<dl class="mb-none">
+									<dt>Address line</dt>
+									<dd>Broadway 1</dd>
+									<dt>Zipcode</dt>
+									<dd>NY 10019</dd>
+									<dt>City</dt>
+									<dd>New York</dd>
+								</dl>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="panel panel-green">
-					<div class="panel-heading">Shipping details</div>
-					<div class="panel-body">
-						<dl>
-							<dt>Address line</dt>
-							<dd>Broadway 1</dd>
-							<dt>Zipcode</dt>
-							<dd>NY 10019</dd>
-							<dt>City</dt>
-							<dd>New York</dd>							
-						</dl>
-					</div>
-				</div>
+
+
 
 				<div class="wizard-step-footer">
-					<button class="btn btn-deep-purple wizard-previous pull-left"><i class="mr fa fa-chevron-left"></i> Previous</button>
-					<button class="btn btn-deep-purple pull-right">Place the order</button>
+					<button class="btn btn-indigo wizard-previous pull-left"><i class="mr fa fa-chevron-left"></i> Previous</button>
+					<button class="btn btn-indigo pull-right">Place the order</button>
 				</div>
 			</div>
 		</div>
