@@ -6,6 +6,19 @@
 (function() {
 	'use strict';
 	
+	angular.module('ft').run(function() {
+		$(document).on('chosen:showing_dropdown', function (event) {
+			$(event.target).closest('.form-group, .input-group').addClass('active');
+		});
+
+		$(document).on('chosen:hiding_dropdown', '.form-group .form-control', function () {
+			$(this).closest('.form-group, .input-group').removeClass('active');
+		});
+	});
+})();
+(function() {
+	'use strict';
+	
 	angular.module('ft').constant('mediaquery', {
 		'desktopLG': 1200,
 		'desktop': 992,
@@ -53,9 +66,8 @@
 (function() {
 	'use strict';
 
-	var directiveName = 'input';
-
-	angular.module('ft').directive(directiveName, inputDirective);
+	angular.module('ft').directive('input', inputDirective);
+	angular.module('ft').directive('select', inputDirective);
 
 	inputDirective.$inject = [ ];
 
@@ -67,6 +79,9 @@
 				
 				var formGroupController = ctrls[0];
 				if(!formGroupController)
+					return;
+
+				if(!element.hasClass('form-control'))
 					return;
 
 				element.on('change', updateIsFormGroupFilled);

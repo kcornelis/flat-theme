@@ -8,6 +8,7 @@
 /* FOOTER */
 /* BOOTSTRAP BUTTONS */
 /* WIZARD */
+/* BOOTSTRAP DATEPICKER */
 /* MIXINS */
 /* STYLES */
 h1,
@@ -966,25 +967,25 @@ fieldset[disabled] .btn-default.btn-accentuate.active {
 }
 .btn-link {
   color: #3498db;
-  background-color: #ffffff;
+  background-color: transparent;
   border-color: transparent;
 }
 .btn-link:focus,
 .btn-link.focus {
   color: #3498db;
-  background-color: #e6e6e6;
+  background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-link:hover {
   color: #3498db;
-  background-color: #e6e6e6;
+  background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-link:active,
 .btn-link.active,
 .open > .dropdown-toggle.btn-link {
   color: #3498db;
-  background-color: #e6e6e6;
+  background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-link:active:hover,
@@ -997,7 +998,7 @@ fieldset[disabled] .btn-default.btn-accentuate.active {
 .btn-link.active.focus,
 .open > .dropdown-toggle.btn-link.focus {
   color: #3498db;
-  background-color: #d4d4d4;
+  background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-link:active,
@@ -1023,12 +1024,12 @@ fieldset[disabled] .btn-link:active,
 .btn-link.disabled.active,
 .btn-link[disabled].active,
 fieldset[disabled] .btn-link.active {
-  background-color: #ffffff;
+  background-color: transparent;
   border-color: transparent;
   opacity: 0.5;
 }
 .btn-link .badge {
-  color: #ffffff;
+  color: transparent;
   background-color: #3498db;
 }
 .btn-link.btn-accentuate {
@@ -1095,6 +1096,73 @@ fieldset[disabled] .btn-link.btn-accentuate.active {
   opacity: 0.5;
 }
 .btn-link.btn-accentuate .badge {
+  color: #ffffff;
+  background-color: #3498db;
+}
+.btn-noborder {
+  color: #3498db;
+  background-color: #ffffff;
+  border-color: transparent;
+}
+.btn-noborder:focus,
+.btn-noborder.focus {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-noborder:hover {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-noborder:active,
+.btn-noborder.active,
+.open > .dropdown-toggle.btn-noborder {
+  color: #3498db;
+  background-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-noborder:active:hover,
+.btn-noborder.active:hover,
+.open > .dropdown-toggle.btn-noborder:hover,
+.btn-noborder:active:focus,
+.btn-noborder.active:focus,
+.open > .dropdown-toggle.btn-noborder:focus,
+.btn-noborder:active.focus,
+.btn-noborder.active.focus,
+.open > .dropdown-toggle.btn-noborder.focus {
+  color: #3498db;
+  background-color: #d4d4d4;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-noborder:active,
+.btn-noborder.active,
+.open > .dropdown-toggle.btn-noborder {
+  background-image: none;
+}
+.btn-noborder.disabled,
+.btn-noborder[disabled],
+fieldset[disabled] .btn-noborder,
+.btn-noborder.disabled:hover,
+.btn-noborder[disabled]:hover,
+fieldset[disabled] .btn-noborder:hover,
+.btn-noborder.disabled:focus,
+.btn-noborder[disabled]:focus,
+fieldset[disabled] .btn-noborder:focus,
+.btn-noborder.disabled.focus,
+.btn-noborder[disabled].focus,
+fieldset[disabled] .btn-noborder.focus,
+.btn-noborder.disabled:active,
+.btn-noborder[disabled]:active,
+fieldset[disabled] .btn-noborder:active,
+.btn-noborder.disabled.active,
+.btn-noborder[disabled].active,
+fieldset[disabled] .btn-noborder.active {
+  background-color: #ffffff;
+  border-color: transparent;
+  opacity: 0.5;
+}
+.btn-noborder .badge {
   color: #ffffff;
   background-color: #3498db;
 }
@@ -2822,6 +2890,10 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
   border-radius: 0px !important;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  /* a panel inside a panel should have a thinner border */
+}
+.panel .panel {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .panel .panel-heading {
   border: none;
@@ -2831,7 +2903,13 @@ fieldset[disabled] .btn-group.btn-group-accentuate .btn-default.active {
   text-transform: uppercase;
   font-weight: bold;
   color: #666666;
-  padding: 25px 20px 20px 20px;
+  padding: 20px;
+}
+.panel .panel-heading.panel-heading-sm {
+  padding: 10px 20px;
+}
+.panel .panel-heading.panel-heading-xs {
+  padding: 5px 20px;
 }
 .panel .panel-body {
   padding: 20px;
@@ -3902,14 +3980,32 @@ textarea.form-control {
 .input-group .input-group-btn:first-child > .btn,
 .input-group .input-group-btn:first-child > .btn-group,
 .input-group .input-group-btn:first-child > .btn.dropdown-toggle {
-  margin-right: 0px;
+  margin-right: 5px;
 }
 .input-group .input-group-btn:last-child > .btn,
 .input-group .input-group-btn:last-child > .btn-group {
-  margin-left: 0px;
+  margin-left: 5px;
 }
 .input-group .input-group-btn + .form-control {
   padding-left: 5px;
+}
+.input-group.input-group-accentuate {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+.input-group.input-group-accentuate .form-control {
+  margin: 0;
+  border: 0px;
+  border-color: #bfbfbf;
+  padding-left: 7px;
+}
+.input-group.input-group-accentuate .btn {
+  margin: 0;
+  border-width: 0px !important;
+  padding: 7px 12px;
+}
+.input-group.input-group-accentuate .form-control:not(:first-child) {
+  border-left: 1px solid #bfbfbf;
 }
 /* COLORS */
 .help-block {
@@ -4020,9 +4116,9 @@ textarea.form-control {
   border-bottom: 1px solid #23b7e5;
 }
 .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-group.active label {
   color: #23b7e5;
@@ -4048,9 +4144,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.input-group.active .btn {
-  border-bottom: 1px solid #23b7e5;
-}
 .input-group.active .input-group-addon {
   border-bottom: 1px solid #23b7e5;
 }
@@ -4063,9 +4156,9 @@ textarea.form-control {
   border-bottom: 1px solid #f05050;
 }
 .form-red .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-red .form-group.active label {
   color: #f05050;
@@ -4091,9 +4184,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-red .input-group.active .btn {
-  border-bottom: 1px solid #f05050;
-}
 .form-red .input-group.active .input-group-addon {
   border-bottom: 1px solid #f05050;
 }
@@ -4106,9 +4196,9 @@ textarea.form-control {
   border-bottom: 1px solid #e91e63;
 }
 .form-pink .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-pink .form-group.active label {
   color: #e91e63;
@@ -4134,9 +4224,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-pink .input-group.active .btn {
-  border-bottom: 1px solid #e91e63;
-}
 .form-pink .input-group.active .input-group-addon {
   border-bottom: 1px solid #e91e63;
 }
@@ -4149,9 +4236,9 @@ textarea.form-control {
   border-bottom: 1px solid #9c27b0;
 }
 .form-purple .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-purple .form-group.active label {
   color: #9c27b0;
@@ -4177,9 +4264,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-purple .input-group.active .btn {
-  border-bottom: 1px solid #9c27b0;
-}
 .form-purple .input-group.active .input-group-addon {
   border-bottom: 1px solid #9c27b0;
 }
@@ -4192,9 +4276,9 @@ textarea.form-control {
   border-bottom: 1px solid #7266ba;
 }
 .form-deep-purple .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-deep-purple .form-group.active label {
   color: #7266ba;
@@ -4220,9 +4304,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-deep-purple .input-group.active .btn {
-  border-bottom: 1px solid #7266ba;
-}
 .form-deep-purple .input-group.active .input-group-addon {
   border-bottom: 1px solid #7266ba;
 }
@@ -4235,9 +4316,9 @@ textarea.form-control {
   border-bottom: 1px solid #3f51b5;
 }
 .form-indigo .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-indigo .form-group.active label {
   color: #3f51b5;
@@ -4263,9 +4344,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-indigo .input-group.active .btn {
-  border-bottom: 1px solid #3f51b5;
-}
 .form-indigo .input-group.active .input-group-addon {
   border-bottom: 1px solid #3f51b5;
 }
@@ -4278,9 +4356,9 @@ textarea.form-control {
   border-bottom: 1px solid #23b7e5;
 }
 .form-blue .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-blue .form-group.active label {
   color: #23b7e5;
@@ -4306,9 +4384,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-blue .input-group.active .btn {
-  border-bottom: 1px solid #23b7e5;
-}
 .form-blue .input-group.active .input-group-addon {
   border-bottom: 1px solid #23b7e5;
 }
@@ -4321,9 +4396,9 @@ textarea.form-control {
   border-bottom: 1px solid #009688;
 }
 .form-teal .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-teal .form-group.active label {
   color: #009688;
@@ -4349,9 +4424,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-teal .input-group.active .btn {
-  border-bottom: 1px solid #009688;
-}
 .form-teal .input-group.active .input-group-addon {
   border-bottom: 1px solid #009688;
 }
@@ -4364,9 +4436,9 @@ textarea.form-control {
   border-bottom: 1px solid #27c24c;
 }
 .form-green .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-green .form-group.active label {
   color: #27c24c;
@@ -4392,9 +4464,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-green .input-group.active .btn {
-  border-bottom: 1px solid #27c24c;
-}
 .form-green .input-group.active .input-group-addon {
   border-bottom: 1px solid #27c24c;
 }
@@ -4407,9 +4476,9 @@ textarea.form-control {
   border-bottom: 1px solid #8bc34a;
 }
 .form-light-green .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-light-green .form-group.active label {
   color: #8bc34a;
@@ -4435,9 +4504,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-light-green .input-group.active .btn {
-  border-bottom: 1px solid #8bc34a;
-}
 .form-light-green .input-group.active .input-group-addon {
   border-bottom: 1px solid #8bc34a;
 }
@@ -4450,9 +4516,9 @@ textarea.form-control {
   border-bottom: 1px solid #cddc39;
 }
 .form-lime .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-lime .form-group.active label {
   color: #cddc39;
@@ -4478,9 +4544,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-lime .input-group.active .btn {
-  border-bottom: 1px solid #cddc39;
-}
 .form-lime .input-group.active .input-group-addon {
   border-bottom: 1px solid #cddc39;
 }
@@ -4493,9 +4556,9 @@ textarea.form-control {
   border-bottom: 1px solid #fad733;
 }
 .form-yellow .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-yellow .form-group.active label {
   color: #fad733;
@@ -4521,9 +4584,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-yellow .input-group.active .btn {
-  border-bottom: 1px solid #fad733;
-}
 .form-yellow .input-group.active .input-group-addon {
   border-bottom: 1px solid #fad733;
 }
@@ -4536,9 +4596,9 @@ textarea.form-control {
   border-bottom: 1px solid #ff9800;
 }
 .form-orange .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-orange .form-group.active label {
   color: #ff9800;
@@ -4564,9 +4624,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-orange .input-group.active .btn {
-  border-bottom: 1px solid #ff9800;
-}
 .form-orange .input-group.active .input-group-addon {
   border-bottom: 1px solid #ff9800;
 }
@@ -4579,9 +4636,9 @@ textarea.form-control {
   border-bottom: 1px solid #ff5722;
 }
 .form-deep-orange .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-deep-orange .form-group.active label {
   color: #ff5722;
@@ -4607,9 +4664,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-deep-orange .input-group.active .btn {
-  border-bottom: 1px solid #ff5722;
-}
 .form-deep-orange .input-group.active .input-group-addon {
   border-bottom: 1px solid #ff5722;
 }
@@ -4622,9 +4676,9 @@ textarea.form-control {
   border-bottom: 1px solid #795548;
 }
 .form-brown .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-brown .form-group.active label {
   color: #795548;
@@ -4650,9 +4704,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-brown .input-group.active .btn {
-  border-bottom: 1px solid #795548;
-}
 .form-brown .input-group.active .input-group-addon {
   border-bottom: 1px solid #795548;
 }
@@ -4665,9 +4716,9 @@ textarea.form-control {
   border-bottom: 1px solid #9e9e9e;
 }
 .form-grey .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-grey .form-group.active label {
   color: #9e9e9e;
@@ -4693,9 +4744,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-grey .input-group.active .btn {
-  border-bottom: 1px solid #9e9e9e;
-}
 .form-grey .input-group.active .input-group-addon {
   border-bottom: 1px solid #9e9e9e;
 }
@@ -4708,9 +4756,9 @@ textarea.form-control {
   border-bottom: 1px solid #f1f3fa;
 }
 .form-light-grey .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-light-grey .form-group.active label {
   color: #f1f3fa;
@@ -4736,9 +4784,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-light-grey .input-group.active .btn {
-  border-bottom: 1px solid #f1f3fa;
-}
 .form-light-grey .input-group.active .input-group-addon {
   border-bottom: 1px solid #f1f3fa;
 }
@@ -4751,9 +4796,9 @@ textarea.form-control {
   border-bottom: 1px solid #607d8b;
 }
 .form-blue-grey .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-blue-grey .form-group.active label {
   color: #607d8b;
@@ -4779,9 +4824,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-blue-grey .input-group.active .btn {
-  border-bottom: 1px solid #607d8b;
-}
 .form-blue-grey .input-group.active .input-group-addon {
   border-bottom: 1px solid #607d8b;
 }
@@ -4794,9 +4836,9 @@ textarea.form-control {
   border-bottom: 1px solid #2c3e50;
 }
 .form-dark .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-dark .form-group.active label {
   color: #2c3e50;
@@ -4822,9 +4864,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-dark .input-group.active .btn {
-  border-bottom: 1px solid #2c3e50;
-}
 .form-dark .input-group.active .input-group-addon {
   border-bottom: 1px solid #2c3e50;
 }
@@ -4837,9 +4876,9 @@ textarea.form-control {
   border-bottom: 1px solid #23b7e5;
 }
 .form-primary .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-primary .form-group.active label {
   color: #23b7e5;
@@ -4865,9 +4904,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-primary .input-group.active .btn {
-  border-bottom: 1px solid #23b7e5;
-}
 .form-primary .input-group.active .input-group-addon {
   border-bottom: 1px solid #23b7e5;
 }
@@ -4880,9 +4916,9 @@ textarea.form-control {
   border-bottom: 1px solid #27c24c;
 }
 .form-success .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-success .form-group.active label {
   color: #27c24c;
@@ -4908,9 +4944,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-success .input-group.active .btn {
-  border-bottom: 1px solid #27c24c;
-}
 .form-success .input-group.active .input-group-addon {
   border-bottom: 1px solid #27c24c;
 }
@@ -4923,9 +4956,9 @@ textarea.form-control {
   border-bottom: 1px solid #23b7e5;
 }
 .form-info .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-info .form-group.active label {
   color: #23b7e5;
@@ -4951,9 +4984,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-info .input-group.active .btn {
-  border-bottom: 1px solid #23b7e5;
-}
 .form-info .input-group.active .input-group-addon {
   border-bottom: 1px solid #23b7e5;
 }
@@ -4966,9 +4996,9 @@ textarea.form-control {
   border-bottom: 1px solid #ff9800;
 }
 .form-warning .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-warning .form-group.active label {
   color: #ff9800;
@@ -4994,9 +5024,6 @@ textarea.form-control {
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
-.form-warning .input-group.active .btn {
-  border-bottom: 1px solid #ff9800;
-}
 .form-warning .input-group.active .input-group-addon {
   border-bottom: 1px solid #ff9800;
 }
@@ -5009,9 +5036,9 @@ textarea.form-control {
   border-bottom: 1px solid #f05050;
 }
 .form-danger .form-group label {
-  -webkit-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  -o-transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  transition: color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -webkit-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  -o-transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  transition: top color cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
 }
 .form-danger .form-group.active label {
   color: #f05050;
@@ -5036,9 +5063,6 @@ textarea.form-control {
   -webkit-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   -o-transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: border-bottom cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-}
-.form-danger .input-group.active .btn {
-  border-bottom: 1px solid #f05050;
 }
 .form-danger .input-group.active .input-group-addon {
   border-bottom: 1px solid #f05050;
@@ -5084,6 +5108,11 @@ textarea.form-control {
 .modal .modal-footer .btn {
   margin-bottom: 0px;
 }
+.dropdown-menu {
+  border-radius: 0;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
 *,
 :after,
 :before {
@@ -5116,7 +5145,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 300;
+  z-index: 5;
   height: 60px;
   background: #ffffff;
   color: #ffffff;
@@ -5175,7 +5204,7 @@ body {
   bottom: 0;
   height: 1px;
   min-height: 100%;
-  z-index: 200;
+  z-index: 2;
   width: 220px;
   padding-top: 60px;
   background: #2c3e50;
@@ -5455,8 +5484,9 @@ body {
   bottom: 0;
   height: 60px;
   padding: 20px;
-  z-index: 100;
+  z-index: 5;
   margin-left: 220px;
+  background: #f1f3fa;
   border-top: 1px solid #cfd8dc;
 }
 @media (max-width: 767px) {
@@ -5545,5 +5575,659 @@ body {
   font-size: 10px;
   text-align: center;
   color: #fff;
+}
+.chosen-container.chosen-container-single .chosen-single,
+.chosen-container.chosen-container-active .chosen-single,
+.chosen-container.chosen-container-multi .chosen-choices,
+.chosen-container.chosen-container-active .chosen-choices {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 2px;
+  color: #666666;
+  background-color: #fff;
+  background-image: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #bfbfbf;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 34px;
+}
+.chosen-container.chosen-container-active .chosen-single,
+.chosen-container.chosen-container-active .chosen-choices {
+  border-bottom: 1px solid #23b7e5;
+}
+.chosen-container .chosen-drop {
+  margin-top: 8px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 0px !important;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+.chosen-container .chosen-results {
+  margin: 0;
+  padding: 0;
+}
+.chosen-container .chosen-results li.highlighted {
+  background: #23b7e5;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 6px 24px 6px 9px;
+  border: 1px solid #bfbfbf;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  top: 7px;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin-top: 4px;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+  border: none;
+}
+.chosen-container-single .chosen-single abbr {
+  top: 11px;
+}
+.chosen-container-single .chosen-single div b {
+  background-position-y: 7px;
+}
+.chosen-container-active .chosen-search input[type="text"] {
+  border: none;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position-y: 7px;
+}
+.mh-a .datepicker.datepicker-inline {
+  margin: 0 auto;
+  display: block !important;
+}
+.datepicker {
+  border-radius: 0px;
+}
+.datepicker table tr td,
+.datepicker table tr th {
+  border-radius: 0px;
+}
+.datepicker table tr td.highlighted {
+  background: #23b7e5;
+  border-radius: 0;
+}
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+  color: #ffffff;
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+}
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today:hover:hover,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled:hover:hover,
+.datepicker table tr td.today:focus,
+.datepicker table tr td.today:hover:focus,
+.datepicker table tr td.today.disabled:focus,
+.datepicker table tr td.today.disabled:hover:focus,
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.today,
+.open .dropdown-toggle.datepicker table tr td.today:hover,
+.open .dropdown-toggle.datepicker table tr td.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
+  color: #ffffff;
+  background-color: #344397;
+  border-color: #2f3d88;
+}
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.today,
+.open .dropdown-toggle.datepicker table tr td.today:hover,
+.open .dropdown-toggle.datepicker table tr td.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today:hover.disabled,
+.datepicker table tr td.today.disabled.disabled,
+.datepicker table tr td.today.disabled:hover.disabled,
+.datepicker table tr td.today[disabled],
+.datepicker table tr td.today:hover[disabled],
+.datepicker table tr td.today.disabled[disabled],
+.datepicker table tr td.today.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.today,
+fieldset[disabled] .datepicker table tr td.today:hover,
+fieldset[disabled] .datepicker table tr td.today.disabled,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover.disabled:hover,
+.datepicker table tr td.today.disabled.disabled:hover,
+.datepicker table tr td.today.disabled:hover.disabled:hover,
+.datepicker table tr td.today[disabled]:hover,
+.datepicker table tr td.today:hover[disabled]:hover,
+.datepicker table tr td.today.disabled[disabled]:hover,
+.datepicker table tr td.today.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.today:hover,
+fieldset[disabled] .datepicker table tr td.today:hover:hover,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover:hover,
+.datepicker table tr td.today.disabled:focus,
+.datepicker table tr td.today:hover.disabled:focus,
+.datepicker table tr td.today.disabled.disabled:focus,
+.datepicker table tr td.today.disabled:hover.disabled:focus,
+.datepicker table tr td.today[disabled]:focus,
+.datepicker table tr td.today:hover[disabled]:focus,
+.datepicker table tr td.today.disabled[disabled]:focus,
+.datepicker table tr td.today.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.today:focus,
+fieldset[disabled] .datepicker table tr td.today:hover:focus,
+fieldset[disabled] .datepicker table tr td.today.disabled:focus,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover:focus,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today:hover.disabled:active,
+.datepicker table tr td.today.disabled.disabled:active,
+.datepicker table tr td.today.disabled:hover.disabled:active,
+.datepicker table tr td.today[disabled]:active,
+.datepicker table tr td.today:hover[disabled]:active,
+.datepicker table tr td.today.disabled[disabled]:active,
+.datepicker table tr td.today.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.today:active,
+fieldset[disabled] .datepicker table tr td.today:hover:active,
+fieldset[disabled] .datepicker table tr td.today.disabled:active,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today:hover.disabled.active,
+.datepicker table tr td.today.disabled.disabled.active,
+.datepicker table tr td.today.disabled:hover.disabled.active,
+.datepicker table tr td.today[disabled].active,
+.datepicker table tr td.today:hover[disabled].active,
+.datepicker table tr td.today.disabled[disabled].active,
+.datepicker table tr td.today.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.today.active,
+fieldset[disabled] .datepicker table tr td.today:hover.active,
+fieldset[disabled] .datepicker table tr td.today.disabled.active,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+}
+.datepicker table tr td.range,
+.datepicker table tr td.range:hover,
+.datepicker table tr td.range.disabled,
+.datepicker table tr td.range.disabled:hover {
+  background: #d9f3fb;
+  border-radius: 0;
+}
+.datepicker table tr td.range.today,
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled:hover {
+  color: #ffffff;
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+  border-radius: 0;
+}
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today:hover:hover,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover:hover,
+.datepicker table tr td.range.today:focus,
+.datepicker table tr td.range.today:hover:focus,
+.datepicker table tr td.range.today.disabled:focus,
+.datepicker table tr td.range.today.disabled:hover:focus,
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.range.today,
+.open .dropdown-toggle.datepicker table tr td.range.today:hover,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
+  color: #ffffff;
+  background-color: #344397;
+  border-color: #2f3d88;
+}
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.range.today,
+.open .dropdown-toggle.datepicker table tr td.range.today:hover,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled,
+.open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today:hover.disabled,
+.datepicker table tr td.range.today.disabled.disabled,
+.datepicker table tr td.range.today.disabled:hover.disabled,
+.datepicker table tr td.range.today[disabled],
+.datepicker table tr td.range.today:hover[disabled],
+.datepicker table tr td.range.today.disabled[disabled],
+.datepicker table tr td.range.today.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.range.today,
+fieldset[disabled] .datepicker table tr td.range.today:hover,
+fieldset[disabled] .datepicker table tr td.range.today.disabled,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today:hover.disabled:hover,
+.datepicker table tr td.range.today.disabled.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover.disabled:hover,
+.datepicker table tr td.range.today[disabled]:hover,
+.datepicker table tr td.range.today:hover[disabled]:hover,
+.datepicker table tr td.range.today.disabled[disabled]:hover,
+.datepicker table tr td.range.today.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.range.today:hover,
+fieldset[disabled] .datepicker table tr td.range.today:hover:hover,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:hover,
+.datepicker table tr td.range.today.disabled:focus,
+.datepicker table tr td.range.today:hover.disabled:focus,
+.datepicker table tr td.range.today.disabled.disabled:focus,
+.datepicker table tr td.range.today.disabled:hover.disabled:focus,
+.datepicker table tr td.range.today[disabled]:focus,
+.datepicker table tr td.range.today:hover[disabled]:focus,
+.datepicker table tr td.range.today.disabled[disabled]:focus,
+.datepicker table tr td.range.today.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.range.today:focus,
+fieldset[disabled] .datepicker table tr td.range.today:hover:focus,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:focus,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:focus,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today:hover.disabled:active,
+.datepicker table tr td.range.today.disabled.disabled:active,
+.datepicker table tr td.range.today.disabled:hover.disabled:active,
+.datepicker table tr td.range.today[disabled]:active,
+.datepicker table tr td.range.today:hover[disabled]:active,
+.datepicker table tr td.range.today.disabled[disabled]:active,
+.datepicker table tr td.range.today.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.range.today:active,
+fieldset[disabled] .datepicker table tr td.range.today:hover:active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today:hover.disabled.active,
+.datepicker table tr td.range.today.disabled.disabled.active,
+.datepicker table tr td.range.today.disabled:hover.disabled.active,
+.datepicker table tr td.range.today[disabled].active,
+.datepicker table tr td.range.today:hover[disabled].active,
+.datepicker table tr td.range.today.disabled[disabled].active,
+.datepicker table tr td.range.today.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.range.today.active,
+fieldset[disabled] .datepicker table tr td.range.today:hover.active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled.active,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+}
+.datepicker table tr td.selected,
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected.disabled:hover {
+  color: #ffffff;
+  background-color: #23b7e5;
+  border-color: #23b7e5;
+  text-shadow: none;
+}
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected:hover:hover,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.disabled:hover:hover,
+.datepicker table tr td.selected:focus,
+.datepicker table tr td.selected:hover:focus,
+.datepicker table tr td.selected.disabled:focus,
+.datepicker table tr td.selected.disabled:hover:focus,
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.selected,
+.open .dropdown-toggle.datepicker table tr td.selected:hover,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
+  color: #ffffff;
+  background-color: #189ec8;
+  border-color: #158fb5;
+}
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.selected,
+.open .dropdown-toggle.datepicker table tr td.selected:hover,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled,
+.open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected:hover.disabled,
+.datepicker table tr td.selected.disabled.disabled,
+.datepicker table tr td.selected.disabled:hover.disabled,
+.datepicker table tr td.selected[disabled],
+.datepicker table tr td.selected:hover[disabled],
+.datepicker table tr td.selected.disabled[disabled],
+.datepicker table tr td.selected.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.selected,
+fieldset[disabled] .datepicker table tr td.selected:hover,
+fieldset[disabled] .datepicker table tr td.selected.disabled,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected:hover.disabled:hover,
+.datepicker table tr td.selected.disabled.disabled:hover,
+.datepicker table tr td.selected.disabled:hover.disabled:hover,
+.datepicker table tr td.selected[disabled]:hover,
+.datepicker table tr td.selected:hover[disabled]:hover,
+.datepicker table tr td.selected.disabled[disabled]:hover,
+.datepicker table tr td.selected.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.selected:hover,
+fieldset[disabled] .datepicker table tr td.selected:hover:hover,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover:hover,
+.datepicker table tr td.selected.disabled:focus,
+.datepicker table tr td.selected:hover.disabled:focus,
+.datepicker table tr td.selected.disabled.disabled:focus,
+.datepicker table tr td.selected.disabled:hover.disabled:focus,
+.datepicker table tr td.selected[disabled]:focus,
+.datepicker table tr td.selected:hover[disabled]:focus,
+.datepicker table tr td.selected.disabled[disabled]:focus,
+.datepicker table tr td.selected.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.selected:focus,
+fieldset[disabled] .datepicker table tr td.selected:hover:focus,
+fieldset[disabled] .datepicker table tr td.selected.disabled:focus,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover:focus,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected:hover.disabled:active,
+.datepicker table tr td.selected.disabled.disabled:active,
+.datepicker table tr td.selected.disabled:hover.disabled:active,
+.datepicker table tr td.selected[disabled]:active,
+.datepicker table tr td.selected:hover[disabled]:active,
+.datepicker table tr td.selected.disabled[disabled]:active,
+.datepicker table tr td.selected.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.selected:active,
+fieldset[disabled] .datepicker table tr td.selected:hover:active,
+fieldset[disabled] .datepicker table tr td.selected.disabled:active,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected:hover.disabled.active,
+.datepicker table tr td.selected.disabled.disabled.active,
+.datepicker table tr td.selected.disabled:hover.disabled.active,
+.datepicker table tr td.selected[disabled].active,
+.datepicker table tr td.selected:hover[disabled].active,
+.datepicker table tr td.selected.disabled[disabled].active,
+.datepicker table tr td.selected.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.selected.active,
+fieldset[disabled] .datepicker table tr td.selected:hover.active,
+fieldset[disabled] .datepicker table tr td.selected.disabled.active,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
+  background-color: #23b7e5;
+  border-color: #23b7e5;
+}
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover {
+  color: #ffffff;
+  background-color: #23b7e5;
+  border-color: #23b7e5;
+  text-shadow: none;
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active:hover:focus,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+  color: #ffffff;
+  background-color: #189ec8;
+  border-color: #158fb5;
+}
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active:hover.disabled,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active[disabled],
+.datepicker table tr td.active:hover[disabled],
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td.active,
+fieldset[disabled] .datepicker table tr td.active:hover,
+fieldset[disabled] .datepicker table tr td.active.disabled,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover.disabled:hover,
+.datepicker table tr td.active.disabled.disabled:hover,
+.datepicker table tr td.active.disabled:hover.disabled:hover,
+.datepicker table tr td.active[disabled]:hover,
+.datepicker table tr td.active:hover[disabled]:hover,
+.datepicker table tr td.active.disabled[disabled]:hover,
+.datepicker table tr td.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td.active:hover,
+fieldset[disabled] .datepicker table tr td.active:hover:hover,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active:hover.disabled:focus,
+.datepicker table tr td.active.disabled.disabled:focus,
+.datepicker table tr td.active.disabled:hover.disabled:focus,
+.datepicker table tr td.active[disabled]:focus,
+.datepicker table tr td.active:hover[disabled]:focus,
+.datepicker table tr td.active.disabled[disabled]:focus,
+.datepicker table tr td.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td.active:focus,
+fieldset[disabled] .datepicker table tr td.active:hover:focus,
+fieldset[disabled] .datepicker table tr td.active.disabled:focus,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active:hover.disabled:active,
+.datepicker table tr td.active.disabled.disabled:active,
+.datepicker table tr td.active.disabled:hover.disabled:active,
+.datepicker table tr td.active[disabled]:active,
+.datepicker table tr td.active:hover[disabled]:active,
+.datepicker table tr td.active.disabled[disabled]:active,
+.datepicker table tr td.active.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td.active:active,
+fieldset[disabled] .datepicker table tr td.active:hover:active,
+fieldset[disabled] .datepicker table tr td.active.disabled:active,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active:hover.disabled.active,
+.datepicker table tr td.active.disabled.disabled.active,
+.datepicker table tr td.active.disabled:hover.disabled.active,
+.datepicker table tr td.active[disabled].active,
+.datepicker table tr td.active:hover[disabled].active,
+.datepicker table tr td.active.disabled[disabled].active,
+.datepicker table tr td.active.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td.active.active,
+fieldset[disabled] .datepicker table tr td.active:hover.active,
+fieldset[disabled] .datepicker table tr td.active.disabled.active,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
+  background-color: #23b7e5;
+  border-color: #23b7e5;
+}
+.datepicker table tr td span {
+  border-radius: 0px;
+}
+.datepicker table tr td span:hover {
+  background: #f1f3fa;
+}
+.datepicker table tr td span.disabled,
+.datepicker table tr td span.disabled:hover {
+  background: none;
+  color: #f1f3fa;
+  cursor: default;
+}
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+  color: #ffffff;
+  background-color: #23b7e5;
+  border-color: #23b7e5;
+  text-shadow: none;
+}
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active:focus,
+.datepicker table tr td span.active:hover:focus,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td span.active,
+.open .dropdown-toggle.datepicker table tr td span.active:hover,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+  color: #ffffff;
+  background-color: #189ec8;
+  border-color: #158fb5;
+}
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td span.active,
+.open .dropdown-toggle.datepicker table tr td span.active:hover,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled,
+.open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+  background-image: none;
+}
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active:hover.disabled,
+.datepicker table tr td span.active.disabled.disabled,
+.datepicker table tr td span.active.disabled:hover.disabled,
+.datepicker table tr td span.active[disabled],
+.datepicker table tr td span.active:hover[disabled],
+.datepicker table tr td span.active.disabled[disabled],
+.datepicker table tr td span.active.disabled:hover[disabled],
+fieldset[disabled] .datepicker table tr td span.active,
+fieldset[disabled] .datepicker table tr td span.active:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover.disabled:hover,
+.datepicker table tr td span.active.disabled.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.disabled:hover,
+.datepicker table tr td span.active[disabled]:hover,
+.datepicker table tr td span.active:hover[disabled]:hover,
+.datepicker table tr td span.active.disabled[disabled]:hover,
+.datepicker table tr td span.active.disabled:hover[disabled]:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover,
+fieldset[disabled] .datepicker table tr td span.active:hover:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:focus,
+.datepicker table tr td span.active:hover.disabled:focus,
+.datepicker table tr td span.active.disabled.disabled:focus,
+.datepicker table tr td span.active.disabled:hover.disabled:focus,
+.datepicker table tr td span.active[disabled]:focus,
+.datepicker table tr td span.active:hover[disabled]:focus,
+.datepicker table tr td span.active.disabled[disabled]:focus,
+.datepicker table tr td span.active.disabled:hover[disabled]:focus,
+fieldset[disabled] .datepicker table tr td span.active:focus,
+fieldset[disabled] .datepicker table tr td span.active:hover:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active:hover.disabled:active,
+.datepicker table tr td span.active.disabled.disabled:active,
+.datepicker table tr td span.active.disabled:hover.disabled:active,
+.datepicker table tr td span.active[disabled]:active,
+.datepicker table tr td span.active:hover[disabled]:active,
+.datepicker table tr td span.active.disabled[disabled]:active,
+.datepicker table tr td span.active.disabled:hover[disabled]:active,
+fieldset[disabled] .datepicker table tr td span.active:active,
+fieldset[disabled] .datepicker table tr td span.active:hover:active,
+fieldset[disabled] .datepicker table tr td span.active.disabled:active,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active:hover.disabled.active,
+.datepicker table tr td span.active.disabled.disabled.active,
+.datepicker table tr td span.active.disabled:hover.disabled.active,
+.datepicker table tr td span.active[disabled].active,
+.datepicker table tr td span.active:hover[disabled].active,
+.datepicker table tr td span.active.disabled[disabled].active,
+.datepicker table tr td span.active.disabled:hover[disabled].active,
+fieldset[disabled] .datepicker table tr td span.active.active,
+fieldset[disabled] .datepicker table tr td span.active:hover.active,
+fieldset[disabled] .datepicker table tr td span.active.disabled.active,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
+  background-color: #23b7e5;
+  border-color: #23b7e5;
+}
+.datepicker thead tr:first-child th:hover,
+.datepicker tfoot tr th:hover {
+  background: #f1f3fa;
 }
 /*# sourceMappingURL=./flat-theme.css.map */
