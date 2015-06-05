@@ -46,9 +46,9 @@
 
 	.form-group {
 		label {
-			-webkit-transition: color cubic-bezier(.25,.8,.25,1) .25s;
-			-o-transition: color cubic-bezier(.25,.8,.25,1) .25s;
-			transition: color cubic-bezier(.25,.8,.25,1) .25s;
+			-webkit-transition: top color cubic-bezier(.25,.8,.25,1) .25s;
+			-o-transition: top color cubic-bezier(.25,.8,.25,1) .25s;
+			transition: top color cubic-bezier(.25,.8,.25,1) .25s;
 		}
 
 		&.active {
@@ -93,10 +93,6 @@
 		}	
 
 		&.active {
-			.btn {
-				border-bottom: 1px solid @accent_color;
-			}
-
 			.input-group-addon {
 				border-bottom: 1px solid @accent_color;
 			}		
@@ -343,16 +339,38 @@
 	.input-group-btn:first-child > .btn, 
 	.input-group-btn:first-child > .btn-group,
 	.input-group-btn:first-child > .btn.dropdown-toggle {
-		margin-right: 0px;
+		margin-right: 5px;
 	}
 
 	.input-group-btn:last-child > .btn, 
 	.input-group-btn:last-child > .btn-group {
-		margin-left: 0px;
+		margin-left: 5px;
 	}
 
 	.input-group-btn + .form-control {
 		padding-left: 5px;
+	}
+
+	&.input-group-accentuate {
+		-webkit-box-shadow: @content_accentuate_shadow;
+		box-shadow: @content_accentuate_shadow;
+
+		.form-control {
+			margin: 0;
+			border: 0px;
+			border-color: @form_input_border_color;
+			padding-left: 7px;
+		}
+
+		.btn {
+			margin: 0;
+			border-width: 0px !important;
+			padding: 7px 12px;
+		}
+
+		& .form-control:not(:first-child) {
+			border-left: 1px solid @form_input_border_color;
+		}
 	}
 }
 

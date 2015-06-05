@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				tasks: [ 'build' ]
 			},
 			js: {
-				files: [ 'src/**/*.js' ],
+				files: [ 'src/**/*.js', 'demo/**/*.js' ],
 				tasks: [ 'build' ]
 			}
 		},
@@ -41,6 +41,10 @@ module.exports = function(grunt) {
 			bootstrap: {
 				src: [ 'vendor/normalize/normalize.css', 'vendor/bootstrap/css/bootstrap.css' ],
 				dest: 'dist/bootstrap.css'
+			},
+			angulardemo: {
+				src: [ 'demo/angular/controllers/**/*.js' ],
+				dest: 'demo/angular/controllers.js'
 			}
 		},
 		cssmin: {

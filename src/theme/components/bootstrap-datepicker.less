@@ -1,0 +1,115 @@
+.mh-a .datepicker.datepicker-inline {
+	margin: 0 auto;
+	display: block !important;
+}
+
+.datepicker-button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 8%);
+        border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border
+    }
+  }
+}
+
+.datepicker {
+	border-radius: 0px;
+
+	table {
+		tr {
+			td, th {
+				border-radius: 0px;
+			}
+		}
+	}
+	table tr td {
+		&.highlighted {
+			background: @bootstrap_datepicker_selected_background;
+			border-radius: 0;
+		}
+		&.today,
+		&.today:hover,
+		&.today.disabled,
+		&.today.disabled:hover {
+			.datepicker-button-variant(@bootstrap_datepicker_today_color, @bootstrap_datepicker_today_background, @bootstrap_datepicker_today_background);
+		}
+		&.range,
+		&.range:hover,
+		&.range.disabled,
+		&.range.disabled:hover {
+			background: lighten(@bootstrap_datepicker_selected_background, 40%);
+			border-radius: 0;
+		}
+		&.range.today,
+		&.range.today:hover,
+		&.range.today.disabled,
+		&.range.today.disabled:hover {
+			.datepicker-button-variant(@bootstrap_datepicker_today_color, @bootstrap_datepicker_today_background, @bootstrap_datepicker_today_background);
+			border-radius: 0;
+		}
+		&.selected,
+		&.selected:hover,
+		&.selected.disabled,
+		&.selected.disabled:hover {
+			.datepicker-button-variant(@bootstrap_datepicker_selected_color, @bootstrap_datepicker_selected_background, @bootstrap_datepicker_selected_background);
+			text-shadow: none;
+		}
+		&.active,
+		&.active:hover,
+		&.active.disabled,
+		&.active.disabled:hover {
+			.datepicker-button-variant(@bootstrap_datepicker_selected_color, @bootstrap_datepicker_selected_background, @bootstrap_datepicker_selected_background);
+			text-shadow: none;
+		}
+		span {
+			border-radius: 0px;
+			&:hover {
+				background: @bootstrap_datepicker_hover_background;
+			}
+			&.disabled,
+			&.disabled:hover {
+				background: none;
+				color: @bootstrap_datepicker_hover_background;
+				cursor: default;
+			}
+			&.active,
+			&.active:hover,
+			&.active.disabled,
+			&.active.disabled:hover {
+				.datepicker-button-variant(@bootstrap_datepicker_selected_color, @bootstrap_datepicker_selected_background, @bootstrap_datepicker_selected_background);
+				text-shadow: none;
+			}
+		}
+	}
+
+	thead tr:first-child th,
+	tfoot tr th {
+		&:hover {
+			background: @bootstrap_datepicker_hover_background;
+		}
+	}
+}

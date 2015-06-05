@@ -25,6 +25,7 @@
 		"icon": "icon-notebook",
 		"submenu": [
 			{ "text": "Standard", "sref": "forms-standard" },
+			{ "text": "Advanced", "sref": "forms-advanced" },
 			{ "text": "Wizard", "sref": "forms-wizard" }
 		]
 	},

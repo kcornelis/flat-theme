@@ -1,10 +1,10 @@
 $(function() {
 	
-	$(document).on('focus', '.form-group .form-control', function () {
+	$(document).on('focus', '.form-control', function () {
 		$(this).closest('.form-group, .input-group').addClass('active');
 	});
 
-	$(document).on('blur', '.form-group .form-control', function () {
+	$(document).on('blur', '.form-control', function () {
 		$(this).closest('.form-group, .input-group').removeClass('active');
 	});	
 

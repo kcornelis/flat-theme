@@ -1,9 +1,8 @@
 (function() {
 	'use strict';
 
-	var directiveName = 'input';
-
-	angular.module('ft').directive(directiveName, inputDirective);
+	angular.module('ft').directive('input', inputDirective);
+	angular.module('ft').directive('select', inputDirective);
 
 	inputDirective.$inject = [ ];
 
@@ -15,6 +14,9 @@
 				
 				var formGroupController = ctrls[0];
 				if(!formGroupController)
+					return;
+
+				if(!element.hasClass('form-control'))
 					return;
 
 				element.on('change', updateIsFormGroupFilled);

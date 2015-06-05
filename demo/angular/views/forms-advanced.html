@@ -1,12 +1,9 @@
-{% extends 'layout-with-menu.html' %} 
-{% block content %}
-
 <div class="content-header">
 	<h1><i class="icon-notebook"></i>Advanced forms</h1>
 	<small>Vendor control styling.</small>
 </div>
 
-<div class="row">
+<div class="row" ng-controller="FormsAdvancedController">
 	<div class="col-md-6">
 		<div class="panel panel-white">
 			<div class="panel-heading clearfix">
@@ -15,8 +12,8 @@
 			<div class="panel-body">
 				<p><a href="http://harvesthq.github.io/chosen/">Chosen</a> is a jQuery plugin that makes long, unwieldy select boxes much more user-friendly.</p>
 				<form>
-					<div class="form-group floating">
-						<select data-placeholder=" " class="form-control chosen-select">
+					<ft-form-group ft-floating-label>
+						<select chosen data-placeholder=" " class="form-control chosen-select">
 							<option value=""></option>
 							<option value="United States">United States</option>
 							<option value="United Kingdom">United Kingdom</option>
@@ -271,10 +268,10 @@
 							<option value="Zimbabwe">Zimbabwe</option>
 						</select>
 						<label>Standard select</label>
-					</div>
+					</ft-form-group>
 
-					<div class="form-group floating">
-						<select data-placeholder=" " class="form-control chosen-select" multiple tabindex="4">
+					<ft-form-group ft-floating-label>
+						<select chosen data-placeholder=" " class="form-control chosen-select" multiple tabindex="4">
 							<option value=""></option>
 							<option value="United States">United States</option>
 							<option value="United Kingdom">United Kingdom</option>
@@ -529,10 +526,10 @@
 							<option value="Zimbabwe">Zimbabwe</option>
 						</select>
 						<label>Multiple select</label>
-					</div>
+					</ft-form-group>
 
-					<div class="form-group floating">
-						<select data-placeholder=" " class="form-control chosen-select">
+					<ft-form-group ft-floating-label>
+						<select chosen data-placeholder=" " class="form-control chosen-select">
 							<option value=""></option>
 							<optgroup label="NFC EAST">
 								<option>Dallas Cowboys</option>
@@ -584,10 +581,10 @@
 							</optgroup>
 						</select>
 						<label>Single select with groups</label>
-					</div>
+					</ft-form-group>
 
-					<div class="form-group floating">
-						<select data-placeholder=" " class="form-control chosen-select" multiple>
+					<ft-form-group ft-floating-label>
+						<select chosen data-placeholder=" " class="form-control chosen-select" multiple>
 							<option value=""></option>
 							<optgroup label="NFC EAST">
 								<option>Dallas Cowboys</option>
@@ -639,10 +636,10 @@
 							</optgroup>
 						</select>
 						<label>Multiple select with groups</label>
-					</div>
+					</ft-form-group>
 
-					<div class="form-group floating">
-						<select data-placeholder=" " class="form-control chosen-select-deselect">
+					<ft-form-group ft-floating-label>
+						<select chosen data-placeholder=" " allow-single-deselect="true" class="form-control">
 							<option value=""></option>
 							<option>American Black Bear</option>
 							<option>Asiatic Black Bear</option>
@@ -654,62 +651,9 @@
 							<option>Spectacled Bear</option>
 						</select>
 						<label>Deselect on single selects</label>
-					</div>
+					</ft-form-group>
 				</form>
 			</div>
 		</div>
 	</div>
-
-	<div class="col-md-6">
-		<div class="panel panel-white">
-			<div class="panel-heading clearfix">
-				<h4 class="panel-title">Bootstrap datepicker</h4>
-			</div>
-			<div class="panel-body">
-				<p><a href="https://github.com/eternicode/bootstrap-datepicker">Bootstrap-datepicker</a> is a datepicker for bootstrap.</p>
-				<div class="form-group floating">
-					<label>Datepicker on text input</label>
-					<input id="defaultDatePicker" type="text" type="text" class="form-control" />
-				</div>
-				<div id="rangeDatePicker" class="input-daterange input-group" id="datepicker">
-					<input type="text" class="input-sm form-control" name="start" />
-					<span class="input-group-addon">to</span>
-					<input type="text" class="input-sm form-control" name="end" />
-				</div>
-				<div id="inlineDatePicker" class="mt-xl mh-a"></div>
-			</div>
-		</div>
-	</div>
 </div>
-
-<script type="text/javascript">
-	$.loadCSS('../../vendor/chosen/chosen.min.css');
-	$.loadJS('../../vendor/chosen/chosen.jquery.min.js');
-
-	var config = {
-		'.chosen-select'           : { width:"100%" },
-		'.chosen-select-deselect'  : { width:"100%", allow_single_deselect:true },
-		'.chosen-select-no-single' : { width:"100%", disable_search_threshold:10 },
-		'.chosen-select-no-results': { width:"100%", no_results_text:'Oops, nothing found!' }
-	}
-	for (var selector in config) {
-		$(selector).chosen(config[selector]);
-	}
-</script>
-
-<script type="text/javascript">
-	$.loadCSS('../../vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css');
-	$.loadJS('../../vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js');
-
-	$('#defaultDatePicker').datepicker({
-		clearBtn: true,
-		todayHighlight: true
-	});
-	$('#inlineDatePicker').datepicker({
-		clearBtn: true,
-		todayHighlight: true
-	});
-	$('#rangeDatePicker').datepicker({ });
-</script>
-
-{% endblock %}
