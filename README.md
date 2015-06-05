@@ -14,7 +14,7 @@ Visit [kcornelis.github.io/flat-theme](http://kcornelis.github.io/flat-theme) fo
 <!-- vendor css -->
 
 <!-- flat theme -->
-<link id="flatThemeCss" rel="stylesheet" href="../../dist/flat-theme.min.css" >
+<link rel="stylesheet" href="dist/flat-theme.min.css" >
 
 <!-- scripts -->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -32,7 +32,7 @@ Visit [kcornelis.github.io/flat-theme](http://kcornelis.github.io/flat-theme) fo
 <!-- vendor css -->
 
 <!-- flat theme -->
-<link id="flatThemeCss" rel="stylesheet" href="../../dist/flat-theme.min.css" >
+<link rel="stylesheet" href="dist/flat-theme.min.css" >
 
 <!-- scripts -->
 <script src="vendor/jquery/jquery.min.js"></script>
