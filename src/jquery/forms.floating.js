@@ -22,7 +22,6 @@ $(function() {
 		if($(this).val()) {
 			$(this).closest('.form-group, .input-group').addClass('filled');
 		}
-		
 	});
 
 });
