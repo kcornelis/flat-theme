@@ -74,10 +74,12 @@
 	function inputDirective() {
 		return {
 			restrict: 'E',
-			require: [ '^?ftFormGroup' ],		
+			require: [ '^?ftFormGroup', '?ngModel' ],		
 			link: function(scope, element, attrs, ctrls) {
 				
 				var formGroupController = ctrls[0];
+				var ngModelCtrl = ctrls[1];
+				
 				if(!formGroupController)
 					return;
 
@@ -85,6 +87,12 @@
 					return;
 
 				element.on('change', updateIsFormGroupFilled);
+				element.on('input', updateIsFormGroupFilled);
+
+				if(ngModelCtrl) {
+					ngModelCtrl.$parsers.push(ngModelPipeIsFormGroupFilled);
+					ngModelCtrl.$formatters.push(ngModelPipeIsFormGroupFilled);
+				}
 
 				element.on('focus', function(ev) {
 					formGroupController.setActive(true);
@@ -99,6 +107,11 @@
 
 				function updateIsFormGroupFilled() {
 					formGroupController.setIsFilled(!!element.val());
+				}
+
+				function ngModelPipeIsFormGroupFilled(arg) {
+					formGroupController.setIsFilled(!ngModelCtrl.$isEmpty(arg));
+					return arg;
 				}
 			}
 		};
