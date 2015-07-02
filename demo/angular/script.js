@@ -1,10 +1,33 @@
 (function() {
 	'use strict';
 
-	var ftApp = angular.module('ftApp', ['ui.router', 'ngAnimate', 'oc.lazyLoad', 'ft', 'LocalStorageModule']);
+	var ftApp = angular.module('ftApp', ['ui.router', 'ngAnimate', 'oc.lazyLoad', 'ft', 'LocalStorageModule', 'angular-loading-bar']);
 	ftApp.config(configureRouting);
+	ftApp.config(configureLoadingBarProvider);
+	ftApp.run(configureLoadingBar);
 
 	configureRouting.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$ocLazyLoadProvider'];
+	configureLoadingBar.$inject = ['$rootScope', 'cfpLoadingBar'];
+	configureLoadingBarProvider.$inject = ['cfpLoadingBarProvider'];
+
+	function configureLoadingBarProvider(cfpLoadingBarProvider) {
+		cfpLoadingBarProvider.parentSelector = '#content';
+		cfpLoadingBarProvider.includeSpinner = false;
+		cfpLoadingBarProvider.includeBar = true;
+	}
+
+	function configureLoadingBar($rootScope, cfpLoadingBar) {
+
+		$rootScope.$on('$stateChangeStart', function() {
+			cfpLoadingBar.start();
+		});
+
+		$rootScope.$on('$stateChangeSuccess', function(event) {
+			event.targetScope.$watch('$viewContentLoaded', function () {
+				cfpLoadingBar.complete();
+			});
+		});
+	}
 
 	function configureRouting($stateProvider, $urlRouterProvider, $locationProvider, $ocLazyLoadProvider) {
 		
@@ -17,8 +40,10 @@
 				files: [ '../../vendor/chosen/chosen.min.css', '../../vendor/chosen/chosen.jquery.min.js', '../../vendor/angular-bootstrap-chosen/dist/js/chosen.js' ]
 			}, {
 				name: 'flot',
-				files: [ '../../vendor/flot/jquery.flot.js', '../../vendor/flot/jquery.flot.resize.js',
-					'../../vendor/flot/jquery.flot.pie.js', '../../vendor/flot/jquery.flot.time.js',
+				files: [ '../../vendor/flot/jquery.flot.js', '../../vendor/flot/jquery.flot.resize.js' ]
+			}, {
+				name: 'flot-plugins',
+				files: [ '../../vendor/flot/jquery.flot.pie.js', '../../vendor/flot/jquery.flot.time.js',
 					'../../vendor/flot/jquery.flot.categories.js', '../../vendor/flot/jquery.flot.stack.js',
 					'../../vendor/flot-spline/jquery.flot.spline.js', '../../vendor/flot.tooltip/jquery.flot.tooltip.js',
 					'../../vendor/angular-flot/angular-flot.js' ]
@@ -40,7 +65,7 @@
 			{ name: 'forms-advanced', vendor: [ 'chosen' ] },
 			{ name: 'forms-wizard' },
 
-			{ name: 'charts-flot', vendor: [ 'flot' ] },
+			{ name: 'charts-flot', vendor: [ 'flot', 'flot-plugins' ] },
 
 			{ name: 'pages-blank' },
 			{ name: 'pages-login' }
@@ -88,5 +113,5 @@
 				}
 			}]
 		};
-	};
+	}
 })();
