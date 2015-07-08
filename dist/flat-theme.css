@@ -3834,7 +3834,7 @@ textarea.form-control {
   -webkit-transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   -o-transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
-  z-index: 10px;
+  z-index: 10;
 }
 .form-group.floating .form-control-feedback {
   color: #bfbfbf;
