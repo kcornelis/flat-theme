@@ -3834,6 +3834,7 @@ textarea.form-control {
   -webkit-transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   -o-transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
   transition: top cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+  z-index: 10px;
 }
 .form-group.floating .form-control-feedback {
   color: #bfbfbf;
@@ -5457,7 +5458,7 @@ body {
 #content .content-header h4,
 #content .content-header h5,
 #content .content-header h6 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #23b7e5;
   font-weight: normal;
 }
