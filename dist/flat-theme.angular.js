@@ -80,6 +80,7 @@
 	'use strict';
 
 	angular.module('ft').directive('input', inputDirective);
+	angular.module('ft').directive('textarea', inputDirective);
 	angular.module('ft').directive('select', inputDirective);
 
 	inputDirective.$inject = [ ];
