@@ -5208,7 +5208,7 @@ body {
   bottom: 0;
   height: 1px;
   min-height: 100%;
-  z-index: 2;
+  z-index: 4;
   width: 220px;
   padding-top: 60px;
   background: #2c3e50;
