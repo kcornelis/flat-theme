@@ -28,21 +28,21 @@
 
 		// in tablet mode the menu should collapse when the state changes
 		$rootScope.$on('$stateChangeStart', function() {
-			if(self.isMobile()) {
-				self.collapse();
-			} else {
-				self.restoreFromLocalStorage();
-			}
+			self.setMenu();
 		});
 
 		// switch between normal and mobile mode should collapse/expand the menu
 		$window.on('resize', function() {
+			self.setMenu();
+		});
+
+		self.setMenu = function() {
 			if(self.isMobile()) {
 				self.collapse();
 			} else {
 				self.restoreFromLocalStorage();
 			}
-		});
+		}
 
 		self.restoreFromLocalStorage = function() {
 			if(storage.get(collapseStorageKey)) {
@@ -65,6 +65,6 @@
 		}
 
 		// initialize sidebar
-		self.restoreFromLocalStorage();
+		self.setMenu();
 	}
 })();
