@@ -5248,6 +5248,7 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 237px;
+  padding-top: 10px;
   color: #f2f4f6;
 }
 #sidebar .sidebar-menu > ul li {
@@ -6239,6 +6240,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   position: absolute;
   top: 1px;
   background: #23b7e5;
+  z-index: 1000;
 }
 #content #loading-bar .peg {
   top: 1px;
