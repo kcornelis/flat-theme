@@ -14,12 +14,14 @@
 		cfpLoadingBarProvider.parentSelector = '#content';
 		cfpLoadingBarProvider.includeSpinner = false;
 		cfpLoadingBarProvider.includeBar = true;
+		cfpLoadingBarProvider.latencyThreshold = 500;
 	}
 
 	function configureLoadingBar($rootScope, cfpLoadingBar) {
 
 		$rootScope.$on('$stateChangeStart', function() {
-			cfpLoadingBar.start();
+			if($('#content').length)
+				cfpLoadingBar.start();
 		});
 
 		$rootScope.$on('$stateChangeSuccess', function(event) {
